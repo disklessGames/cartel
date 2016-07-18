@@ -1,0 +1,604 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		570F9A3F19ADDE3900FC9731 /* DraggableCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570F9A3E19ADDE3900FC9731 /* DraggableCard.swift */; };
+		5714DC581994B6A800065908 /* BankrollTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5714DC571994B6A800065908 /* BankrollTests.swift */; };
+		57357FE21A20D3820089B018 /* BoardCollectionViewDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57357FE11A20D3820089B018 /* BoardCollectionViewDataSourceTests.swift */; };
+		57357FE41A20D42D0089B018 /* BoardCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57357FE31A20D42D0089B018 /* BoardCollectionViewDataSource.swift */; };
+		57357FE51A20D66B0089B018 /* BoardCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57357FE31A20D42D0089B018 /* BoardCollectionViewDataSource.swift */; };
+		573D187C199382C6007DD674 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573D187B199382C6007DD674 /* GameViewController.swift */; };
+		574CAE121990D8DC00C86588 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574CAE111990D8DC00C86588 /* Card.swift */; };
+		574CAE1F1991049B00C86588 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574CAE1E1991049B00C86588 /* Player.swift */; };
+		574CAE21199111F000C86588 /* PocketCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574CAE20199111F000C86588 /* PocketCardTests.swift */; };
+		577385DD199234FB006BF33B /* Bankroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577FC24C198A81A900A9AB52 /* Bankroll.swift */; };
+		577385DE199234FB006BF33B /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577FC24E198AA0D800A9AB52 /* Game.swift */; };
+		577385DF199234FB006BF33B /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574CAE111990D8DC00C86588 /* Card.swift */; };
+		577385E0199234FB006BF33B /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574CAE1E1991049B00C86588 /* Player.swift */; };
+		577385E2199236E7006BF33B /* BuildingCardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577385E1199236E7006BF33B /* BuildingCardsTests.swift */; };
+		577385E719925E87006BF33B /* RoadCardLeftTurn.png in Resources */ = {isa = PBXBuildFile; fileRef = 577385E319925E87006BF33B /* RoadCardLeftTurn.png */; };
+		577385E819925E87006BF33B /* RoadCardRightTurn.png in Resources */ = {isa = PBXBuildFile; fileRef = 577385E419925E87006BF33B /* RoadCardRightTurn.png */; };
+		577385E919925E87006BF33B /* RoadCardStraight.png in Resources */ = {isa = PBXBuildFile; fileRef = 577385E519925E87006BF33B /* RoadCardStraight.png */; };
+		577385EA19925E87006BF33B /* RoadCardTJunction.png in Resources */ = {isa = PBXBuildFile; fileRef = 577385E619925E87006BF33B /* RoadCardTJunction.png */; };
+		577385EE1992608F006BF33B /* CityCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577385ED1992608F006BF33B /* CityCollectionViewController.swift */; };
+		577385F2199267AA006BF33B /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577385F1199267AA006BF33B /* CardCell.swift */; };
+		577FC229198A803D00A9AB52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577FC228198A803D00A9AB52 /* AppDelegate.swift */; };
+		577FC22C198A803D00A9AB52 /* Cartel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 577FC22A198A803D00A9AB52 /* Cartel.xcdatamodeld */; };
+		577FC231198A803D00A9AB52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 577FC22F198A803D00A9AB52 /* Main.storyboard */; };
+		577FC233198A803D00A9AB52 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 577FC232198A803D00A9AB52 /* Images.xcassets */; };
+		577FC24A198A80F800A9AB52 /* GameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577FC249198A80F800A9AB52 /* GameTests.swift */; };
+		577FC24D198A81A900A9AB52 /* Bankroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577FC24C198A81A900A9AB52 /* Bankroll.swift */; };
+		577FC24F198AA0D800A9AB52 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577FC24E198AA0D800A9AB52 /* Game.swift */; };
+		579C58AA19A5FD3E008B1556 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 579C58A919A5FD3E008B1556 /* CoreData.framework */; };
+		57CDD2A219C1C3F900CE36FD /* DragViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CDD2A119C1C3F900CE36FD /* DragViewController.swift */; };
+		57F33BF9199A3F1700526538 /* PlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F33BF8199A3F1700526538 /* PlayerTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		574CAE171990F53400C86588 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 577FC21B198A803D00A9AB52 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 577FC222198A803D00A9AB52;
+			remoteInfo = Cartel;
+		};
+		577385DB199234C3006BF33B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 577FC21B198A803D00A9AB52 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 577FC222198A803D00A9AB52;
+			remoteInfo = Cartel;
+		};
+		577FC239198A803E00A9AB52 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 577FC21B198A803D00A9AB52 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 577FC222198A803D00A9AB52;
+			remoteInfo = Cartel;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		570F9A3E19ADDE3900FC9731 /* DraggableCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableCard.swift; sourceTree = "<group>"; };
+		5714DC571994B6A800065908 /* BankrollTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankrollTests.swift; sourceTree = "<group>"; };
+		57357FE11A20D3820089B018 /* BoardCollectionViewDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardCollectionViewDataSourceTests.swift; sourceTree = "<group>"; };
+		57357FE31A20D42D0089B018 /* BoardCollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		573D187B199382C6007DD674 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		574CAE111990D8DC00C86588 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		574CAE1E1991049B00C86588 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		574CAE20199111F000C86588 /* PocketCardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PocketCardTests.swift; sourceTree = "<group>"; };
+		577385E1199236E7006BF33B /* BuildingCardsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildingCardsTests.swift; sourceTree = "<group>"; };
+		577385E319925E87006BF33B /* RoadCardLeftTurn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RoadCardLeftTurn.png; sourceTree = "<group>"; };
+		577385E419925E87006BF33B /* RoadCardRightTurn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RoadCardRightTurn.png; sourceTree = "<group>"; };
+		577385E519925E87006BF33B /* RoadCardStraight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RoadCardStraight.png; sourceTree = "<group>"; };
+		577385E619925E87006BF33B /* RoadCardTJunction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RoadCardTJunction.png; sourceTree = "<group>"; };
+		577385ED1992608F006BF33B /* CityCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityCollectionViewController.swift; sourceTree = "<group>"; };
+		577385F1199267AA006BF33B /* CardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
+		577FC223198A803D00A9AB52 /* Cartel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cartel.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		577FC227198A803D00A9AB52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		577FC228198A803D00A9AB52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		577FC22B198A803D00A9AB52 /* Cartel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cartel.xcdatamodel; sourceTree = "<group>"; };
+		577FC230198A803D00A9AB52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		577FC232198A803D00A9AB52 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		577FC238198A803E00A9AB52 /* CartelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CartelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		577FC23D198A803E00A9AB52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		577FC249198A80F800A9AB52 /* GameTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTests.swift; sourceTree = "<group>"; };
+		577FC24C198A81A900A9AB52 /* Bankroll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bankroll.swift; sourceTree = "<group>"; };
+		577FC24E198AA0D800A9AB52 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		579C58A919A5FD3E008B1556 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		57CDD2A119C1C3F900CE36FD /* DragViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragViewController.swift; sourceTree = "<group>"; };
+		57F33BF8199A3F1700526538 /* PlayerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		577FC220198A803D00A9AB52 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				579C58AA19A5FD3E008B1556 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		577FC235198A803E00A9AB52 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		577385EF199260FB006BF33B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				577385ED1992608F006BF33B /* CityCollectionViewController.swift */,
+				573D187B199382C6007DD674 /* GameViewController.swift */,
+				57CDD2A119C1C3F900CE36FD /* DragViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		577385F01992678D006BF33B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				577385F1199267AA006BF33B /* CardCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		577FC21A198A803D00A9AB52 = {
+			isa = PBXGroup;
+			children = (
+				577FC225198A803D00A9AB52 /* Cartel */,
+				577FC23B198A803E00A9AB52 /* CartelTests */,
+				577FC224198A803D00A9AB52 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		577FC224198A803D00A9AB52 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				577FC223198A803D00A9AB52 /* Cartel.app */,
+				577FC238198A803E00A9AB52 /* CartelTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		577FC225198A803D00A9AB52 /* Cartel */ = {
+			isa = PBXGroup;
+			children = (
+				577FC22F198A803D00A9AB52 /* Main.storyboard */,
+				577385F01992678D006BF33B /* Cells */,
+				57F14056199F8B7700A0DCE6 /* Engine */,
+				577385EF199260FB006BF33B /* ViewControllers */,
+				577FC24B198A819600A9AB52 /* Data Objects */,
+				577FC22A198A803D00A9AB52 /* Cartel.xcdatamodeld */,
+				577FC226198A803D00A9AB52 /* Supporting Files */,
+			);
+			path = Cartel;
+			sourceTree = "<group>";
+		};
+		577FC226198A803D00A9AB52 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				579C58A919A5FD3E008B1556 /* CoreData.framework */,
+				577FC232198A803D00A9AB52 /* Images.xcassets */,
+				577FC228198A803D00A9AB52 /* AppDelegate.swift */,
+				577FC227198A803D00A9AB52 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		577FC23B198A803E00A9AB52 /* CartelTests */ = {
+			isa = PBXGroup;
+			children = (
+				57F33BF7199A3EEC00526538 /* BoardTests */,
+				577FC249198A80F800A9AB52 /* GameTests.swift */,
+				577FC248198A80E400A9AB52 /* CardTests */,
+				577FC23C198A803E00A9AB52 /* Supporting Files */,
+				57357FE11A20D3820089B018 /* BoardCollectionViewDataSourceTests.swift */,
+			);
+			path = CartelTests;
+			sourceTree = "<group>";
+		};
+		577FC23C198A803E00A9AB52 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				577385E319925E87006BF33B /* RoadCardLeftTurn.png */,
+				577385E419925E87006BF33B /* RoadCardRightTurn.png */,
+				577385E519925E87006BF33B /* RoadCardStraight.png */,
+				577385E619925E87006BF33B /* RoadCardTJunction.png */,
+				577FC23D198A803E00A9AB52 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		577FC248198A80E400A9AB52 /* CardTests */ = {
+			isa = PBXGroup;
+			children = (
+				574CAE20199111F000C86588 /* PocketCardTests.swift */,
+				577385E1199236E7006BF33B /* BuildingCardsTests.swift */,
+				5714DC571994B6A800065908 /* BankrollTests.swift */,
+			);
+			name = CardTests;
+			sourceTree = "<group>";
+		};
+		577FC24B198A819600A9AB52 /* Data Objects */ = {
+			isa = PBXGroup;
+			children = (
+				577FC24C198A81A900A9AB52 /* Bankroll.swift */,
+				574CAE111990D8DC00C86588 /* Card.swift */,
+				574CAE1E1991049B00C86588 /* Player.swift */,
+				570F9A3E19ADDE3900FC9731 /* DraggableCard.swift */,
+				57357FE31A20D42D0089B018 /* BoardCollectionViewDataSource.swift */,
+			);
+			name = "Data Objects";
+			sourceTree = "<group>";
+		};
+		57F14056199F8B7700A0DCE6 /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				577FC24E198AA0D800A9AB52 /* Game.swift */,
+			);
+			name = Engine;
+			sourceTree = "<group>";
+		};
+		57F33BF7199A3EEC00526538 /* BoardTests */ = {
+			isa = PBXGroup;
+			children = (
+				57F33BF8199A3F1700526538 /* PlayerTests.swift */,
+			);
+			name = BoardTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		577FC222198A803D00A9AB52 /* Cartel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 577FC242198A803E00A9AB52 /* Build configuration list for PBXNativeTarget "Cartel" */;
+			buildPhases = (
+				577FC21F198A803D00A9AB52 /* Sources */,
+				577FC220198A803D00A9AB52 /* Frameworks */,
+				577FC221198A803D00A9AB52 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Cartel;
+			productName = Cartel;
+			productReference = 577FC223198A803D00A9AB52 /* Cartel.app */;
+			productType = "com.apple.product-type.application";
+		};
+		577FC237198A803E00A9AB52 /* CartelTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 577FC245198A803E00A9AB52 /* Build configuration list for PBXNativeTarget "CartelTests" */;
+			buildPhases = (
+				577FC234198A803E00A9AB52 /* Sources */,
+				577FC235198A803E00A9AB52 /* Frameworks */,
+				577FC236198A803E00A9AB52 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				577FC23A198A803E00A9AB52 /* PBXTargetDependency */,
+				574CAE181990F53400C86588 /* PBXTargetDependency */,
+				577385DC199234C3006BF33B /* PBXTargetDependency */,
+			);
+			name = CartelTests;
+			productName = CartelTests;
+			productReference = 577FC238198A803E00A9AB52 /* CartelTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		577FC21B198A803D00A9AB52 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = Tuism;
+				TargetAttributes = {
+					577FC222198A803D00A9AB52 = {
+						CreatedOnToolsVersion = 6.0;
+						LastSwiftMigration = 0800;
+					};
+					577FC237198A803E00A9AB52 = {
+						CreatedOnToolsVersion = 6.0;
+						LastSwiftMigration = 0800;
+						TestTargetID = 577FC222198A803D00A9AB52;
+					};
+				};
+			};
+			buildConfigurationList = 577FC21E198A803D00A9AB52 /* Build configuration list for PBXProject "Cartel" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 577FC21A198A803D00A9AB52;
+			productRefGroup = 577FC224198A803D00A9AB52 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				577FC222198A803D00A9AB52 /* Cartel */,
+				577FC237198A803E00A9AB52 /* CartelTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		577FC221198A803D00A9AB52 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				577FC231198A803D00A9AB52 /* Main.storyboard in Resources */,
+				577FC233198A803D00A9AB52 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		577FC236198A803E00A9AB52 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				577385E719925E87006BF33B /* RoadCardLeftTurn.png in Resources */,
+				577385E919925E87006BF33B /* RoadCardStraight.png in Resources */,
+				577385EA19925E87006BF33B /* RoadCardTJunction.png in Resources */,
+				577385E819925E87006BF33B /* RoadCardRightTurn.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		577FC21F198A803D00A9AB52 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				577FC22C198A803D00A9AB52 /* Cartel.xcdatamodeld in Sources */,
+				57CDD2A219C1C3F900CE36FD /* DragViewController.swift in Sources */,
+				570F9A3F19ADDE3900FC9731 /* DraggableCard.swift in Sources */,
+				574CAE121990D8DC00C86588 /* Card.swift in Sources */,
+				57357FE41A20D42D0089B018 /* BoardCollectionViewDataSource.swift in Sources */,
+				577FC229198A803D00A9AB52 /* AppDelegate.swift in Sources */,
+				577FC24F198AA0D800A9AB52 /* Game.swift in Sources */,
+				573D187C199382C6007DD674 /* GameViewController.swift in Sources */,
+				574CAE1F1991049B00C86588 /* Player.swift in Sources */,
+				577385F2199267AA006BF33B /* CardCell.swift in Sources */,
+				577FC24D198A81A900A9AB52 /* Bankroll.swift in Sources */,
+				577385EE1992608F006BF33B /* CityCollectionViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		577FC234198A803E00A9AB52 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57357FE51A20D66B0089B018 /* BoardCollectionViewDataSource.swift in Sources */,
+				57357FE21A20D3820089B018 /* BoardCollectionViewDataSourceTests.swift in Sources */,
+				577385DD199234FB006BF33B /* Bankroll.swift in Sources */,
+				577385DE199234FB006BF33B /* Game.swift in Sources */,
+				577385DF199234FB006BF33B /* Card.swift in Sources */,
+				577385E0199234FB006BF33B /* Player.swift in Sources */,
+				577385E2199236E7006BF33B /* BuildingCardsTests.swift in Sources */,
+				57F33BF9199A3F1700526538 /* PlayerTests.swift in Sources */,
+				577FC24A198A80F800A9AB52 /* GameTests.swift in Sources */,
+				574CAE21199111F000C86588 /* PocketCardTests.swift in Sources */,
+				5714DC581994B6A800065908 /* BankrollTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		574CAE181990F53400C86588 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 577FC222198A803D00A9AB52 /* Cartel */;
+			targetProxy = 574CAE171990F53400C86588 /* PBXContainerItemProxy */;
+		};
+		577385DC199234C3006BF33B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 577FC222198A803D00A9AB52 /* Cartel */;
+			targetProxy = 577385DB199234C3006BF33B /* PBXContainerItemProxy */;
+		};
+		577FC23A198A803E00A9AB52 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 577FC222198A803D00A9AB52 /* Cartel */;
+			targetProxy = 577FC239198A803E00A9AB52 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		577FC22F198A803D00A9AB52 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				577FC230198A803D00A9AB52 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		577FC240198A803E00A9AB52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				METAL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		577FC241198A803E00A9AB52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				METAL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		577FC243198A803E00A9AB52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = Cartel/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.disklessgames.cartel;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		577FC244198A803E00A9AB52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = Cartel/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.disklessgames.cartel;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+		577FC246198A803E00A9AB52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Cartel.app/Cartel";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CartelTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		577FC247198A803E00A9AB52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Cartel.app/Cartel";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CartelTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		577FC21E198A803D00A9AB52 /* Build configuration list for PBXProject "Cartel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				577FC240198A803E00A9AB52 /* Debug */,
+				577FC241198A803E00A9AB52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		577FC242198A803E00A9AB52 /* Build configuration list for PBXNativeTarget "Cartel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				577FC243198A803E00A9AB52 /* Debug */,
+				577FC244198A803E00A9AB52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		577FC245198A803E00A9AB52 /* Build configuration list for PBXNativeTarget "CartelTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				577FC246198A803E00A9AB52 /* Debug */,
+				577FC247198A803E00A9AB52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		577FC22A198A803D00A9AB52 /* Cartel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				577FC22B198A803D00A9AB52 /* Cartel.xcdatamodel */,
+			);
+			currentVersion = 577FC22B198A803D00A9AB52 /* Cartel.xcdatamodel */;
+			path = Cartel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 577FC21B198A803D00A9AB52 /* Project object */;
+}

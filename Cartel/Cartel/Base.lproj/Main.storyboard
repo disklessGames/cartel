@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11129.15" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11103.10"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lV4-g1-pDu"/>
+                        <viewControllerLayoutGuide type="bottom" id="MeB-N7-pTQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="twi-6L-zvY">
+                                <state key="normal" title="New game">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="SRQ-4e-qsx" kind="presentation" id="oiu-VT-hCx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="twi-6L-zvY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6jz-nb-vRf"/>
+                            <constraint firstItem="twi-6L-zvY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="j0F-Pr-URJ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="322" y="336"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="zec-Zs-nTE">
+            <objects>
+                <viewController id="SRQ-4e-qsx" customClass="GameViewController" customModule="Cartel" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZrX-Ex-Ima"/>
+                        <viewControllerLayoutGuide type="bottom" id="1zx-6C-aRf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="van-r5-EEj">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" maximumZoomScale="3" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Iwd-Ht-yjx">
+                                <color key="backgroundColor" red="0.8051151916" green="0.21387431570000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0bx-yw-DaL">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CardCell" id="Otc-kM-h3K" customClass="CardCell" customModule="Cartel" customModuleProvider="target">
+                                        <frame key="frameInset" width="100" height="150"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RoadCardStraight.png" translatesAutoresizingMaskIntoConstraints="NO" id="3HQ-2G-Ump"/>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="3HQ-2G-Ump" secondAttribute="trailing" id="19o-3c-O25"/>
+                                            <constraint firstItem="3HQ-2G-Ump" firstAttribute="top" secondItem="Otc-kM-h3K" secondAttribute="top" id="MyK-Od-Dod"/>
+                                            <constraint firstItem="3HQ-2G-Ump" firstAttribute="leading" secondItem="Otc-kM-h3K" secondAttribute="leading" id="R3m-fL-QDB"/>
+                                            <constraint firstAttribute="bottom" secondItem="3HQ-2G-Ump" secondAttribute="bottom" id="zpt-72-jiL"/>
+                                        </constraints>
+                                        <size key="customSize" width="100" height="150"/>
+                                        <connections>
+                                            <outlet property="imageView" destination="3HQ-2G-Ump" id="60r-hk-QrG"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d0t-2D-Iec">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="5m7-ND-1Me"/>
+                                    <constraint firstAttribute="width" constant="68" id="IRe-55-Cjo"/>
+                                </constraints>
+                                <state key="normal" title="Exit">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="exit:" destination="SRQ-4e-qsx" eventType="touchUpInside" id="dFt-M1-tdi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DAN-wo-5Fz">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="0AG-gX-Rhc"/>
+                                    <constraint firstAttribute="height" constant="150" id="LVb-4F-YcK"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="CardBack">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="drawCard:" destination="SRQ-4e-qsx" eventType="touchUpInside" id="mQp-Hd-VsS"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Eiq-RY-8ya">
+                                <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="173" id="aMF-WK-uQl"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="guJ-Mw-CMR">
+                                    <size key="itemSize" width="85" height="120"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CardCell" id="F8t-34-503" customClass="CardCell" customModule="Cartel" customModuleProvider="target">
+                                        <frame key="frameInset" minX="20" minY="11.5" width="100" height="150"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BuildingAnnie.png" translatesAutoresizingMaskIntoConstraints="NO" id="4Zj-al-dbG">
+                                                    <gestureRecognizers/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="4Zj-al-dbG" secondAttribute="trailing" id="PPS-VC-5jx"/>
+                                            <constraint firstItem="4Zj-al-dbG" firstAttribute="leading" secondItem="F8t-34-503" secondAttribute="leading" id="ZM5-Nj-Eaw"/>
+                                            <constraint firstAttribute="bottom" secondItem="4Zj-al-dbG" secondAttribute="bottom" id="dlY-Es-NvB"/>
+                                            <constraint firstItem="4Zj-al-dbG" firstAttribute="top" secondItem="F8t-34-503" secondAttribute="top" id="wOu-cN-x67"/>
+                                        </constraints>
+                                        <size key="customSize" width="100" height="150"/>
+                                        <connections>
+                                            <outlet property="imageView" destination="4Zj-al-dbG" id="Tio-Nu-K31"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="SRQ-4e-qsx" id="iXK-Lc-cIh"/>
+                                    <outlet property="delegate" destination="SRQ-4e-qsx" id="33c-tD-6og"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Iwd-Ht-yjx" secondAttribute="trailing" id="EhI-b0-T2l"/>
+                            <constraint firstItem="DAN-wo-5Fz" firstAttribute="leading" secondItem="van-r5-EEj" secondAttribute="leadingMargin" id="L6x-EM-hcq"/>
+                            <constraint firstItem="Iwd-Ht-yjx" firstAttribute="leading" secondItem="van-r5-EEj" secondAttribute="leading" id="LKA-hl-r6h"/>
+                            <constraint firstItem="DAN-wo-5Fz" firstAttribute="top" secondItem="ZrX-Ex-Ima" secondAttribute="bottom" id="Nr2-Eq-CkQ"/>
+                            <constraint firstItem="Iwd-Ht-yjx" firstAttribute="top" secondItem="van-r5-EEj" secondAttribute="top" id="RH6-rh-gdN"/>
+                            <constraint firstItem="Eiq-RY-8ya" firstAttribute="leading" secondItem="van-r5-EEj" secondAttribute="leading" id="dnb-LS-D3m"/>
+                            <constraint firstItem="Iwd-Ht-yjx" firstAttribute="height" secondItem="van-r5-EEj" secondAttribute="height" constant="-173" id="eep-kk-qOO"/>
+                            <constraint firstAttribute="trailing" secondItem="Eiq-RY-8ya" secondAttribute="trailing" id="jK5-dt-oss"/>
+                            <constraint firstItem="1zx-6C-aRf" firstAttribute="top" secondItem="Eiq-RY-8ya" secondAttribute="bottom" id="m7J-nT-Qw0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="d0t-2D-Iec" secondAttribute="trailing" id="uXS-nG-29c"/>
+                            <constraint firstItem="Eiq-RY-8ya" firstAttribute="top" secondItem="Iwd-Ht-yjx" secondAttribute="bottom" id="wtt-9b-pbR"/>
+                            <constraint firstItem="d0t-2D-Iec" firstAttribute="top" secondItem="ZrX-Ex-Ima" secondAttribute="bottom" id="x0T-J4-Wwz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bankRollButton" destination="DAN-wo-5Fz" id="2mZ-jV-BVg"/>
+                        <outlet property="cityCollectionView" destination="Iwd-Ht-yjx" id="mGi-6U-I6B"/>
+                        <outlet property="handCollectionView" destination="Eiq-RY-8ya" id="4br-Xr-H5A"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zO2-bN-BhG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1143" y="336"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="BuildingAnnie.png" width="213" height="312"/>
+        <image name="CardBack" width="213" height="314"/>
+        <image name="RoadCardStraight.png" width="213" height="312"/>
+    </resources>
+</document>
