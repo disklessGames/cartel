@@ -29,14 +29,13 @@ enum BuildingCardType:Int{
     case topTech,doubleDown,groundhogCoffees,efficientConsulting,lucyLaundromat,mannedManagement,neueNewsNetwork,privateSecurity,shelfCorp,skyline
 }
 
-
-class Card : NSObject{
+class Card {
     var type:CardType
     var name = "None"
     var wealthValue = 0
     var image:UIImage
     
-    override init(){
+    init(){
         self.type = .none
         self.image = UIImage(named: "CardBack.png")!
     }

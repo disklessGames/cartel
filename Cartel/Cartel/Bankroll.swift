@@ -94,11 +94,11 @@ class Bankroll {
         bankrollCards = shuffle(bankrollCards)
     }
     
-    func shuffle<T>(_ list: Array<T>) -> Array<T> {
+    func shuffle(_ list: [Card]) -> [Card] {
         var list = list
-        for i in 0..<list.count {
-            let j = Int(arc4random_uniform(UInt32(list.count - i))) + i
-            list.insert(list.remove(at: j), at: i)
+        for old in 0..<list.count {
+            let new = Int(arc4random_uniform(UInt32(list.count - old))) + old
+            list.insert(list.remove(at: new), at: old)
         }
         return list
     }

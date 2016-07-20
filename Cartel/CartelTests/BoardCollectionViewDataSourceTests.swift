@@ -1,6 +1,6 @@
 
 import XCTest
-import Cartel
+@testable import Cartel
 
 class BoardCollectionViewDataSourceTests: XCTestCase {
 
@@ -13,7 +13,8 @@ class BoardCollectionViewDataSourceTests: XCTestCase {
     }
 
     func testCreate(){
-        let sut = BoardCollectionViewDataSource()
+        let cards = [Card()]
+        let sut = BoardCollectionViewDataSource(cards: cards)
         
         XCTAssertNotNil(sut)
     }
