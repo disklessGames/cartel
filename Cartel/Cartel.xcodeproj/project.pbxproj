@@ -9,16 +9,12 @@
 /* Begin PBXBuildFile section */
 		570F9A3F19ADDE3900FC9731 /* DraggableCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570F9A3E19ADDE3900FC9731 /* DraggableCard.swift */; };
 		5714DC581994B6A800065908 /* BankrollTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5714DC571994B6A800065908 /* BankrollTests.swift */; };
-		57357FE21A20D3820089B018 /* BoardCollectionViewDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57357FE11A20D3820089B018 /* BoardCollectionViewDataSourceTests.swift */; };
+		571ABC731D3F8C780013B5DF /* BoardCollectionViewDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57357FE11A20D3820089B018 /* BoardCollectionViewDataSourceTests.swift */; };
 		57357FE41A20D42D0089B018 /* BoardCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57357FE31A20D42D0089B018 /* BoardCollectionViewDataSource.swift */; };
 		573D187C199382C6007DD674 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573D187B199382C6007DD674 /* GameViewController.swift */; };
 		574CAE121990D8DC00C86588 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574CAE111990D8DC00C86588 /* Card.swift */; };
 		574CAE1F1991049B00C86588 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574CAE1E1991049B00C86588 /* Player.swift */; };
 		574CAE21199111F000C86588 /* PocketCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574CAE20199111F000C86588 /* PocketCardTests.swift */; };
-		577385DD199234FB006BF33B /* Bankroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577FC24C198A81A900A9AB52 /* Bankroll.swift */; };
-		577385DE199234FB006BF33B /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577FC24E198AA0D800A9AB52 /* Game.swift */; };
-		577385DF199234FB006BF33B /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574CAE111990D8DC00C86588 /* Card.swift */; };
-		577385E0199234FB006BF33B /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574CAE1E1991049B00C86588 /* Player.swift */; };
 		577385E2199236E7006BF33B /* BuildingCardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577385E1199236E7006BF33B /* BuildingCardsTests.swift */; };
 		577385E719925E87006BF33B /* RoadCardLeftTurn.png in Resources */ = {isa = PBXBuildFile; fileRef = 577385E319925E87006BF33B /* RoadCardLeftTurn.png */; };
 		577385E819925E87006BF33B /* RoadCardRightTurn.png in Resources */ = {isa = PBXBuildFile; fileRef = 577385E419925E87006BF33B /* RoadCardRightTurn.png */; };
@@ -34,7 +30,6 @@
 		577FC24D198A81A900A9AB52 /* Bankroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577FC24C198A81A900A9AB52 /* Bankroll.swift */; };
 		577FC24F198AA0D800A9AB52 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577FC24E198AA0D800A9AB52 /* Game.swift */; };
 		579C58AA19A5FD3E008B1556 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 579C58A919A5FD3E008B1556 /* CoreData.framework */; };
-		57CDD2A219C1C3F900CE36FD /* DragViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CDD2A119C1C3F900CE36FD /* DragViewController.swift */; };
 		57F33BF9199A3F1700526538 /* PlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F33BF8199A3F1700526538 /* PlayerTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -90,7 +85,6 @@
 		577FC24C198A81A900A9AB52 /* Bankroll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bankroll.swift; sourceTree = "<group>"; };
 		577FC24E198AA0D800A9AB52 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		579C58A919A5FD3E008B1556 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		57CDD2A119C1C3F900CE36FD /* DragViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragViewController.swift; sourceTree = "<group>"; };
 		57F33BF8199A3F1700526538 /* PlayerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,7 +112,6 @@
 			children = (
 				577385ED1992608F006BF33B /* CityCollectionViewController.swift */,
 				573D187B199382C6007DD674 /* GameViewController.swift */,
-				57CDD2A119C1C3F900CE36FD /* DragViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -348,7 +341,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				577FC22C198A803D00A9AB52 /* Cartel.xcdatamodeld in Sources */,
-				57CDD2A219C1C3F900CE36FD /* DragViewController.swift in Sources */,
 				570F9A3F19ADDE3900FC9731 /* DraggableCard.swift in Sources */,
 				574CAE121990D8DC00C86588 /* Card.swift in Sources */,
 				57357FE41A20D42D0089B018 /* BoardCollectionViewDataSource.swift in Sources */,
@@ -366,15 +358,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57357FE21A20D3820089B018 /* BoardCollectionViewDataSourceTests.swift in Sources */,
-				577385DD199234FB006BF33B /* Bankroll.swift in Sources */,
-				577385DE199234FB006BF33B /* Game.swift in Sources */,
-				577385DF199234FB006BF33B /* Card.swift in Sources */,
-				577385E0199234FB006BF33B /* Player.swift in Sources */,
 				577385E2199236E7006BF33B /* BuildingCardsTests.swift in Sources */,
 				57F33BF9199A3F1700526538 /* PlayerTests.swift in Sources */,
 				577FC24A198A80F800A9AB52 /* GameTests.swift in Sources */,
 				574CAE21199111F000C86588 /* PocketCardTests.swift in Sources */,
+				571ABC731D3F8C780013B5DF /* BoardCollectionViewDataSourceTests.swift in Sources */,
 				5714DC581994B6A800065908 /* BankrollTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -498,6 +486,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Cartel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -515,6 +504,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Cartel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

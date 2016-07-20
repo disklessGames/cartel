@@ -1,5 +1,6 @@
 
 import XCTest
+@testable import Cartel
 
 class BankrollTests: XCTestCase {
 
@@ -10,8 +11,11 @@ class BankrollTests: XCTestCase {
         let first2cards = [sut.bankrollCards[0], sut.bankrollCards[1]];
         
         sut.shuffle()
-        
-        XCTAssertNotEqual([sut.bankrollCards[0], sut.bankrollCards[1]], first2cards)
+
+        let shuffled2cards = [sut.bankrollCards[0], sut.bankrollCards[1]];
+
+        XCTAssertNotEqual(shuffled2cards[0].type, first2cards[0].type)
+        XCTAssertNotEqual(shuffled2cards[1].type, first2cards[1].type)
     }
     
     func testFlip(){

@@ -1,6 +1,6 @@
 
 import XCTest
-import Cartel
+@testable import Cartel
 
 class GameTests: XCTestCase {
     var sut = Game()

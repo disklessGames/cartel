@@ -1,10 +1,3 @@
-//
-//  CityCollectionViewController.swift
-//  Cartel
-//
-//  Created by Jannie Theron on 2014/08/06.
-//  Copyright (c) 2014 Tuism. All rights reserved.
-//
 
 import UIKit
 

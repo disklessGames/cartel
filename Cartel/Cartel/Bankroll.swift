@@ -39,7 +39,7 @@ class Bankroll {
         }
     }
     
-    func pocketCardsCount()->Int{
+    func pocketCardsCount() -> Int{
         var pocketCount = 0
         for card in bankrollCards {
             if card.type == CardType.pocket {

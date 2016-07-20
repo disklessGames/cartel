@@ -4,22 +4,34 @@ import UIKit
 
 class BoardCollectionViewDataSource: NSObject, UICollectionViewDataSource {
 
-    var cards: [Card]?
+    let identifier = "CardCell"
+    var city: [Card]
+    var pocket: [PocketCard]
     
-    init(cards: [Card]?) {
-        self.cards = cards
+    init(city: [Card]? = nil, pocket: [PocketCard]? = nil) {
+        self.city = city ?? [Card]()
+        self.pocket = pocket ?? [PocketCard]()
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 0
+        return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        switch section {
+        case 0:
+            return city.count
+        case 1:
+            return pocket.count
+        default:
+            return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath)
+
+        return cell
     }
     
 }
