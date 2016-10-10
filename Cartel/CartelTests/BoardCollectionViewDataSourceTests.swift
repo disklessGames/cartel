@@ -2,23 +2,10 @@
 import XCTest
 @testable import Cartel
 
-class BoardCollectionViewDataSourceTests: XCTestCase {
-
-    let sut = BoardCollectionViewDataSource()
-    let collectionView = TestableCollectionView(frame: CGRect.null, collectionViewLayout: UICollectionViewFlowLayout())
-
-    override func setUp() {
-        super.setUp()
-    }
+class BoardDataTests: XCTestCase {
     
-    override func tearDown() {
-        super.tearDown()
-    }
-
-    func testCreate(){
-        
-        XCTAssertNotNil(sut)
-    }
+    let sut = BoardData()
+    let collectionView = TestableCollectionView(frame: CGRect.null, collectionViewLayout: UICollectionViewFlowLayout())
     
     func testNumberOfSections() {
         
@@ -28,13 +15,26 @@ class BoardCollectionViewDataSourceTests: XCTestCase {
     }
     
     func testNumberOfItemsInSection() {
-        let city = [RoadCard(roadType: .tJunction), BuildingCard(buildingType: .anniewares)]
-        let pocket = [PocketCard(pocketType: .captainJuan)]
+        let board = BoardData()
+        board.play(x: 0, y: 0, card: RoadCard(type: .tJunction))
+        board.play(x: 0, y: 1, card: BuildingCard(buildingType: .anniewares))
         
-        let board = BoardCollectionViewDataSource(city: city, pocket: pocket)
+        board.play(x: 0, y: 0, card: PocketCard(pocketType: .captainJuan))
         
         XCTAssertEqual(board.collectionView(collectionView, numberOfItemsInSection: 0), 2)
         XCTAssertEqual(board.collectionView(collectionView, numberOfItemsInSection: 1), 1)
+    }
+    
+    func testPlayStraightRoad() {
+        
+        let road = RoadCard(type: .straight)
+        let building = BuildingCard(buildingType: .anniewares)
+        
+        sut.play(x: 0, y: 0, card: road)
+        sut.play(x: 0, y: 1, card: building)
+        
+        XCTAssertEqual(sut.getCard(x:0, y:0), road)
+        XCTAssertEqual(sut.getCard(x:0, y:1), building)
     }
 }
 

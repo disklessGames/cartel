@@ -9,7 +9,7 @@ class GameTests: XCTestCase {
         let player1 = Player(name: "Piet")
         let player2 = Player(name: "Koos")
         
-        sut.setupGame([player1,player2])
+        sut.setup(players: [player1,player2])
         super.setUp()
         
     }
@@ -22,20 +22,13 @@ class GameTests: XCTestCase {
 
         let card = BuildingCard(buildingType: BuildingCardType.anniewares)
         
-        XCTAssertEqual(card.type , CardType.building)
+        XCTAssertEqual(card.type, BuildingCardType.anniewares)
     }
     
     func testBankRollSetupCreates71Cards() {
         
-        XCTAssertEqual(sut.bankroll.bankrollCards.count, 71)
+        XCTAssertEqual(sut.bankroll.cardsLeft(), 71)
     }
-    
-    
-    func testCreateCityBoard(){
-        
-        XCTAssertEqual(sut.city.count, 2)
-    }
-    
     
     func testPocketCardsAre15(){
         
@@ -54,13 +47,14 @@ class GameTests: XCTestCase {
     
     func testStartingRoadsCreated(){
     
-        XCTAssertEqual(sut.city[0][0].type, CardType.road)
-        XCTAssertEqual(sut.city[1][0].type, CardType.road)
+        XCTAssertEqual(sut.board.getCard(x: 0, y: 0)?.card, CardType.road)
+        XCTAssertEqual(sut.board.getCard(x: 0, y: 1)?.card, CardType.road)
+        
     }
     
     func testNewGameWith2Players(){
         
-        XCTAssertEqual(sut.players.count, 2)
+        XCTAssertEqual(sut.playerCount(), 2)
     }
     
     
@@ -68,22 +62,22 @@ class GameTests: XCTestCase {
         
         sut.deal()
         
-        XCTAssertEqual(sut.players[0].hand.count, 4)
+        XCTAssertEqual(sut.currentPlayer.handSize, 4)
     }
     
     func testShuffle(){
         
-        let firstcard = sut.bankroll.bankrollCards[0];
         sut.shuffle()
         
-        XCTAssertNotEqual(sut.bankroll.bankrollCards[0].type, firstcard.type)
+        XCTAssertTrue(sut.bankroll.shuffled)
+        
     }
     
     func testFlip(){
 
         sut.flip()
         
-        XCTAssertTrue(sut.bankroll.isFlipped)
+        XCTAssertTrue(sut.bankroll.flipped)
     }
 
     

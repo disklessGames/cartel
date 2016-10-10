@@ -2,16 +2,35 @@
 
 import UIKit
 
-class BoardCollectionViewDataSource: NSObject, UICollectionViewDataSource {
-
+class BoardData: NSObject {
+    
     let identifier = "CardCell"
-    var city: [Card]
+    let maxSize = 100
+    var city: [Int: Card]
     var pocket: [PocketCard]
     
-    init(city: [Card]? = nil, pocket: [PocketCard]? = nil) {
-        self.city = city ?? [Card]()
-        self.pocket = pocket ?? [PocketCard]()
+    override init() {
+        self.city = [Int: Card]()
+        self.pocket = [PocketCard]()
+        super.init()
+        play(x: 0, y: 0, card: RoadCard(type: .straight))
+        play(x: 0, y: 1, card: RoadCard(type: .straight))
     }
+    
+    func play(x: Int, y: Int, card: Card) {
+        if let card = card as? PocketCard {
+            pocket.append(card)
+        } else {
+            city[x + y * maxSize] = card
+        }
+    }
+    
+    func getCard(x: Int, y: Int) -> Card? {
+        return city[x + y * maxSize]
+    }
+}
+
+extension BoardData: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 2
@@ -30,7 +49,7 @@ class BoardCollectionViewDataSource: NSObject, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath)
-
+        
         return cell
     }
     

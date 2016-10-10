@@ -3,7 +3,8 @@ import Foundation
 
 class Bankroll {
     var bankrollCards = [Card]()
-    var isFlipped = false
+    var flipped = false
+    var shuffled = false
     
     init(){
         bankrollCards.append(PocketCard(pocketType: .snitch))
@@ -15,8 +16,8 @@ class Bankroll {
             bankrollCards.append(PocketCard(pocketType:.captainJuan))
             bankrollCards.append(PocketCard(pocketType:.wardenSachs))
             bankrollCards.append(PocketCard(pocketType:.congressmanTu))
-            bankrollCards.append(RoadCard(roadType:.leftTurn))
-            bankrollCards.append(RoadCard(roadType:.tJunction))
+            bankrollCards.append(RoadCard(type:.leftTurn))
+            bankrollCards.append(RoadCard(type:.tJunction))
             bankrollCards.append(BuildingCard(buildingType: .shelfCorp))
             bankrollCards.append(BuildingCard(buildingType: .lucyLaundromat))
             bankrollCards.append(BuildingCard(buildingType: .neueNewsNetwork))
@@ -27,11 +28,11 @@ class Bankroll {
         }
 
         for _ in 1...3 {
-            bankrollCards.append(RoadCard(roadType:.rightTurn))
+            bankrollCards.append(RoadCard(type:.rightTurn))
         }
         
         for _ in 1...7 {
-            bankrollCards.append(RoadCard(roadType:.straight))
+            bankrollCards.append(RoadCard(type:.straight))
             bankrollCards.append(BuildingCard(buildingType: .anniewares))
             bankrollCards.append(BuildingCard(buildingType: .doubleDown))
             bankrollCards.append(BuildingCard(buildingType: .groundhogCoffees))
@@ -42,7 +43,7 @@ class Bankroll {
     func pocketCardsCount() -> Int{
         var pocketCount = 0
         for card in bankrollCards {
-            if card.type == CardType.pocket {
+            if card.card == CardType.pocket {
                 pocketCount += 1;
             }
         }
@@ -52,7 +53,7 @@ class Bankroll {
     func roadCardsCount()->Int{
         var roadCardCount = 0
         for card in bankrollCards {
-            if card.type == CardType.road{
+            if card.card == CardType.road{
                 roadCardCount += 1
             }
         }
@@ -62,7 +63,7 @@ class Bankroll {
     func buildingCardsCount()->Int{
         var buildingCardCount = 0
         for card in bankrollCards {
-            if card.type == CardType.building{
+            if card.card == CardType.building{
                 buildingCardCount += 1
             }
         }
@@ -86,12 +87,13 @@ class Bankroll {
         return cardsDrawn
     }
     
-    func countCardsLeft()->Int{
+    func cardsLeft()->Int{
         return bankrollCards.count;
     }
     
     func shuffle() {
         bankrollCards = shuffle(bankrollCards)
+        shuffled = true
     }
     
     func shuffle(_ list: [Card]) -> [Card] {
@@ -104,7 +106,6 @@ class Bankroll {
     }
     
     func flip(){
-        isFlipped = true
-        
+        flipped = true
     }
 }

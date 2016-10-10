@@ -1,27 +1,30 @@
-//
-//  CardDO.swift
-//  Cartel
-//
-//  Created by Jannie Theron on 2014/08/05.
-//  Copyright (c) 2014 Tuism. All rights reserved.
-//
 
 import Foundation
 import UIKit
 
-enum CardType:Int{
-    case none = 1
-    case road,pocket,building
+enum CardType {
+    case none
+    case road
+    case pocket
+    case building
 }
 
-enum RoadCardType:Int{
-    case straight = 1
-    case tJunction,leftTurn,rightTurn
+enum RoadCardType {
+    case straight
+    case tJunction
+    case leftTurn
+    case rightTurn
 }
 
 enum PocketCardType:Int{
-    case snitch = 1
-    case detectiveTracy,informantFivel,inspectorFord,sneakySven,captainJuan,wardenSachs,congressmanTu
+    case snitch
+    case detectiveTracy
+    case informantFivel
+    case inspectorFord
+    case sneakySven
+    case captainJuan
+    case wardenSachs
+    case congressmanTu
 }
 
 enum BuildingCardType:Int{
@@ -29,30 +32,31 @@ enum BuildingCardType:Int{
     case topTech,doubleDown,groundhogCoffees,efficientConsulting,lucyLaundromat,mannedManagement,neueNewsNetwork,privateSecurity,shelfCorp,skyline
 }
 
-class Card {
-    var type:CardType
+class Card: NSObject {
+    var card: CardType
     var name = "None"
     var wealthValue = 0
-    var image:UIImage
+    var image: UIImage
     
-    init(){
-        self.type = .none
+    override init(){
+        self.card = .none
         self.image = UIImage(named: "CardBack.png")!
+        super.init()
     }
+    
     init(type: CardType){
-        self.type = type
+        self.card = type
         image = UIImage(named: "CardBack.png")!
     }
-    
 }
 
 class RoadCard : Card {
-    var roadType:RoadCardType
+    var type: RoadCardType
     
-    init(roadType:RoadCardType){
-        self.roadType = roadType
+    init(type:RoadCardType){
+        self.type = type
         super.init(type: CardType.road)
-        switch roadType {
+        switch type {
         case .straight : self.image = UIImage(named: "RoadCardStraight.png")!
         case .tJunction : self.image = UIImage(named: "RoadCardTJunction.png")!
         case .leftTurn : self.image = UIImage(named: "RoadCardLeftTurn.png")!
@@ -60,8 +64,6 @@ class RoadCard : Card {
     
         }
     }
-    
-
 }
 
 
@@ -88,10 +90,10 @@ class PocketCard : Card {
 
 
 class BuildingCard : Card {
-    var buildingType:BuildingCardType
+    var type:BuildingCardType
     
     init(buildingType:BuildingCardType){
-        self.buildingType = buildingType
+        self.type = buildingType
         super.init(type: CardType.building)
         switch buildingType {
         case .anniewares : self.image = UIImage(named: "BuildingAnnie.png")!

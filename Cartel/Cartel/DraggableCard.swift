@@ -3,10 +3,10 @@ import UIKit
 
 class DraggableCard : UIImageView
 {
-    var dragStartPositionRelativeToCenter : CGPoint?
+    var dragCenterOffset : CGPoint?
     var card:Card
     let smallSize = CGSize(width: 100, height: 150)
-    let bigSize = CGSize(width: 200, height: 300)
+    let bigSize = CGSize(width: 150, height: 225)
     
     init(_ card:Card!) {
         self.card = card
@@ -14,7 +14,8 @@ class DraggableCard : UIImageView
         
         self.isUserInteractionEnabled = true
         
-        layer.shadowColor = UIColor.black().cgColor
+        let black = UIColor.black.cgColor
+        layer.shadowColor = black
         layer.shadowOffset = CGSize(width: 0, height: 3)
         layer.shadowOpacity = 0.5
         layer.shadowRadius = 2
@@ -24,25 +25,11 @@ class DraggableCard : UIImageView
         fatalError("init(coder:) has not been implemented")
     }
     
-    func handlePan(_ nizer: UIPanGestureRecognizer!) {
-        if nizer.state == UIGestureRecognizerState.began {
-            return
-        }
-        
-        if nizer.state == UIGestureRecognizerState.ended {
-            dragStartPositionRelativeToCenter = nil
-            return
-        }
-        
-        
-    }
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
-            self.center = touches.first?.location(in: self.superview) ?? CGPoint(x: 0, y: 0)
 
             let locationInView = touch.location(in: superview)
-            dragStartPositionRelativeToCenter = CGPoint(x: locationInView.x - center.x, y: locationInView.y - center.y)
+            dragCenterOffset = CGPoint(x: locationInView.x - center.x, y: locationInView.y - center.y)
             
             layer.shadowOffset = CGSize(width: 0, height: 20)
             layer.shadowOpacity = 0.3
@@ -57,8 +44,8 @@ class DraggableCard : UIImageView
             let locationInView = touch.location(in: superview)
             
             UIView.animate(withDuration: 0.1) {
-                self.center = CGPoint(x: locationInView.x - self.dragStartPositionRelativeToCenter!.x,
-                                      y: locationInView.y - self.dragStartPositionRelativeToCenter!.y)
+                self.center = CGPoint(x: locationInView.x - self.dragCenterOffset!.x,
+                                      y: locationInView.y - self.dragCenterOffset!.y)
             }
         }
     }

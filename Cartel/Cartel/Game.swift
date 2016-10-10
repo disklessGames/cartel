@@ -1,28 +1,36 @@
 
 import Foundation
 
-class Game{
-    var players = [Player]()
-    var city = [[Card]]()
+class Game {
+
     let bankroll = Bankroll()
+    let board = BoardData()
     
-    func setupGame(_ players:[Player]){
-        let card1 = RoadCard(roadType:RoadCardType.straight)
-        let card2 = RoadCard(roadType:RoadCardType.straight)
-        self.city.append([card1])
-        self.city.append([card2])
+    private var currentPlayerIndex = 0
+    private var players = [Player]()
+    
+    func playerCount() -> Int {
+        return players.count
+    }
+    
+    var currentPlayer: Player {
+        return self.players[currentPlayerIndex]
+    }
+    
+    func setup(players:[Player]) {
         self.players = players
     }
     
-    func deal(){
+    func deal() {
         for _ in 1...4 {
             for player in players {
-                if let card = self.drawCard(){
-                    player.hand.append(card)
+                if let card = drawCard(){
+                    player.add(card: card)
                 }
             }
         }
     }
+    
     func shuffle(){
         bankroll.shuffle()
     }
