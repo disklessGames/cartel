@@ -46,7 +46,7 @@ class GameTests: XCTestCase {
     }
     
     func testNewGameWith2Players(){
-        XCTAssertEqual(sut.playerCount(), 2)
+        XCTAssertEqual(sut.numberOfPlayers, 2)
     }
     
     
@@ -70,5 +70,12 @@ class GameTests: XCTestCase {
         sut.flip()
         
         XCTAssertTrue(sut.bankroll.flipped)
+    }
+    
+    func testBeginTurn() {
+        
+        sut.beginTurn()
+        
+        XCTAssertEqual(sut.currentPlayer.handSize, 1)
     }
 }

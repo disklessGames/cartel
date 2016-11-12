@@ -18,7 +18,7 @@ class Game {
         self.currentPlayer = players[0]
     }
     
-    func playerCount() -> Int {
+    var numberOfPlayers: Int {
         return players.count
     }
     
@@ -49,5 +49,11 @@ class Game {
     
     func flip(){
         bankroll.flip()
+    }
+    
+    func beginTurn(){
+        if let card = bankroll.drawCard() {
+            currentPlayer.add(card: card)
+        }
     }
 }

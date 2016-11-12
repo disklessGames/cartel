@@ -7,31 +7,30 @@ class GameViewController: UIViewController, UICollectionViewDelegate {
     @IBOutlet var handCollectionView: UICollectionView!
     @IBOutlet weak var cityCollectionView: UICollectionView!
     
-    var game: Game
     var cardMoving: DraggableCard?
-    var dataSource: GameDataSource {
+    
+    var gameData: GameDataSource? {
         didSet {
-            handCollectionView.dataSource = dataSource
-            cityCollectionView.dataSource = dataSource
+            handCollectionView.dataSource = gameData
+//            cityCollectionView.dataSource = gameData
         }
     }
     
     required init?(coder aDecoder: NSCoder) {
-        game = Game()
-        dataSource = GameDataSource(game: Game())
-        let player = Player(name: "Me")
-        game.setup(players: [player])
-        game.shuffle()
-        game.deal()
         super.init(coder: aDecoder)
     }
     
+    override func viewDidLoad() {
+        let me = Player(name: "Me")
+        gameData = GameDataSource(game: Game(), players: [me])
+        super.viewDidLoad()
+    }
     @IBAction func exit(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func drawCard(_ sender: AnyObject) {
-        if let cardDrawn = game.bankroll.drawCard() {
+        if let cardDrawn = gameData?.draw() {
             self.playerDraw(cardDrawn)
         } else {
             print("No more cards !")
@@ -40,26 +39,35 @@ class GameViewController: UIViewController, UICollectionViewDelegate {
     
     func cleanUpDrawAnimation(_ cardDrawn: Card, cardView: UIView) {
         cardView.removeFromSuperview()
-        game.currentPlayer.add(card: cardDrawn)
+        gameData?.addToCurrentPlayer(card: cardDrawn)
         handCollectionView.reloadData()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        
+        let newCenter =  collectionView.cellForItem(at: indexPath)!.center
+        if let card = gameData?.playCard(at: (indexPath as NSIndexPath).row) {
+            
+            let floater = DraggableCard(card)
+            
+            view.addSubview(floater)
+            floater.center = newCenter
+            // remove
+            collectionView.reloadData()
+        }
+
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let card = game.currentPlayer.playCard(at: (indexPath as NSIndexPath).row)
-        let cardMoving = DraggableCard(card)
-        
-        view.addSubview(cardMoving)
-        cardMoving.center = collectionView.cellForItem(at: indexPath)!.center
-        // remove
-        collectionView.reloadData()
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let location = touches.first?.location(in: self.view),
             let cardUnwrapped = cardMoving {
-            if location.y > self.view.frame.height - handCollectionView.frame.height {
-                game.currentPlayer.add(card: cardUnwrapped.card)
+            if location.y > handCollectionView.frame.maxY {
+                
+                gameData?.addToCurrentPlayer(card: cardUnwrapped.card)
                 handCollectionView.reloadData()
             }
             cardMoving = nil

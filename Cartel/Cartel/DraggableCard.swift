@@ -12,8 +12,7 @@ class DraggableCard : UIImageView
         self.card = card
         super.init(image: card.image)
         
-        self.isUserInteractionEnabled = true
-        
+        isUserInteractionEnabled = true
         setSmallShadow()
     }
     

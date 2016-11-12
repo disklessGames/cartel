@@ -5,10 +5,10 @@ class GameDataSource: NSObject, UICollectionViewDataSource {
 
     let game: Game
     
-    init(game: Game) {
+    init(game: Game, players: [Player]) {
         self.game = game
         super.init()
-        setupGame()
+        setup(with: players)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -27,11 +27,21 @@ class GameDataSource: NSObject, UICollectionViewDataSource {
         return 1;
     }
 
-    func setupGame() {
-        let player = Player(name: "Me")
-        let opponent = Player(name: "You")
-        game.setup(players: [player, opponent])
+    func setup(with players: [Player]) {
+        game.setup(players: players)
         game.shuffle()
         game.deal()
+    }
+    
+    func draw() -> Card? {
+        return game.bankroll.drawCard()
+    }
+    
+    func playCard(at index: Int) -> Card? {
+        return game.currentPlayer.playCard(at: index)
+    }
+    
+    func addToCurrentPlayer(card: Card) {
+        game.currentPlayer.add(card: card)
     }
 }
