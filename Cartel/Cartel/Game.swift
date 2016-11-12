@@ -6,22 +6,27 @@ class Game {
     let bankroll = Bankroll()
     let board = BoardData()
     
-    private var currentPlayerIndex = 0
-    private var players = [Player]()
+    private var players: [Player]
+    
+    init() {
+        self.currentPlayer = Player(name: "Me")
+        self.players = [currentPlayer]
+    }
+    
+    init(players: [Player]) {
+        self.players = players
+        self.currentPlayer = players[0]
+    }
     
     func playerCount() -> Int {
         return players.count
     }
     
-    var currentPlayer: Player? {
-        if currentPlayerIndex < players.count {
-            return self.players[currentPlayerIndex]
-        }
-        return nil
-    }
+    var currentPlayer: Player
     
     func setup(players:[Player]) {
         self.players = players
+        self.currentPlayer = players[0]
     }
     
     func deal() {

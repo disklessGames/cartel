@@ -40,13 +40,13 @@ class GameViewController: UIViewController, UICollectionViewDelegate {
     
     func cleanUpDrawAnimation(_ cardDrawn: Card, cardView: UIView) {
         cardView.removeFromSuperview()
-        game.currentPlayer?.add(card: cardDrawn)
+        game.currentPlayer.add(card: cardDrawn)
         handCollectionView.reloadData()
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let card = game.currentPlayer?.playCard(at: (indexPath as NSIndexPath).row)
+        let card = game.currentPlayer.playCard(at: (indexPath as NSIndexPath).row)
         let cardMoving = DraggableCard(card)
         
         view.addSubview(cardMoving)
@@ -59,7 +59,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate {
         if let location = touches.first?.location(in: self.view),
             let cardUnwrapped = cardMoving {
             if location.y > self.view.frame.height - handCollectionView.frame.height {
-                game.currentPlayer?.add(card: cardUnwrapped.card)
+                game.currentPlayer.add(card: cardUnwrapped.card)
                 handCollectionView.reloadData()
             }
             cardMoving = nil

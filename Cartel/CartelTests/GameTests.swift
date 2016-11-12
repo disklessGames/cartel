@@ -3,15 +3,14 @@ import XCTest
 @testable import Cartel
 
 class GameTests: XCTestCase {
-    var sut = Game()
+    var sut: Game!
     
     override func setUp() {
         let player1 = Player(name: "Piet")
         let player2 = Player(name: "Koos")
         
-        sut.setup(players: [player1,player2])
+        sut = Game(players: [player1,player2])
         super.setUp()
-        
     }
     
     override func tearDown() {
@@ -19,29 +18,24 @@ class GameTests: XCTestCase {
     }
     
     func testBuildingCard(){
-
         let card = BuildingCard(buildingType: BuildingCardType.anniewares)
         
         XCTAssertEqual(card.type, BuildingCardType.anniewares)
     }
     
     func testBankRollSetupCreates73Cards() {
-        
         XCTAssertEqual(sut.bankroll.cardsLeft(), 73)
     }
     
     func testPocketCardsAre15(){
-        
         XCTAssertEqual(sut.bankroll.pocketCardsCount(), 15)
     }
     
     func testRoadCardsAreThereExceptStartingStraights(){
-    
         XCTAssertEqual(sut.bankroll.roadCardsCount(), 14)
     }
     
     func testBuildingCardsAre44(){
-    
         XCTAssertEqual(sut.bankroll.buildingCardsCount(), 44)
     }
     
@@ -49,11 +43,9 @@ class GameTests: XCTestCase {
     
         XCTAssertEqual(sut.board.getCard(x: 0, y: 0)?.card, CardType.road)
         XCTAssertEqual(sut.board.getCard(x: 0, y: 1)?.card, CardType.road)
-        
     }
     
     func testNewGameWith2Players(){
-        
         XCTAssertEqual(sut.playerCount(), 2)
     }
     
@@ -62,7 +54,7 @@ class GameTests: XCTestCase {
         
         sut.deal()
         
-        XCTAssertEqual(sut.currentPlayer?.handSize, 4)
+        XCTAssertEqual(sut.currentPlayer.handSize, 4)
     }
     
     func testShuffle(){
@@ -79,6 +71,4 @@ class GameTests: XCTestCase {
         
         XCTAssertTrue(sut.bankroll.flipped)
     }
-
-    
 }

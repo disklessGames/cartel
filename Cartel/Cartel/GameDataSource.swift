@@ -12,12 +12,12 @@ class GameDataSource: NSObject, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return game.currentPlayer?.handSize ?? 0
+        return game.currentPlayer.handSize
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath) as! CardCell
-        if let card = game.currentPlayer?.peekCard(index: (indexPath as NSIndexPath).row) {
+        if let card = game.currentPlayer.peekCard(index: (indexPath as NSIndexPath).row) {
             cell.imageView.image = card.image
         }
         return cell
