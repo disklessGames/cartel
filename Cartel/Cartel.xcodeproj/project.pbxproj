@@ -27,13 +27,11 @@
 		577385EE1992608F006BF33B /* CityCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577385ED1992608F006BF33B /* CityCollectionViewController.swift */; };
 		577385F2199267AA006BF33B /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577385F1199267AA006BF33B /* CardCell.swift */; };
 		577FC229198A803D00A9AB52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577FC228198A803D00A9AB52 /* AppDelegate.swift */; };
-		577FC22C198A803D00A9AB52 /* Cartel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 577FC22A198A803D00A9AB52 /* Cartel.xcdatamodeld */; };
 		577FC231198A803D00A9AB52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 577FC22F198A803D00A9AB52 /* Main.storyboard */; };
 		577FC233198A803D00A9AB52 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 577FC232198A803D00A9AB52 /* Images.xcassets */; };
 		577FC24A198A80F800A9AB52 /* GameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577FC249198A80F800A9AB52 /* GameTests.swift */; };
 		577FC24D198A81A900A9AB52 /* Bankroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577FC24C198A81A900A9AB52 /* Bankroll.swift */; };
 		577FC24F198AA0D800A9AB52 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577FC24E198AA0D800A9AB52 /* Game.swift */; };
-		579C58AA19A5FD3E008B1556 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 579C58A919A5FD3E008B1556 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,7 +81,6 @@
 		577FC223198A803D00A9AB52 /* Cartel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cartel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		577FC227198A803D00A9AB52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		577FC228198A803D00A9AB52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		577FC22B198A803D00A9AB52 /* Cartel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cartel.xcdatamodel; sourceTree = "<group>"; };
 		577FC230198A803D00A9AB52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		577FC232198A803D00A9AB52 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		577FC238198A803E00A9AB52 /* CartelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CartelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,7 +88,6 @@
 		577FC249198A80F800A9AB52 /* GameTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTests.swift; sourceTree = "<group>"; };
 		577FC24C198A81A900A9AB52 /* Bankroll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bankroll.swift; sourceTree = "<group>"; };
 		577FC24E198AA0D800A9AB52 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
-		579C58A919A5FD3E008B1556 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +95,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				579C58AA19A5FD3E008B1556 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,7 +152,6 @@
 				57F14056199F8B7700A0DCE6 /* Engine */,
 				577385EF199260FB006BF33B /* ViewControllers */,
 				577FC24B198A819600A9AB52 /* Data Objects */,
-				577FC22A198A803D00A9AB52 /* Cartel.xcdatamodeld */,
 				577FC226198A803D00A9AB52 /* Supporting Files */,
 			);
 			path = Cartel;
@@ -166,7 +160,6 @@
 		577FC226198A803D00A9AB52 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				579C58A919A5FD3E008B1556 /* CoreData.framework */,
 				577FC232198A803D00A9AB52 /* Images.xcassets */,
 				577FC228198A803D00A9AB52 /* AppDelegate.swift */,
 				577FC227198A803D00A9AB52 /* Info.plist */,
@@ -177,8 +170,7 @@
 		577FC23B198A803E00A9AB52 /* CartelTests */ = {
 			isa = PBXGroup;
 			children = (
-				57F33BF7199A3EEC00526538 /* BoardTests */,
-				577FC249198A80F800A9AB52 /* GameTests.swift */,
+				57F33BF7199A3EEC00526538 /* GameTests */,
 				577FC248198A80E400A9AB52 /* CardTests */,
 				577FC23C198A803E00A9AB52 /* Supporting Files */,
 				57357FE11A20D3820089B018 /* BoardCollectionViewDataSourceTests.swift */,
@@ -231,11 +223,12 @@
 			name = Engine;
 			sourceTree = "<group>";
 		};
-		57F33BF7199A3EEC00526538 /* BoardTests */ = {
+		57F33BF7199A3EEC00526538 /* GameTests */ = {
 			isa = PBXGroup;
 			children = (
+				577FC249198A80F800A9AB52 /* GameTests.swift */,
 			);
-			name = BoardTests;
+			name = GameTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,7 +345,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5701C8921DD73A5300B484F8 /* GameDataSource.swift in Sources */,
-				577FC22C198A803D00A9AB52 /* Cartel.xcdatamodeld in Sources */,
 				570F9A3F19ADDE3900FC9731 /* DraggableCard.swift in Sources */,
 				574CAE121990D8DC00C86588 /* Card.swift in Sources */,
 				57357FE41A20D42D0089B018 /* BoardCollectionViewDataSource.swift in Sources */,
@@ -621,19 +613,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		577FC22A198A803D00A9AB52 /* Cartel.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				577FC22B198A803D00A9AB52 /* Cartel.xcdatamodel */,
-			);
-			currentVersion = 577FC22B198A803D00A9AB52 /* Cartel.xcdatamodel */;
-			path = Cartel.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 577FC21B198A803D00A9AB52 /* Project object */;
 }
