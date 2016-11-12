@@ -25,9 +25,9 @@ class GameTests: XCTestCase {
         XCTAssertEqual(card.type, BuildingCardType.anniewares)
     }
     
-    func testBankRollSetupCreates71Cards() {
+    func testBankRollSetupCreates73Cards() {
         
-        XCTAssertEqual(sut.bankroll.cardsLeft(), 71)
+        XCTAssertEqual(sut.bankroll.cardsLeft(), 73)
     }
     
     func testPocketCardsAre15(){
@@ -40,9 +40,9 @@ class GameTests: XCTestCase {
         XCTAssertEqual(sut.bankroll.roadCardsCount(), 14)
     }
     
-    func testBuildingCardsAre42(){
+    func testBuildingCardsAre44(){
     
-        XCTAssertEqual(sut.bankroll.buildingCardsCount(), 42)
+        XCTAssertEqual(sut.bankroll.buildingCardsCount(), 44)
     }
     
     func testStartingRoadsCreated(){
@@ -62,7 +62,7 @@ class GameTests: XCTestCase {
         
         sut.deal()
         
-        XCTAssertEqual(sut.currentPlayer.handSize, 4)
+        XCTAssertEqual(sut.currentPlayer?.handSize, 4)
     }
     
     func testShuffle(){

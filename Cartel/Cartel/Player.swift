@@ -7,7 +7,7 @@ class Player {
         return hand.count
     }
     
-
+    
     private var hand = Hand()
     
     init(name: String){
@@ -19,11 +19,14 @@ class Player {
     }
     
     func playCard(at index: Int) -> Card? {
-        return hand.remove(at: index)
+        if handSize > index {
+            return hand.remove(at: index)
+        }
+        return nil
     }
     
     func peekCard(index: Int) -> Card? {
-        if index < hand.count {
+        if index < handSize {
             return hand[index]
         }
         return nil

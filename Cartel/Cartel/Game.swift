@@ -13,8 +13,11 @@ class Game {
         return players.count
     }
     
-    var currentPlayer: Player {
-        return self.players[currentPlayerIndex]
+    var currentPlayer: Player? {
+        if currentPlayerIndex < players.count {
+            return self.players[currentPlayerIndex]
+        }
+        return nil
     }
     
     func setup(players:[Player]) {

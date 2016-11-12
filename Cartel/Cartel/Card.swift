@@ -37,13 +37,7 @@ class Card: NSObject {
     var name = "None"
     var wealthValue = 0
     var image: UIImage
-    
-    override init(){
-        self.card = .none
-        self.image = UIImage(named: "CardBack.png")!
-        super.init()
-    }
-    
+        
     init(type: CardType){
         self.card = type
         image = UIImage(named: "CardBack.png")!

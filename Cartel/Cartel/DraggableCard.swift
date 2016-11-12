@@ -3,8 +3,8 @@ import UIKit
 
 class DraggableCard : UIImageView
 {
-    var dragCenterOffset : CGPoint?
-    var card:Card
+    var dragCenterOffset: CGPoint?
+    var card: Card
     let smallSize = CGSize(width: 100, height: 150)
     let bigSize = CGSize(width: 150, height: 225)
     
@@ -14,11 +14,7 @@ class DraggableCard : UIImageView
         
         self.isUserInteractionEnabled = true
         
-        let black = UIColor.black.cgColor
-        layer.shadowColor = black
-        layer.shadowOffset = CGSize(width: 0, height: 3)
-        layer.shadowOpacity = 0.5
-        layer.shadowRadius = 2
+        setSmallShadow()
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -27,13 +23,11 @@ class DraggableCard : UIImageView
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
-
+            
             let locationInView = touch.location(in: superview)
             dragCenterOffset = CGPoint(x: locationInView.x - center.x, y: locationInView.y - center.y)
             
-            layer.shadowOffset = CGSize(width: 0, height: 20)
-            layer.shadowOpacity = 0.3
-            layer.shadowRadius = 6
+            setBigShadow()
             self.frame.size = bigSize
         }
         super.touchesBegan(touches, with: event)
@@ -44,8 +38,8 @@ class DraggableCard : UIImageView
             let locationInView = touch.location(in: superview)
             
             UIView.animate(withDuration: 0.1) {
-                self.center = CGPoint(x: locationInView.x - self.dragCenterOffset!.x,
-                                      y: locationInView.y - self.dragCenterOffset!.y)
+                self.center = CGPoint(x: locationInView.x - (self.dragCenterOffset?.x ?? 0),
+                                      y: locationInView.y - (self.dragCenterOffset?.y ?? 0))
             }
         }
     }
@@ -55,12 +49,22 @@ class DraggableCard : UIImageView
         //check if destination valid
         //  add to new position
         //else return to hand
-        
+        setSmallShadow()
+        frame.size = smallSize
+        center = touches.first!.location(in: superview)
+        super.touchesEnded(touches, with: event)
+    }
+    
+    private func setSmallShadow() {
+        layer.shadowColor = UIColor.black.cgColor
         layer.shadowOffset = CGSize(width: 0, height: 3)
         layer.shadowOpacity = 0.5
         layer.shadowRadius = 2
-        self.frame.size = smallSize
-        self.center = touches.first?.location(in: self.superview) ?? CGPoint(x: 0, y: 0)
-        super.touchesEnded(touches, with: event)
+    }
+    
+    private func setBigShadow() {
+        layer.shadowOffset = CGSize(width: 0, height: 20)
+        layer.shadowOpacity = 0.3
+        layer.shadowRadius = 6
     }
 }

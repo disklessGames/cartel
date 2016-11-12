@@ -37,4 +37,10 @@ class BankrollTests: XCTestCase {
         
         XCTAssertEqual(cardsDrawn.count, 2)
     }
+    
+    func testNoCardDrawn_bankrollEmpty() {
+        sut.bankrollCards = [Card]()
+        
+        XCTAssertNil(sut.drawCard())
+    }
 }

@@ -25,6 +25,7 @@ class Bankroll {
             bankrollCards.append(BuildingCard(buildingType: .lucyLaundromat))
             bankrollCards.append(BuildingCard(buildingType: .privateSecurity))
             bankrollCards.append(BuildingCard(buildingType: .mannedManagement))
+            bankrollCards.append(BuildingCard(buildingType: .efficientConsulting))
         }
 
         for _ in 1...3 {
