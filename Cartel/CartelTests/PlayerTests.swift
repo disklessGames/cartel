@@ -5,7 +5,7 @@ import XCTest
 class PlayerTests: XCTestCase {
     
     let sut = Player(name: "tester")
-    let card = Card(type: .road)
+    let card = Card(.road)
     
     func testCreate() {
         

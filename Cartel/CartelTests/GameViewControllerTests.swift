@@ -9,6 +9,7 @@ class GameViewControllerTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
+        sut.game = Game()
         sut.handCollectionView = collectionView
     }
 
@@ -22,16 +23,15 @@ class GameViewControllerTests: XCTestCase {
 
     func testDrawCard() {
         sut.bankRollButton = UIButton()
-//        XCTAssertEqual(sut.game.bankroll.cardsLeft(), 69)
 
         sut.drawCard(sut.bankRollButton)
         
-//        XCTAssertEqual(sut.game.bankroll.cardsLeft(), 68)
+        XCTAssertEqual(sut.cardsLeft(), 68)
     }
     
     func testCleanupDrawAnimation() {
         
-        let card = Card(type: .road)
+        let card = Card(.road)
         let cardView = TestableView()
         
         sut.cleanUpDrawAnimation(card, cardView:cardView)

@@ -17,7 +17,7 @@ class BankrollTests: XCTestCase {
         var diff = false
         for i in 1...10 {
             if !diff {
-                diff = preShuffleDeck[i].card != shuffledDards[i].card
+                diff = preShuffleDeck[i].type != shuffledDards[i].type
             }
         }
         
@@ -43,4 +43,21 @@ class BankrollTests: XCTestCase {
         
         XCTAssertNil(sut.drawCard())
     }
+    
+    func testBankRollSetupCreates73Cards() {
+        XCTAssertEqual(sut.cardsLeft(), 73)
+    }
+    
+    func testPocketCardsAre15(){
+        XCTAssertEqual(sut.pocketCardsCount(), 15)
+    }
+    
+    func testRoadCardsAreThereExceptStartingStraights(){
+        XCTAssertEqual(sut.roadCardsCount(), 14)
+    }
+    
+    func testBuildingCardsAre44(){
+        XCTAssertEqual(sut.buildingCardsCount(), 44)
+    }
+    
 }

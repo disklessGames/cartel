@@ -5,27 +5,34 @@ class BoardData: NSObject {
     
     let identifier = "CardCell"
     let maxSize = 100
-    var city: [Int: Card]
-    var pocket: [PocketCard]
+    var city = [Int: [Card]]()
+    var pocket = [Card]()
     
     override init() {
-        self.city = [Int: Card]()
-        self.pocket = [PocketCard]()
         super.init()
-        play(x: 0, y: 0, card: RoadCard(type: .straight))
-        play(x: 0, y: 1, card: RoadCard(type: .straight))
-    }
-    
-    func play(x: Int, y: Int, card: Card) {
-        if let card = card as? PocketCard {
-            pocket.append(card)
-        } else {
-            city[x + y * maxSize] = card
+        for x in 0..<16 {
+            for y in 0..<16 {
+                city[x + y * maxSize] = [Card(.none)]
+            }
         }
     }
     
-    func getCard(x: Int, y: Int) -> Card? {
-        return city[x + y * maxSize]
+    func playCity(x: Int, y: Int, card: Card) {
+        city[x + y * maxSize]?.append(card)
+    }
+    
+    func playPocket(_ card: Card) {
+        pocket.append(card)
+    }
+    
+    func topCardAt(x: Int, y: Int) -> Card? {
+        return city[x + y * maxSize]?.last
+    }
+    
+    func prepareForNewGame() {
+        playCity(x: 0, y: 0, card: Card(.straight))
+        playCity(x: 0, y: 1, card: Card(.straight))
+
     }
 }
 

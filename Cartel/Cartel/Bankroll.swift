@@ -7,44 +7,44 @@ class Bankroll {
     var shuffled = false
     
     init(){
-        bankrollCards.append(PocketCard(pocketType: .snitch))
+        bankrollCards.append(Card(.snitch))
         for _ in 1...2 {
-            bankrollCards.append(PocketCard(pocketType:.detectiveTracy))
-            bankrollCards.append(PocketCard(pocketType:.informantFivel))
-            bankrollCards.append(PocketCard(pocketType:.inspectorFord))
-            bankrollCards.append(PocketCard(pocketType:.sneakySven))
-            bankrollCards.append(PocketCard(pocketType:.captainJuan))
-            bankrollCards.append(PocketCard(pocketType:.wardenSachs))
-            bankrollCards.append(PocketCard(pocketType:.congressmanTu))
-            bankrollCards.append(RoadCard(type:.leftTurn))
-            bankrollCards.append(RoadCard(type:.tJunction))
-            bankrollCards.append(BuildingCard(buildingType: .shelfCorp))
-            bankrollCards.append(BuildingCard(buildingType: .lucyLaundromat))
-            bankrollCards.append(BuildingCard(buildingType: .neueNewsNetwork))
-            bankrollCards.append(BuildingCard(buildingType: .skyline))
-            bankrollCards.append(BuildingCard(buildingType: .lucyLaundromat))
-            bankrollCards.append(BuildingCard(buildingType: .privateSecurity))
-            bankrollCards.append(BuildingCard(buildingType: .mannedManagement))
-            bankrollCards.append(BuildingCard(buildingType: .efficientConsulting))
+            bankrollCards.append(Card(.detectiveTracy))
+            bankrollCards.append(Card(.informantFivel))
+            bankrollCards.append(Card(.inspectorFord))
+            bankrollCards.append(Card(.sneakySven))
+            bankrollCards.append(Card(.captainJuan))
+            bankrollCards.append(Card(.wardenSachs))
+            bankrollCards.append(Card(.congressmanTu))
+            bankrollCards.append(Card(.leftTurn))
+            bankrollCards.append(Card(.tJunction))
+            bankrollCards.append(Card(.shelfCorp))
+            bankrollCards.append(Card(.lucyLaundromat))
+            bankrollCards.append(Card(.neueNewsNetwork))
+            bankrollCards.append(Card(.skyline))
+            bankrollCards.append(Card(.lucyLaundromat))
+            bankrollCards.append(Card(.privateSecurity))
+            bankrollCards.append(Card(.mannedManagement))
+            bankrollCards.append(Card(.efficientConsulting))
         }
 
         for _ in 1...3 {
-            bankrollCards.append(RoadCard(type:.rightTurn))
+            bankrollCards.append(Card(.rightTurn))
         }
         
         for _ in 1...7 {
-            bankrollCards.append(RoadCard(type:.straight))
-            bankrollCards.append(BuildingCard(buildingType: .anniewares))
-            bankrollCards.append(BuildingCard(buildingType: .doubleDown))
-            bankrollCards.append(BuildingCard(buildingType: .groundhogCoffees))
-            bankrollCards.append(BuildingCard(buildingType: .topTech))
+            bankrollCards.append(Card(.straight))
+            bankrollCards.append(Card(.anniewares))
+            bankrollCards.append(Card(.doubleDown))
+            bankrollCards.append(Card(.groundhogCoffees))
+            bankrollCards.append(Card(.topTech))
         }
     }
     
     func pocketCardsCount() -> Int{
         var pocketCount = 0
         for card in bankrollCards {
-            if card.card == CardType.pocket {
+            if card.type == .pocket {
                 pocketCount += 1;
             }
         }
@@ -52,19 +52,19 @@ class Bankroll {
     }
     
     func roadCardsCount()->Int{
-        var roadCardCount = 0
+        var CardCount = 0
         for card in bankrollCards {
-            if card.card == CardType.road{
-                roadCardCount += 1
+            if card.type == .road{
+                CardCount += 1
             }
         }
-        return roadCardCount
+        return CardCount
     }
     
     func buildingCardsCount()->Int{
         var buildingCardCount = 0
         for card in bankrollCards {
-            if card.card == CardType.building{
+            if card.type == .building{
                 buildingCardCount += 1
             }
         }

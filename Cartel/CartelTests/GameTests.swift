@@ -17,38 +17,17 @@ class GameTests: XCTestCase {
         super.tearDown()
     }
     
-    func testBuildingCard(){
-        let card = BuildingCard(buildingType: BuildingCardType.anniewares)
-        
-        XCTAssertEqual(card.type, BuildingCardType.anniewares)
-    }
-    
-    func testBankRollSetupCreates73Cards() {
-        XCTAssertEqual(sut.bankroll.cardsLeft(), 73)
-    }
-    
-    func testPocketCardsAre15(){
-        XCTAssertEqual(sut.bankroll.pocketCardsCount(), 15)
-    }
-    
-    func testRoadCardsAreThereExceptStartingStraights(){
-        XCTAssertEqual(sut.bankroll.roadCardsCount(), 14)
-    }
-    
-    func testBuildingCardsAre44(){
-        XCTAssertEqual(sut.bankroll.buildingCardsCount(), 44)
-    }
-    
     func testStartingRoadsCreated(){
     
-        XCTAssertEqual(sut.board.getCard(x: 0, y: 0)?.card, CardType.road)
-        XCTAssertEqual(sut.board.getCard(x: 0, y: 1)?.card, CardType.road)
+        sut.startGame()
+        
+        XCTAssertEqual(sut.board.topCardAt(x: 0, y: 0)?.type, CardType.road)
+        XCTAssertEqual(sut.board.topCardAt(x: 0, y: 1)?.type, CardType.road)
     }
     
     func testNewGameWith2Players(){
         XCTAssertEqual(sut.numberOfPlayers, 2)
     }
-    
     
     func testPlayerHas4CardsAfterDeal(){
         

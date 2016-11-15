@@ -14,9 +14,24 @@ enum RoadCardType {
     case tJunction
     case leftTurn
     case rightTurn
+    
+    var image: UIImage {
+        get {
+            switch self {
+            case .straight :
+                return UIImage(named: "RoadCardStraight.png")!
+            case .tJunction :
+                return UIImage(named: "RoadCardTJunction.png")!
+            case .leftTurn :
+                return UIImage(named: "RoadCardLeftTurn.png")!
+            case .rightTurn :
+                return UIImage(named: "RoadCardRightTurn.png")!
+            }
+        }
+    }
 }
 
-enum PocketCardType:Int{
+enum PocketCardType {
     case snitch
     case detectiveTracy
     case informantFivel
@@ -25,82 +40,101 @@ enum PocketCardType:Int{
     case captainJuan
     case wardenSachs
     case congressmanTu
+    
+    var image: UIImage {
+        switch self {
+        case .snitch:
+            return UIImage(named: "PocketSnitch")!
+        case .detectiveTracy:
+            return UIImage(named: "PocketDetectiveTracy.png")!
+        case .informantFivel:
+            return UIImage(named: "PocketInformantFivel.png")!
+        case .inspectorFord:
+            return UIImage(named: "PocketInspectorFord.png")!
+        case .sneakySven:
+            return  UIImage(named: "PocketSneakySven.png")!
+        case .captainJuan:
+            return UIImage(named: "PocketCaptainJuan.png")!
+        case .wardenSachs:
+            return UIImage(named: "PocketWardenSachs.png")!
+        case .congressmanTu:
+            return UIImage(named: "PocketCongressmanTu.png")!
+        }
+        
+    }
 }
 
-enum BuildingCardType:Int{
-    case anniewares = 1
-    case topTech,doubleDown,groundhogCoffees,efficientConsulting,lucyLaundromat,mannedManagement,neueNewsNetwork,privateSecurity,shelfCorp,skyline
+enum BuildingCardType {
+    case anniewares
+    case topTech
+    case doubleDown
+    case groundhogCoffees
+    case efficientConsulting
+    case lucyLaundromat
+    case mannedManagement
+    case neueNewsNetwork
+    case privateSecurity
+    case shelfCorp
+    case skyline
+    
+    var image: UIImage {
+        switch self {
+        case .anniewares : return UIImage(named: "BuildingAnnie.png")!
+        case .doubleDown : return UIImage(named: "BuildingDoubleDown.png")!
+        case .topTech : return UIImage(named: "BuildingTopTech.png")!
+        case .groundhogCoffees : return UIImage(named: "BuildingGroundhog.png")!
+        case .efficientConsulting : return UIImage(named: "BuildingEfficientConsulting.png")!
+        case .lucyLaundromat : return UIImage(named: "BuildingLucyLaundromat.png")!
+        case .mannedManagement : return UIImage(named: "BuildingMannedManagement.png")!
+        case .neueNewsNetwork : return UIImage(named: "BuildingNeueNewsNetwork.png")!
+        case .privateSecurity : return UIImage(named: "BuildingPrivateSecurity.png")!
+        case .shelfCorp : return UIImage(named: "BuildingShelfCorp.png")!
+        case .skyline : return UIImage(named: "BuildingSkyline.png")!
+        }
+    }
 }
 
 class Card: NSObject {
-    var card: CardType
+    
+    static let smallSize = CGSize(width: 100, height: 150)
+    static let bigSize = CGSize(width: 150, height: 225)
+
+    var type: CardType
     var name = "None"
     var wealthValue = 0
-    var image: UIImage
-        
-    init(type: CardType){
-        self.card = type
-        image = UIImage(named: "CardBack.png")!
+    var image: UIImage {
+        if let road = road {
+            return road.image
+        }
+        if let building = building {
+            return building.image
+        }
+        if let pocket = pocket {
+            return pocket.image
+        }
+        return UIImage(named: "CardBack.png")!
     }
-}
-
-class RoadCard : Card {
-    var type: RoadCardType
+    var building: BuildingCardType?
+    var road: RoadCardType?
+    var pocket: PocketCardType?
     
-    init(type:RoadCardType){
+    init(_ type: CardType){
         self.type = type
-        super.init(type: CardType.road)
-        switch type {
-        case .straight : self.image = UIImage(named: "RoadCardStraight.png")!
-        case .tJunction : self.image = UIImage(named: "RoadCardTJunction.png")!
-        case .leftTurn : self.image = UIImage(named: "RoadCardLeftTurn.png")!
-        case .rightTurn : self.image = UIImage(named: "RoadCardRightTurn.png")!
-    
-        }
     }
-}
-
-
-
-class PocketCard : Card {
-    var pocketType:PocketCardType
     
-    init(pocketType: PocketCardType){
-        self.pocketType = pocketType
-        super.init(type: CardType.pocket)
-        switch self.pocketType {
-        case .snitch: self.image =  UIImage(named: "PocketSnitch")!
-        case .detectiveTracy: self.image =  UIImage(named: "PocketDetectiveTracy.png")!
-        case .informantFivel: self.image =  UIImage(named: "PocketInformantFivel.png")!
-        case .inspectorFord: self.image =  UIImage(named: "PocketInspectorFord.png")!
-        case .sneakySven: self.image =  UIImage(named: "PocketSneakySven.png")!
-        case .captainJuan: self.image =  UIImage(named: "PocketCaptainJuan.png")!
-        case .wardenSachs: self.image =  UIImage(named: "PocketWardenSachs.png")!
-        case .congressmanTu: self.image =  UIImage(named: "PocketCongressmanTu.png")!
-        }
-        
+    convenience init(_ building: BuildingCardType) {
+        self.init(.building)
+        self.building = building
+        //        self.init(.building)
     }
-}
-
-
-class BuildingCard : Card {
-    var type:BuildingCardType
     
-    init(buildingType:BuildingCardType){
-        self.type = buildingType
-        super.init(type: CardType.building)
-        switch buildingType {
-        case .anniewares : self.image = UIImage(named: "BuildingAnnie.png")!
-        case .doubleDown : self.image = UIImage(named: "BuildingDoubleDown.png")!
-        case .topTech : self.image = UIImage(named: "BuildingTopTech.png")!
-        case .groundhogCoffees : self.image = UIImage(named: "BuildingGroundhog.png")!
-        case .efficientConsulting : self.image = UIImage(named: "BuildingEfficientConsulting.png")!
-        case .lucyLaundromat : self.image = UIImage(named: "BuildingLucyLaundromat.png")!
-        case .mannedManagement : self.image = UIImage(named: "BuildingMannedManagement.png")!
-        case .neueNewsNetwork : self.image = UIImage(named: "BuildingNeueNewsNetwork.png")!
-        case .privateSecurity : self.image = UIImage(named: "BuildingPrivateSecurity.png")!
-        case .shelfCorp : self.image = UIImage(named: "BuildingShelfCorp.png")!
-        case .skyline : self.image = UIImage(named: "BuildingSkyline.png")!
-        }
+    convenience init(_ road: RoadCardType) {
+        self.init(.road)
+        self.road = road
+    }
+    
+    convenience init(_ pocket: PocketCardType) {
+        self.init(.pocket)
+        self.pocket = pocket
     }
 }

@@ -29,6 +29,11 @@ class Game {
         self.currentPlayer = players[0]
     }
     
+    func startGame() {
+        
+        board.prepareForNewGame()
+    }
+    
     func deal() {
         for _ in 1...4 {
             for player in players {

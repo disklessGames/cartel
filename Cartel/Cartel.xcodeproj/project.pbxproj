@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57014AE91DDBA13100BC53C1 /* Cartel_Prototype_PnP_printer_friendly_latest.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 57014AE81DDBA13100BC53C1 /* Cartel_Prototype_PnP_printer_friendly_latest.pdf */; };
+		57014AEB1DDBA16700BC53C1 /* CardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57014AEA1DDBA16700BC53C1 /* CardTests.swift */; };
+		57014AED1DDBB82A00BC53C1 /* HandCollectionViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57014AEC1DDBB82A00BC53C1 /* HandCollectionViewTests.swift */; };
+		57014AF01DDBB8C800BC53C1 /* HandCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57014AEF1DDBB8C800BC53C1 /* HandCollectionView.swift */; };
+		57014AF21DDBB8E600BC53C1 /* CityCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57014AF11DDBB8E600BC53C1 /* CityCollectionView.swift */; };
+		57014AF61DDBB93700BC53C1 /* CityCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57014AF51DDBB93700BC53C1 /* CityCollectionView.swift */; };
 		5701C88C1DD70B5F00B484F8 /* DraggableCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5701C88B1DD70B5F00B484F8 /* DraggableCardTests.swift */; };
 		5701C88E1DD7118E00B484F8 /* PlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5701C88D1DD7118E00B484F8 /* PlayerTests.swift */; };
 		5701C8901DD7169200B484F8 /* GameViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5701C88F1DD7169200B484F8 /* GameViewControllerTests.swift */; };
@@ -24,7 +30,6 @@
 		577385E819925E87006BF33B /* RoadCardRightTurn.png in Resources */ = {isa = PBXBuildFile; fileRef = 577385E419925E87006BF33B /* RoadCardRightTurn.png */; };
 		577385E919925E87006BF33B /* RoadCardStraight.png in Resources */ = {isa = PBXBuildFile; fileRef = 577385E519925E87006BF33B /* RoadCardStraight.png */; };
 		577385EA19925E87006BF33B /* RoadCardTJunction.png in Resources */ = {isa = PBXBuildFile; fileRef = 577385E619925E87006BF33B /* RoadCardTJunction.png */; };
-		577385EE1992608F006BF33B /* CityCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577385ED1992608F006BF33B /* CityCollectionViewController.swift */; };
 		577385F2199267AA006BF33B /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577385F1199267AA006BF33B /* CardCell.swift */; };
 		577FC229198A803D00A9AB52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577FC228198A803D00A9AB52 /* AppDelegate.swift */; };
 		577FC231198A803D00A9AB52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 577FC22F198A803D00A9AB52 /* Main.storyboard */; };
@@ -59,6 +64,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		57014AE81DDBA13100BC53C1 /* Cartel_Prototype_PnP_printer_friendly_latest.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Cartel_Prototype_PnP_printer_friendly_latest.pdf; sourceTree = "<group>"; };
+		57014AEA1DDBA16700BC53C1 /* CardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTests.swift; sourceTree = "<group>"; };
+		57014AEC1DDBB82A00BC53C1 /* HandCollectionViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandCollectionViewTests.swift; sourceTree = "<group>"; };
+		57014AEF1DDBB8C800BC53C1 /* HandCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandCollectionView.swift; sourceTree = "<group>"; };
+		57014AF11DDBB8E600BC53C1 /* CityCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityCollectionView.swift; sourceTree = "<group>"; };
+		57014AF51DDBB93700BC53C1 /* CityCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityCollectionView.swift; sourceTree = "<group>"; };
 		5701C88B1DD70B5F00B484F8 /* DraggableCardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableCardTests.swift; sourceTree = "<group>"; };
 		5701C88D1DD7118E00B484F8 /* PlayerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTests.swift; sourceTree = "<group>"; };
 		5701C88F1DD7169200B484F8 /* GameViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewControllerTests.swift; sourceTree = "<group>"; };
@@ -76,7 +87,6 @@
 		577385E419925E87006BF33B /* RoadCardRightTurn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RoadCardRightTurn.png; sourceTree = "<group>"; };
 		577385E519925E87006BF33B /* RoadCardStraight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RoadCardStraight.png; sourceTree = "<group>"; };
 		577385E619925E87006BF33B /* RoadCardTJunction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RoadCardTJunction.png; sourceTree = "<group>"; };
-		577385ED1992608F006BF33B /* CityCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityCollectionViewController.swift; sourceTree = "<group>"; };
 		577385F1199267AA006BF33B /* CardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		577FC223198A803D00A9AB52 /* Cartel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cartel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		577FC227198A803D00A9AB52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -108,10 +118,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		57014AEE1DDBB8A000BC53C1 /* Board */ = {
+			isa = PBXGroup;
+			children = (
+				57014AEF1DDBB8C800BC53C1 /* HandCollectionView.swift */,
+				57014AF11DDBB8E600BC53C1 /* CityCollectionView.swift */,
+			);
+			name = Board;
+			sourceTree = "<group>";
+		};
+		57014AF41DDBB91300BC53C1 /* BoardTests */ = {
+			isa = PBXGroup;
+			children = (
+				57014AF51DDBB93700BC53C1 /* CityCollectionView.swift */,
+			);
+			name = BoardTests;
+			sourceTree = "<group>";
+		};
 		577385EF199260FB006BF33B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				577385ED1992608F006BF33B /* CityCollectionViewController.swift */,
 				573D187B199382C6007DD674 /* GameViewController.swift */,
 				5701C8911DD73A5300B484F8 /* GameDataSource.swift */,
 			);
@@ -148,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				577FC22F198A803D00A9AB52 /* Main.storyboard */,
+				57014AEE1DDBB8A000BC53C1 /* Board */,
 				577385F01992678D006BF33B /* Cells */,
 				57F14056199F8B7700A0DCE6 /* Engine */,
 				577385EF199260FB006BF33B /* ViewControllers */,
@@ -170,6 +197,8 @@
 		577FC23B198A803E00A9AB52 /* CartelTests */ = {
 			isa = PBXGroup;
 			children = (
+				57014AF41DDBB91300BC53C1 /* BoardTests */,
+				57014AE81DDBA13100BC53C1 /* Cartel_Prototype_PnP_printer_friendly_latest.pdf */,
 				57F33BF7199A3EEC00526538 /* GameTests */,
 				577FC248198A80E400A9AB52 /* CardTests */,
 				577FC23C198A803E00A9AB52 /* Supporting Files */,
@@ -177,6 +206,7 @@
 				5701C88D1DD7118E00B484F8 /* PlayerTests.swift */,
 				5701C88F1DD7169200B484F8 /* GameViewControllerTests.swift */,
 				5701C8931DD73C1600B484F8 /* GameDataSourceTests.swift */,
+				57014AEC1DDBB82A00BC53C1 /* HandCollectionViewTests.swift */,
 			);
 			path = CartelTests;
 			sourceTree = "<group>";
@@ -199,6 +229,7 @@
 				574CAE20199111F000C86588 /* PocketCardTests.swift */,
 				5714DC571994B6A800065908 /* BankrollTests.swift */,
 				5701C88B1DD70B5F00B484F8 /* DraggableCardTests.swift */,
+				57014AEA1DDBA16700BC53C1 /* CardTests.swift */,
 			);
 			name = CardTests;
 			sourceTree = "<group>";
@@ -330,6 +361,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57014AE91DDBA13100BC53C1 /* Cartel_Prototype_PnP_printer_friendly_latest.pdf in Resources */,
 				577385E719925E87006BF33B /* RoadCardLeftTurn.png in Resources */,
 				577385E919925E87006BF33B /* RoadCardStraight.png in Resources */,
 				577385EA19925E87006BF33B /* RoadCardTJunction.png in Resources */,
@@ -345,6 +377,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5701C8921DD73A5300B484F8 /* GameDataSource.swift in Sources */,
+				57014AF01DDBB8C800BC53C1 /* HandCollectionView.swift in Sources */,
 				570F9A3F19ADDE3900FC9731 /* DraggableCard.swift in Sources */,
 				574CAE121990D8DC00C86588 /* Card.swift in Sources */,
 				57357FE41A20D42D0089B018 /* BoardCollectionViewDataSource.swift in Sources */,
@@ -354,7 +387,7 @@
 				574CAE1F1991049B00C86588 /* Player.swift in Sources */,
 				577385F2199267AA006BF33B /* CardCell.swift in Sources */,
 				577FC24D198A81A900A9AB52 /* Bankroll.swift in Sources */,
-				577385EE1992608F006BF33B /* CityCollectionViewController.swift in Sources */,
+				57014AF21DDBB8E600BC53C1 /* CityCollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +401,9 @@
 				5714DC581994B6A800065908 /* BankrollTests.swift in Sources */,
 				5701C8941DD73C1600B484F8 /* GameDataSourceTests.swift in Sources */,
 				5701C88E1DD7118E00B484F8 /* PlayerTests.swift in Sources */,
+				57014AEB1DDBA16700BC53C1 /* CardTests.swift in Sources */,
+				57014AF61DDBB93700BC53C1 /* CityCollectionView.swift in Sources */,
+				57014AED1DDBB82A00BC53C1 /* HandCollectionViewTests.swift in Sources */,
 				5701C88C1DD70B5F00B484F8 /* DraggableCardTests.swift in Sources */,
 				5701C8901DD7169200B484F8 /* GameViewControllerTests.swift in Sources */,
 			);

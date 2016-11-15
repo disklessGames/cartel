@@ -14,35 +14,45 @@ class BoardDataTests: XCTestCase {
         XCTAssertEqual(sections, 2)
     }
     
-    func testNumberOfItemsInSection() {
+    func testCreate64X64GridOfNone() {
+        for x in 0..<16 {
+            for y in 0..<16 {
+                XCTAssertEqual(sut.topCardAt(x: x, y: y)?.type, CardType.none)
+            }
+        }
+    }
+    
+    func testSimplePlay() {
         let board = BoardData()
-        board.play(x: 0, y: 0, card: RoadCard(type: .tJunction))
-        board.play(x: 0, y: 1, card: BuildingCard(buildingType: .anniewares))
         
-        board.play(x: 0, y: 0, card: PocketCard(pocketType: .captainJuan))
         
-        XCTAssertEqual(board.collectionView(collectionView, numberOfItemsInSection: 0), 2)
+        board.playCity(x: 0, y: 0, card: Card(.tJunction))
+        board.playCity(x: 0, y: 1, card: Card(.anniewares))
+        
+        board.playPocket(Card(.captainJuan))
+        
+        XCTAssertEqual(board.collectionView(collectionView, numberOfItemsInSection: 0), 256)
         XCTAssertEqual(board.collectionView(collectionView, numberOfItemsInSection: 1), 1)
         XCTAssertEqual(board.collectionView(collectionView, numberOfItemsInSection: 2), 0)
     }
     
     func testPlayStraightRoad() {
         
-        let road = RoadCard(type: .straight)
-        let building = BuildingCard(buildingType: .anniewares)
+        let road = Card(.straight)
+        let building = Card(.anniewares)
         
-        sut.play(x: 0, y: 0, card: road)
-        sut.play(x: 0, y: 1, card: building)
+        sut.playCity(x: 0, y: 0, card: road)
+        sut.playCity(x: 0, y: 1, card: building)
         
-        XCTAssertEqual(sut.getCard(x:0, y:0), road)
-        XCTAssertEqual(sut.getCard(x:0, y:1), building)
+        XCTAssertEqual(sut.topCardAt(x:0, y:0), road)
+        XCTAssertEqual(sut.topCardAt(x:0, y:1), building)
     }
     
     func testCorrectCellDequeued() {
         
-        let road = RoadCard(type: .straight)
+        let road = Card(.straight)
         
-        sut.play(x: 0, y: 0, card: road)
+        sut.playCity(x: 0, y: 0, card: road)
         
         XCTAssertNotNil(sut.collectionView(collectionView, cellForItemAt: IndexPath(row: 0, section: 0)))
         XCTAssertTrue(collectionView.dequeueCalled)
@@ -56,7 +66,7 @@ class TestableCollectionView: UICollectionView {
     override func dequeueReusableCell(withReuseIdentifier identifier: String, for indexPath: IndexPath) -> UICollectionViewCell {
         dequeueCalled = true
         let cell = CardCell()
-        cell.imageView = DraggableCard(Card(type: .road))
+        cell.imageView = DraggableCard(Card(.road))
         return cell
     }
 }

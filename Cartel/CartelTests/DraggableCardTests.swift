@@ -4,7 +4,7 @@ import XCTest
 
 class DraggableCardTests: XCTestCase {
 
-    let card = Card(type: .road)
+    let card = Card(.road)
     var sut: DraggableCard!
     let touch = TestableTouch()
     

@@ -9,10 +9,18 @@ class GameViewController: UIViewController, UICollectionViewDelegate {
     
     var cardMoving: DraggableCard?
     
+    var game: Game? {
+        didSet {
+            if let game = game {
+                gameData = GameDataSource(game: game, players: [Player(name: "Me")])
+            }
+        }
+    }
+    
     var gameData: GameDataSource? {
         didSet {
-            handCollectionView.dataSource = gameData
-//            cityCollectionView.dataSource = gameData
+            handCollectionView?.dataSource = gameData
+            //            cityCollectionView.dataSource = gameData
         }
     }
     
@@ -21,10 +29,10 @@ class GameViewController: UIViewController, UICollectionViewDelegate {
     }
     
     override func viewDidLoad() {
-        let me = Player(name: "Me")
-        gameData = GameDataSource(game: Game(), players: [me])
         super.viewDidLoad()
+        game = Game()
     }
+    
     @IBAction func exit(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -35,6 +43,10 @@ class GameViewController: UIViewController, UICollectionViewDelegate {
         } else {
             print("No more cards !")
         }
+    }
+    
+    func cardsLeft() -> Int {
+        return gameData?.game.bankroll.cardsLeft() ?? 0
     }
     
     func cleanUpDrawAnimation(_ cardDrawn: Card, cardView: UIView) {
@@ -55,7 +67,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate {
             // remove
             collectionView.reloadData()
         }
-
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -81,6 +93,7 @@ extension GameViewController {
     fileprivate func playerDraw(_ cardDrawn: Card) {
         
         let cardDrawnView = UIImageView(image: cardDrawn.image)
+        cardDrawnView.frame.size = Card.bigSize
         let duration = 1.0
         let delay = 0.0
         let options = UIViewAnimationOptions()
