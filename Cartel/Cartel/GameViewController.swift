@@ -9,7 +9,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate {
     
     var cardMoving: DraggableCard?
     
-    var game: Game? {
+    var game: Game? = Game() {
         didSet {
             if let game = game {
                 gameData = GameDataSource(game: game, players: [Player(name: "Me")])
@@ -30,7 +30,6 @@ class GameViewController: UIViewController, UICollectionViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        game = Game()
     }
     
     @IBAction func exit(_ sender: AnyObject) {

@@ -31,8 +31,8 @@ class DraggableCardTests: XCTestCase {
         
         sut.touchesBegan(touches, with: nil)
         
-        XCTAssertEqual(sut.center, CGPoint(x: sut.bigSize.width / 2, y: sut.bigSize.height / 2))
-        XCTAssertEqual(sut.frame.size, sut.bigSize)
+        XCTAssertEqual(sut.center, CGPoint(x: Card.bigSize.width / 2, y: Card.bigSize.height / 2))
+        XCTAssertEqual(sut.frame.size, Card.bigSize)
     }
     
     func testTouchesBeganShadow() {

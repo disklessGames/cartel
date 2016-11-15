@@ -21,7 +21,9 @@ class DraggableCard: UIImageView {
         if let touch = touches.first {
 
             let locationInView = touch.location(in: superview)
-            dragCenterOffset = CGPoint(x: locationInView.x - center.x, y: locationInView.y - center.y)
+            let x = locationInView.x - center.x
+            let y = locationInView.y - center.y
+            dragCenterOffset = CGPoint(x: x, y: y)
 
             setBigShadow()
             self.frame.size = Card.bigSize

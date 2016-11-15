@@ -3,7 +3,7 @@ import XCTest
 @testable import Cartel
 
 class GameViewControllerTests: XCTestCase {
-
+    
     let sut = GameViewController(coder: TestableCoder())!
     let collectionView = TestableCollectionView(frame: CGRect.null, collectionViewLayout: UICollectionViewFlowLayout())
     
@@ -11,8 +11,13 @@ class GameViewControllerTests: XCTestCase {
         super.setUp()
         sut.game = Game()
         sut.handCollectionView = collectionView
-    }
+        sut.cityCollectionView = collectionView
+        sut.bankRollButton = UIButton()
 
+        _ = sut.view
+        
+    }
+    
     func testViewDidLoad() {
         
         sut.viewDidLoad()
@@ -20,10 +25,9 @@ class GameViewControllerTests: XCTestCase {
         XCTAssertNotNil(sut.gameData)
         
     }
-
+    
     func testDrawCard() {
-        sut.bankRollButton = UIButton()
-
+        
         sut.drawCard(sut.bankRollButton)
         
         XCTAssertEqual(sut.cardsLeft(), 68)
