@@ -37,7 +37,7 @@ class Game {
     func deal() {
         for _ in 1...4 {
             for player in players {
-                if let card = drawCard(){
+                if let card = bankroll.drawCard(){
                     player.add(card: card)
                 }
             }
@@ -48,7 +48,7 @@ class Game {
         bankroll.shuffle()
     }
     
-    func drawCard()->Card?{
+    func draw()->Card?{
         return self.bankroll.drawCard()
     }
     

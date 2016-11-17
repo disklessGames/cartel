@@ -1,23 +1,22 @@
 
 import UIKit
 
-class GameDataSource: NSObject, UICollectionViewDataSource {
+class HandDataSource: NSObject, UICollectionViewDataSource {
 
-    let game: Game
+    var player: Player
     
-    init(game: Game, players: [Player]) {
-        self.game = game
+    init(player: Player) {
+        self.player = player
         super.init()
-        setup(with: players)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return game.currentPlayer.handSize
+        return player.handSize
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath) as! CardCell
-        if let card = game.currentPlayer.peekCard(index: (indexPath as NSIndexPath).row) {
+        if let card = player.peekCard(index: (indexPath as NSIndexPath).row) {
             cell.imageView.image = card.image
         }
         return cell
@@ -27,21 +26,11 @@ class GameDataSource: NSObject, UICollectionViewDataSource {
         return 1;
     }
 
-    func setup(with players: [Player]) {
-        game.setup(players: players)
-        game.shuffle()
-        game.deal()
-    }
-    
-    func draw() -> Card? {
-        return game.bankroll.drawCard()
+    func add(card: Card) {
+        player.add(card: card)
     }
     
     func playCard(at index: Int) -> Card? {
-        return game.currentPlayer.playCard(at: index)
-    }
-    
-    func addToCurrentPlayer(card: Card) {
-        game.currentPlayer.add(card: card)
+        return player.playCard(at: index)
     }
 }

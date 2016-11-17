@@ -135,13 +135,13 @@
 			name = BoardTests;
 			sourceTree = "<group>";
 		};
-		577385EF199260FB006BF33B /* ViewControllers */ = {
+		577385EF199260FB006BF33B /* GameViews */ = {
 			isa = PBXGroup;
 			children = (
 				573D187B199382C6007DD674 /* GameViewController.swift */,
 				5701C8911DD73A5300B484F8 /* GameDataSource.swift */,
 			);
-			name = ViewControllers;
+			name = GameViews;
 			sourceTree = "<group>";
 		};
 		577385F01992678D006BF33B /* Cells */ = {
@@ -177,7 +177,7 @@
 				57014AEE1DDBB8A000BC53C1 /* Board */,
 				577385F01992678D006BF33B /* Cells */,
 				57F14056199F8B7700A0DCE6 /* Engine */,
-				577385EF199260FB006BF33B /* ViewControllers */,
+				577385EF199260FB006BF33B /* GameViews */,
 				577FC24B198A819600A9AB52 /* Data Objects */,
 				577FC226198A803D00A9AB52 /* Supporting Files */,
 			);
@@ -204,8 +204,6 @@
 				577FC23C198A803E00A9AB52 /* Supporting Files */,
 				57357FE11A20D3820089B018 /* BoardCollectionViewDataSourceTests.swift */,
 				5701C88D1DD7118E00B484F8 /* PlayerTests.swift */,
-				5701C88F1DD7169200B484F8 /* GameViewControllerTests.swift */,
-				5701C8931DD73C1600B484F8 /* GameDataSourceTests.swift */,
 				57014AEC1DDBB82A00BC53C1 /* HandCollectionViewTests.swift */,
 			);
 			path = CartelTests;
@@ -246,6 +244,15 @@
 			name = "Data Objects";
 			sourceTree = "<group>";
 		};
+		57C9146E1DDE4350004871F9 /* GameViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				5701C88F1DD7169200B484F8 /* GameViewControllerTests.swift */,
+				5701C8931DD73C1600B484F8 /* GameDataSourceTests.swift */,
+			);
+			name = GameViewTests;
+			sourceTree = "<group>";
+		};
 		57F14056199F8B7700A0DCE6 /* Engine */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,6 +264,7 @@
 		57F33BF7199A3EEC00526538 /* GameTests */ = {
 			isa = PBXGroup;
 			children = (
+				57C9146E1DDE4350004871F9 /* GameViewTests */,
 				577FC249198A80F800A9AB52 /* GameTests.swift */,
 			);
 			name = GameTests;

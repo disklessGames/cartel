@@ -17,6 +17,6 @@ class HandCollectionViewTests: XCTestCase {
   
     func testCanCreate() {
         
-        _ = HandCollectionView()
+        _ = HandCollectionView(frame: CGRect.null, collectionViewLayout: UICollectionViewFlowLayout())
     }
 }

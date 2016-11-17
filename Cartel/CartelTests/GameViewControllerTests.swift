@@ -9,28 +9,26 @@ class GameViewControllerTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        sut.game = Game()
         sut.handCollectionView = collectionView
         sut.cityCollectionView = collectionView
+        sut.game = Game()
         sut.bankRollButton = UIButton()
 
         _ = sut.view
-        
     }
     
     func testViewDidLoad() {
         
         sut.viewDidLoad()
         
-        XCTAssertNotNil(sut.gameData)
-        
+        XCTAssertNotNil(sut.handData)
     }
     
     func testDrawCard() {
         
         sut.drawCard(sut.bankRollButton)
         
-        XCTAssertEqual(sut.cardsLeft(), 68)
+        XCTAssertEqual(sut.cardsLeft(), 72)
     }
     
     func testCleanupDrawAnimation() {
@@ -46,7 +44,6 @@ class GameViewControllerTests: XCTestCase {
     
     class TestableView : UIView {
         var removeCalled = false
-        
         
         override func removeFromSuperview() {
             removeCalled = true
@@ -74,6 +71,5 @@ class GameViewControllerTests: XCTestCase {
         override func containsValue(forKey key: String) -> Bool {
             return false
         }
-        
     }
 }
