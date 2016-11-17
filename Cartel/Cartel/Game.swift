@@ -5,6 +5,10 @@ class Game {
 
     let bankroll = Bankroll()
     let board = BoardData()
+    var numberOfPlayers: Int {
+        return players.count
+    }
+    var currentPlayer: Player
     
     private var players: [Player]
     
@@ -13,16 +17,14 @@ class Game {
         self.players = [currentPlayer]
     }
     
+    deinit {
+        print("deinit")
+    }
+    
     init(players: [Player]) {
         self.players = players
-        self.currentPlayer = players[0]
+        self.currentPlayer = players.first ?? Player(name: "Me")
     }
-    
-    var numberOfPlayers: Int {
-        return players.count
-    }
-    
-    var currentPlayer: Player
     
     func setup(players:[Player]) {
         self.players = players
@@ -30,7 +32,6 @@ class Game {
     }
     
     func startGame() {
-        
         board.prepareForNewGame()
     }
     
@@ -60,5 +61,9 @@ class Game {
         if let card = bankroll.drawCard() {
             currentPlayer.add(card: card)
         }
+    }
+    
+    func cardsLeft() -> Int {
+        return bankroll.cardsLeft()
     }
 }

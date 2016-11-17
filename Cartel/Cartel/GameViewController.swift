@@ -46,7 +46,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate {
     }
     
     func cardsLeft() -> Int {
-        return game.bankroll.cardsLeft()
+        return game.cardsLeft()
     }
     
     func cleanUpDrawAnimation(_ cardDrawn: Card, cardView: UIView) {

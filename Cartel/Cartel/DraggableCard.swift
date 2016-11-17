@@ -2,7 +2,7 @@
 import UIKit
 
 class DraggableCard: UIImageView {
-    var dragCenterOffset: CGPoint?
+    var dragCenterOffset = CGPoint(x: 0, y: 0)
     var card: Card
 
     init(_ card: Card!) {
@@ -19,14 +19,13 @@ class DraggableCard: UIImageView {
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
+            enlarge()
 
             let locationInView = touch.location(in: superview)
             let x = locationInView.x - center.x
             let y = locationInView.y - center.y
             dragCenterOffset = CGPoint(x: x, y: y)
 
-            setBigShadow()
-            self.frame.size = Card.bigSize
         }
         super.touchesBegan(touches, with: event)
     }
@@ -34,10 +33,11 @@ class DraggableCard: UIImageView {
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
             let locationInView = touch.location(in: superview)
-
+            let offset = dragCenterOffset
+            
             UIView.animate(withDuration: 0.1) {
-                self.center = CGPoint(x: locationInView.x - (self.dragCenterOffset?.x ?? 0),
-                                      y: locationInView.y - (self.dragCenterOffset?.y ?? 0))
+                self.center = CGPoint(x: locationInView.x - offset.x,
+                                      y: locationInView.y - offset.y)
             }
         }
     }
@@ -60,7 +60,8 @@ class DraggableCard: UIImageView {
         layer.shadowRadius = 2
     }
 
-    private func setBigShadow() {
+    private func enlarge() {
+        self.frame.size = Card.bigSize
         layer.shadowOffset = CGSize(width: 0, height: 20)
         layer.shadowOpacity = 0.3
         layer.shadowRadius = 6
