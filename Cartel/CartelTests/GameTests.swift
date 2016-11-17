@@ -25,6 +25,18 @@ class GameTests: XCTestCase {
         XCTAssertEqual(sut.board.topCardAt(x: 0, y: 1)?.type, CardType.road)
     }
     
+    func testStartGame_Shuffles() {
+        sut.startGame()
+        
+        XCTAssertTrue(sut.bankroll.shuffled)
+    }
+    
+    func testStartGame_Deals() {
+        sut.startGame()
+        
+        XCTAssertEqual(sut.cardsLeft(), 65)
+    }
+    
     func testNewGameWith2Players(){
         XCTAssertEqual(sut.numberOfPlayers, 2)
     }
@@ -41,7 +53,6 @@ class GameTests: XCTestCase {
         sut.shuffle()
         
         XCTAssertTrue(sut.bankroll.shuffled)
-        
     }
     
     func testFlip(){

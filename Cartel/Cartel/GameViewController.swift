@@ -34,7 +34,8 @@ class GameViewController: UIViewController, UICollectionViewDelegate {
     }
     
     @IBAction func exit(_ sender: AnyObject) {
-        self.dismiss(animated: true, completion: nil)
+        game = Game()
+        game.startGame()
     }
     
     @IBAction func drawCard(_ sender: AnyObject) {
@@ -74,18 +75,18 @@ class GameViewController: UIViewController, UICollectionViewDelegate {
         
     }
     
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let location = touches.first?.location(in: self.view),
-            let card = cardMoving {
-            if location.y > handCollectionView.frame.maxY {
-                
-                handData?.add(card: card.card)
-                handCollectionView.reloadData()
-            }
-            cardMoving = nil
-        }
-        super.touchesEnded(touches, with: event)
-    }
+//    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        if let location = touches.first?.location(in: self.view),
+//            let card = cardMoving {
+//            if location.y > handCollectionView.frame.maxY {
+//                
+//                handData?.add(card: card.card)
+//                handCollectionView.reloadData()
+//            }
+//            cardMoving = nil
+//        }
+//        super.touchesEnded(touches, with: event)
+//    }
 }
 
 extension GameViewController {

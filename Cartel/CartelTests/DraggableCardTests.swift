@@ -17,12 +17,12 @@ class DraggableCardTests: XCTestCase {
         XCTAssertEqual(sut.image, card.image)
     }
     
-    func testShadow() {
+    func testCreateBig() {
         XCTAssertTrue(sut.isUserInteractionEnabled)
         XCTAssertEqual(sut.layer.shadowColor, UIColor.black.cgColor)
-        XCTAssertEqual(sut.layer.shadowRadius, 2)
-        XCTAssertEqual(sut.layer.shadowOffset.height, 3)
-        XCTAssertEqual(sut.layer.shadowOpacity, 0.5)
+        XCTAssertEqual(sut.layer.shadowRadius, 6)
+        XCTAssertEqual(sut.layer.shadowOffset.height, 20)
+        XCTAssertEqual(sut.layer.shadowOpacity, 0.3)
     }
     
     func testTouchesBegan() {
@@ -64,7 +64,7 @@ class DraggableCardTests: XCTestCase {
         
         sut.touchesMoved(touches, with: nil)
         
-        XCTAssertEqual(sut.center, CGPoint(x: 15, y: 15))
+        XCTAssertEqual(sut.center, CGPoint(x: 20, y: 20))
         
     }
     

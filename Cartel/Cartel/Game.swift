@@ -17,10 +17,6 @@ class Game {
         self.players = [currentPlayer]
     }
     
-    deinit {
-        print("deinit")
-    }
-    
     init(players: [Player]) {
         self.players = players
         self.currentPlayer = players.first ?? Player(name: "Me")
@@ -33,6 +29,8 @@ class Game {
     
     func startGame() {
         board.prepareForNewGame()
+        shuffle()
+        deal()
     }
     
     func deal() {
