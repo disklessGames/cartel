@@ -68,12 +68,19 @@ class DraggableCardTests: XCTestCase {
         
     }
     
-    func testTouchesEnded() {
-        touch.viewLocation = CGPoint(x: 50, y: 50)
+    func testTouchesEndedDropsCard() {
+
+        let expect = expectation(description: "drop")
+        sut.dropCard = { (point) in
+            XCTAssertEqual(point, CGPoint(x: 50, y: 100))
+            expect.fulfill()
+        }
+        touch.viewLocation = CGPoint(x: 50, y: 100)
         
         sut.touchesEnded([touch], with: nil)
         
-        XCTAssertEqual(sut.center, CGPoint(x: 50, y: 50))
+        waitForExpectations(timeout: 0.1, handler: nil)
+        
     }
     
     func testTouchesEndedShadow() {

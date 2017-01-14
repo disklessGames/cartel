@@ -7,7 +7,8 @@ class GameViewController: UIViewController, UICollectionViewDelegate {
     @IBOutlet var handCollectionView: UICollectionView!
     @IBOutlet weak var cityCollectionView: UICollectionView!
     
-    var cardMoving: DraggableCard?
+    var movingCard: DraggableCard?
+    
     var game = Game() {
         didSet {
             handData = HandDataSource(player: game.currentPlayer)
@@ -16,7 +17,11 @@ class GameViewController: UIViewController, UICollectionViewDelegate {
     var handData: HandDataSource? {
         didSet {
             handCollectionView?.dataSource = handData
-            cityCollectionView?.dataSource = handData
+        }
+    }
+    var boardData: BoardData? {
+        didSet {
+            cityCollectionView.dataSource = boardData
         }
     }
     
@@ -58,38 +63,36 @@ class GameViewController: UIViewController, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
         
-        let newCenter =  collectionView.cellForItem(at: indexPath)!.center
         if let card = handData?.playCard(at: (indexPath as NSIndexPath).row) {
             
             let floater = DraggableCard(card)
-            
+            floater.dropCard = { [unowned self] (point) in
+                self.play(floater.card, at: point)
+                floater.removeFromSuperview()
+            }
+            floater.center = handCollectionView.convert(handCollectionView.cellForItem(at: indexPath)!.center, to: view)
+
             view.addSubview(floater)
-            floater.center = newCenter
-            // remove
-            collectionView.reloadData()
+            handCollectionView.reloadData()
         }
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
     }
-    
-//    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        if let location = touches.first?.location(in: self.view),
-//            let card = cardMoving {
-//            if location.y > handCollectionView.frame.maxY {
-//                
-//                handData?.add(card: card.card)
-//                handCollectionView.reloadData()
-//            }
-//            cardMoving = nil
-//        }
-//        super.touchesEnded(touches, with: event)
-//    }
 }
 
 extension GameViewController {
+    
+    fileprivate func play(_ card: Card, at point: CGPoint) {
+        if self.cityCollectionView.frame.contains(point) {
+            self.boardData?.playCity(x: 0, y: 0, card: card)
+            self.cityCollectionView.reloadData()
+        } else {
+            self.handData?.add(card: card)
+            self.handCollectionView.reloadData()
+        }
+    }
     
     fileprivate func playerDraw(_ cardDrawn: Card) {
         

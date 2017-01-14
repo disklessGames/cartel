@@ -33,7 +33,6 @@ class BoardDataTests: XCTestCase {
         
         XCTAssertEqual(board.collectionView(collectionView, numberOfItemsInSection: 0), 256)
         XCTAssertEqual(board.collectionView(collectionView, numberOfItemsInSection: 1), 1)
-        XCTAssertEqual(board.collectionView(collectionView, numberOfItemsInSection: 2), 0)
     }
     
     func testPlayStraightRoad() {

@@ -32,31 +32,30 @@ class BoardData: NSObject {
     func prepareForNewGame() {
         playCity(x: 0, y: 0, card: Card(.straight))
         playCity(x: 0, y: 1, card: Card(.straight))
-
+        
     }
 }
 
 extension BoardData: UICollectionViewDataSource {
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
-    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        switch section {
-        case 0:
+        if section == 0 {
             return city.count
-        case 1:
+        } else {
             return pocket.count
-        default:
-            return 0
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath)
-        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath) as! CardCell
+        if let card = city[indexPath.row]?.first {
+            cell.imageView.image = card.image
+        }
         return cell
     }
     
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2;
+    }
 }

@@ -5,8 +5,9 @@ class DraggableCard: UIImageView {
     var dragCenterOffset = CGPoint(x: 0, y: 0)
     var card: Card
     var shrinkTimer: Timer?
+    var dropCard: ((CGPoint) -> Void)?
     
-    init(_ card: Card!) {
+    init(_ card: Card) {
         self.card = card
         super.init(image: card.image)
         
@@ -45,6 +46,7 @@ class DraggableCard: UIImageView {
         let offset = dragCenterOffset
         
         let location = touches.first!.location(in: superview)
+        dropCard?(location)
         center = CGPoint(x: location.x + offset.x,
                          y: location.y + offset.y)
     }
