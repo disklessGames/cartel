@@ -7,8 +7,6 @@ class GameViewController: UIViewController, UICollectionViewDelegate {
     @IBOutlet var handCollectionView: UICollectionView!
     @IBOutlet weak var cityCollectionView: UICollectionView!
     
-    var movingCard: DraggableCard?
-    
     var game = Game() {
         didSet {
             handData = HandDataSource(player: game.currentPlayer)
@@ -34,13 +32,9 @@ class GameViewController: UIViewController, UICollectionViewDelegate {
         print("will appear")
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        print("did appear")
-    }
-    
     @IBAction func exit(_ sender: AnyObject) {
         game = Game()
-        game.startGame()
+        game.prepareGame()
     }
     
     @IBAction func drawCard(_ sender: AnyObject) {
@@ -67,11 +61,10 @@ class GameViewController: UIViewController, UICollectionViewDelegate {
             
             let floater = DraggableCard(card)
             floater.dropCard = { [unowned self] (point) in
-                self.play(floater.card, at: point)
-                floater.removeFromSuperview()
+                self.play(floater, at: point)
             }
             floater.center = handCollectionView.convert(handCollectionView.cellForItem(at: indexPath)!.center, to: view)
-
+            
             view.addSubview(floater)
             handCollectionView.reloadData()
         }
@@ -84,13 +77,14 @@ class GameViewController: UIViewController, UICollectionViewDelegate {
 
 extension GameViewController {
     
-    fileprivate func play(_ card: Card, at point: CGPoint) {
+    fileprivate func play(_ movingCard: DraggableCard, at point: CGPoint) {
         if self.cityCollectionView.frame.contains(point) {
-            self.boardData?.playCity(x: 0, y: 0, card: card)
+            self.boardData?.playCity(x: 0, y: 0, card: movingCard.card)
             self.cityCollectionView.reloadData()
         } else {
-            self.handData?.add(card: card)
+            self.handData?.add(card: movingCard.card)
             self.handCollectionView.reloadData()
+            movingCard.removeFromSuperview()
         }
     }
     

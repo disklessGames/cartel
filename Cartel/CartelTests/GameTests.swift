@@ -19,20 +19,20 @@ class GameTests: XCTestCase {
     
     func testStartingRoadsCreated(){
     
-        sut.startGame()
+        sut.prepareGame()
         
         XCTAssertEqual(sut.board.topCardAt(x: 0, y: 0)?.type, CardType.road)
         XCTAssertEqual(sut.board.topCardAt(x: 0, y: 1)?.type, CardType.road)
     }
     
     func testStartGame_Shuffles() {
-        sut.startGame()
+        sut.prepareGame()
         
         XCTAssertTrue(sut.bankroll.shuffled)
     }
     
     func testStartGame_Deals() {
-        sut.startGame()
+        sut.prepareGame()
         
         XCTAssertEqual(sut.cardsLeft(), 65)
     }

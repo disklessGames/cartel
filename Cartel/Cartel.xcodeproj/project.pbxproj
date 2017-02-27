@@ -121,6 +121,7 @@
 		57014AEE1DDBB8A000BC53C1 /* Board */ = {
 			isa = PBXGroup;
 			children = (
+				577385F1199267AA006BF33B /* CardCell.swift */,
 				57014AEF1DDBB8C800BC53C1 /* HandCollectionView.swift */,
 				57014AF11DDBB8E600BC53C1 /* CityCollectionView.swift */,
 			);
@@ -135,21 +136,14 @@
 			name = BoardTests;
 			sourceTree = "<group>";
 		};
-		577385EF199260FB006BF33B /* GameViews */ = {
+		577385EF199260FB006BF33B /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				57014AEE1DDBB8A000BC53C1 /* Board */,
 				573D187B199382C6007DD674 /* GameViewController.swift */,
 				5701C8911DD73A5300B484F8 /* GameDataSource.swift */,
 			);
-			name = GameViews;
-			sourceTree = "<group>";
-		};
-		577385F01992678D006BF33B /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				577385F1199267AA006BF33B /* CardCell.swift */,
-			);
-			name = Cells;
+			name = Game;
 			sourceTree = "<group>";
 		};
 		577FC21A198A803D00A9AB52 = {
@@ -174,10 +168,8 @@
 			isa = PBXGroup;
 			children = (
 				577FC22F198A803D00A9AB52 /* Main.storyboard */,
-				57014AEE1DDBB8A000BC53C1 /* Board */,
-				577385F01992678D006BF33B /* Cells */,
 				57F14056199F8B7700A0DCE6 /* Engine */,
-				577385EF199260FB006BF33B /* GameViews */,
+				577385EF199260FB006BF33B /* Game */,
 				577FC24B198A819600A9AB52 /* Data Objects */,
 				577FC226198A803D00A9AB52 /* Supporting Files */,
 			);
@@ -544,6 +536,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = CG6B72D3X4;
 				INFOPLIST_FILE = Cartel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -564,6 +557,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = CG6B72D3X4;
 				INFOPLIST_FILE = Cartel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

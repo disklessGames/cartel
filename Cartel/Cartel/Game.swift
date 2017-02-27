@@ -5,10 +5,10 @@ class Game {
 
     let bankroll = Bankroll()
     let board = BoardData()
+    var currentPlayer: Player
     var numberOfPlayers: Int {
         return players.count
     }
-    var currentPlayer: Player
     
     private var players: [Player]
     
@@ -22,12 +22,7 @@ class Game {
         self.currentPlayer = players.first ?? Player(name: "Me")
     }
     
-    func setup(players:[Player]) {
-        self.players = players
-        self.currentPlayer = players[0]
-    }
-    
-    func startGame() {
+    func prepareGame() {
         board.prepareForNewGame()
         shuffle()
         deal()
