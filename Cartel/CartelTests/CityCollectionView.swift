@@ -2,7 +2,7 @@
 import XCTest
 @testable import Cartel
 
-class CityCollectionView: XCTestCase {
+class CityCollectionViewTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -16,7 +16,7 @@ class CityCollectionView: XCTestCase {
     
     func testCanCreate() {
     
-        _ = CityCollectionView()
+        _ = CityCollectionView(frame: CGRect.null, collectionViewLayout: UICollectionViewFlowLayout())
         
     }
 }

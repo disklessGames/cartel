@@ -21,8 +21,8 @@ class GameTests: XCTestCase {
     
         sut.prepareGame()
         
-        XCTAssertEqual(sut.board.topCardAt(x: 0, y: 0)?.type, CardType.road)
-        XCTAssertEqual(sut.board.topCardAt(x: 0, y: 1)?.type, CardType.road)
+        XCTAssertEqual(sut.board.cards(at: 0)?.last?.type, CardType.road)
+        XCTAssertEqual(sut.board.cards(at: 1)?.last?.type, CardType.road)
     }
     
     func testStartGame_Shuffles() {

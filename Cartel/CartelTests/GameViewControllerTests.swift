@@ -13,7 +13,7 @@ class GameViewControllerTests: XCTestCase {
             return
         }
         sut.handCollectionView = collectionView
-        sut.cityCollectionView = collectionView
+        sut.cityCollectionView = CityCollectionView(frame: CGRect.null, collectionViewLayout: UICollectionViewFlowLayout())
         sut.game = Game()
         sut.bankRollButton = UIButton()
 

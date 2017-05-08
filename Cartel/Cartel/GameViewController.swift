@@ -5,7 +5,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate {
     
     @IBOutlet var bankRollButton: UIButton!
     @IBOutlet var handCollectionView: UICollectionView!
-    @IBOutlet weak var cityCollectionView: UICollectionView!
+    @IBOutlet weak var cityCollectionView: CityCollectionView!
     
     var game = Game() {
         didSet {
@@ -17,7 +17,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate {
             handCollectionView?.dataSource = handData
         }
     }
-    var boardData: BoardData? {
+    var boardData = BoardData() {
         didSet {
             cityCollectionView.dataSource = boardData
         }
@@ -28,6 +28,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        cityCollectionView.dataSource = boardData
         handData = HandDataSource(player: game.currentPlayer)
         print("will appear")
     }
@@ -78,9 +79,10 @@ class GameViewController: UIViewController, UICollectionViewDelegate {
 extension GameViewController {
     
     fileprivate func play(_ movingCard: DraggableCard, at point: CGPoint) {
-        if self.cityCollectionView.frame.contains(point) {
-            self.boardData?.playCity(x: 0, y: 0, card: movingCard.card)
+        if let index = self.cityCollectionView.contains(point: point) {
+            self.boardData.play(card: movingCard.card, at: index.row )
             self.cityCollectionView.reloadData()
+            movingCard.removeFromSuperview()
         } else {
             self.handData?.add(card: movingCard.card)
             self.handCollectionView.reloadData()
