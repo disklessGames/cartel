@@ -1,13 +1,32 @@
 
 import UIKit
 
-class HandDataSource: NSObject, UICollectionViewDataSource {
+class HandDataSource: NSObject {
 
-    var player: Player
+    fileprivate var player: Player
     
     init(player: Player) {
         self.player = player
         super.init()
+    }
+    
+    func add(card: Card) {
+        player.add(card: card)
+    }
+    
+    func playCard(at index: Int) -> Card? {
+        return player.playCard(at: index)
+    }
+    
+    func swop(_ first: Int, _ second: Int) {
+        player.swop(first, second)
+    }
+}
+
+extension HandDataSource: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+//        swop(sourceIndexPath.item, destinationIndexPath.item)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -25,12 +44,8 @@ class HandDataSource: NSObject, UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1;
     }
-
-    func add(card: Card) {
-        player.add(card: card)
-    }
     
-    func playCard(at index: Int) -> Card? {
-        return player.playCard(at: index)
+    func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
+        return true
     }
 }

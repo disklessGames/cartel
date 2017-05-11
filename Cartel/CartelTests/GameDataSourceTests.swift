@@ -4,32 +4,46 @@ import XCTest
 
 class HandDataSourceTests: XCTestCase {
 
-    let sut = HandDataSource(player: Player(name: "me"))
+    var sut: HandDataSource!
     let cv = TestableCollectionView(frame: CGRect.null, collectionViewLayout: UICollectionViewFlowLayout())
+    let player = Player(name: "Me")
     
     override func setUp() {
         super.setUp()
-        let player = Player(name: "Me")
-        player.add(card: Card(.road))
-        sut.player = player
+        sut = HandDataSource(player: player)
     }
 
     func testNumberOfSections() {
         
         XCTAssertEqual(sut.numberOfSections(in: cv), 1)
     }
+
     func testNumberOfItems() {
         
+        sut.add(card: Card(.road))
+
         let items = sut.collectionView(cv, numberOfItemsInSection: 0)
         
         XCTAssertEqual(items, 1)
     }
     
     func testCellForItem() {
-        
+
+        sut.add(card: Card(.road))
+
         let cell = sut.collectionView(cv, cellForItemAt: IndexPath(row: 0, section: 0))
         
         XCTAssertNotNil(cell)
     }
-
+    
+    func testSwop() {
+        
+        sut.add(card: Card(.anniewares))
+        sut.add(card: Card(.snitch))
+        
+        sut.swop(0, 1)
+        
+        XCTAssertEqual(player.peekCard(index: 0)?.pocket, PocketCardType.snitch)
+        XCTAssertEqual(player.peekCard(index: 1)?.building, BuildingCardType.anniewares)
+    }
 }

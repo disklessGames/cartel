@@ -5,18 +5,18 @@ import XCTest
 class GameViewControllerTests: XCTestCase {
     
     var sut = GameViewController(coder: TestableCoder())
-    let collectionView = TestableCollectionView(frame: CGRect.null, collectionViewLayout: UICollectionViewFlowLayout())
+    let hand = TestableHandCollectionView()
     
     override func setUp() {
         super.setUp()
         guard let sut = sut else {
             return
         }
-        sut.handCollectionView = collectionView
+        sut.handCollectionView = hand
         sut.cityCollectionView = CityCollectionView(frame: CGRect.null, collectionViewLayout: UICollectionViewFlowLayout())
         sut.game = Game()
         sut.bankRollButton = UIButton()
-
+        
         _ = sut.loadViewIfNeeded()
     }
     
@@ -24,7 +24,7 @@ class GameViewControllerTests: XCTestCase {
         sut = nil
         super.tearDown()
     }
-
+    
     
     func testViewDidLoad() {
         
@@ -48,7 +48,7 @@ class GameViewControllerTests: XCTestCase {
         sut?.cleanUpDrawAnimation(card, cardView:cardView)
         
         XCTAssertTrue(cardView.removeCalled)
-        XCTAssertTrue(collectionView.reloadCalled)
+        XCTAssertEqual(hand.reloadCalled, 1)
     }
     
     class TestableView : UIView {
@@ -80,5 +80,22 @@ class GameViewControllerTests: XCTestCase {
         override func containsValue(forKey key: String) -> Bool {
             return false
         }
+    }
+}
+
+class TestableHandCollectionView: HandCollectionView {
+    
+    var reloadCalled = 0
+    
+    init() {
+        super.init(frame: CGRect.null, collectionViewLayout: UICollectionViewFlowLayout())
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func reloadData() {
+        reloadCalled += 1
     }
 }

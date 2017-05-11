@@ -3,9 +3,31 @@ import UIKit
 
 class CityCollectionView: UICollectionView {
     
+    override var dataSource: UICollectionViewDataSource? {
+        didSet {
+            delegate = dataSource as? UICollectionViewDelegate
+            if let ds = dataSource {
+                let middle = ds.collectionView(self, numberOfItemsInSection: 0)/2
+                scrollToItem(at: IndexPath(item: middle, section: 0), at: .centeredVertically, animated: false)
+                setZoomScale(0.5, animated: true)
+                print("Datasource set")
+            }
+        }
+    }
+    
+    init(frame: CGRect) {
+        super.init(frame: frame, collectionViewLayout: UICollectionViewFlowLayout())
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     func contains(point: CGPoint) -> IndexPath? {
         if frame.contains(point) {
-            return indexPathForItem(at: point)
+            let actualPoint = CGPoint(x: point.x + contentOffset.x,
+                                      y: point.y + contentOffset.y)
+            return indexPathForItem(at: actualPoint)
         } else {
             return nil
         }

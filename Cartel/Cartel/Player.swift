@@ -31,4 +31,9 @@ class Player {
         }
         return nil
     }
+    
+    func swop(_ first: Int, _ second: Int) {
+        let temp = hand.remove(at: first)
+        hand.insert(temp, at: second)
+    }
 }

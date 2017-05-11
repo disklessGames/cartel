@@ -112,7 +112,7 @@ class Card: NSObject {
         if let pocket = pocket {
             return pocket.image
         }
-        return UIImage(named: "CardBack.png")!
+        return UIImage()
     }
     var building: BuildingCardType?
     var road: RoadCardType?
