@@ -97,7 +97,7 @@ enum BuildingCardType {
 class Card: NSObject {
     
     static let smallSize = CGSize(width: 100, height: 150)
-    static let bigSize = CGSize(width: 150, height: 225)
+    static let bigSize = CGSize(width: 300, height: 450)
 
     var type: CardType
     var name = "None"
@@ -125,7 +125,6 @@ class Card: NSObject {
     convenience init(_ building: BuildingCardType) {
         self.init(.building)
         self.building = building
-        //        self.init(.building)
     }
     
     convenience init(_ road: RoadCardType) {

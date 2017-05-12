@@ -25,10 +25,6 @@ class HandDataSource: NSObject {
 
 extension HandDataSource: UICollectionViewDataSource {
     
-    func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-//        swop(sourceIndexPath.item, destinationIndexPath.item)
-    }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return player.handSize
     }

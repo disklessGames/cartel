@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -26,7 +25,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" maximumZoomScale="3" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Iwd-Ht-yjx" customClass="CityCollectionView" customModule="Cartel" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="494"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0bx-yw-DaL">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="0bx-yw-DaL">
                                     <size key="itemSize" width="100" height="150"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -51,6 +50,7 @@
                                                 </label>
                                             </subviews>
                                         </view>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="3HQ-2G-Ump" secondAttribute="trailing" id="19o-3c-O25"/>
                                             <constraint firstItem="PDF-yN-iQr" firstAttribute="centerX" secondItem="3HQ-2G-Ump" secondAttribute="centerX" id="Dt3-MU-PJp"/>
@@ -67,32 +67,6 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d0t-2D-Iec">
-                                <rect key="frame" x="291" y="20" width="68" height="61"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="61" id="5m7-ND-1Me"/>
-                                    <constraint firstAttribute="width" constant="68" id="IRe-55-Cjo"/>
-                                </constraints>
-                                <state key="normal" title="Exit">
-                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="exit:" destination="SRQ-4e-qsx" eventType="touchUpInside" id="dFt-M1-tdi"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DAN-wo-5Fz">
-                                <rect key="frame" x="16" y="20" width="100" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="0AG-gX-Rhc"/>
-                                    <constraint firstAttribute="height" constant="150" id="LVb-4F-YcK"/>
-                                </constraints>
-                                <state key="normal" title="Button" image="CardBack">
-                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="drawCard:" destination="SRQ-4e-qsx" eventType="touchUpInside" id="mQp-Hd-VsS"/>
-                                </connections>
-                            </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Eiq-RY-8ya" customClass="HandCollectionView" customModule="Cartel" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="494" width="375" height="173"/>
                                 <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -136,16 +110,30 @@
                                     <outlet property="delegate" destination="SRQ-4e-qsx" id="33c-tD-6og"/>
                                 </connections>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OdR-Oe-ceC">
-                                <rect key="frame" x="254" y="407" width="83" height="50"/>
-                                <color key="backgroundColor" red="0.18614366319444445" green="0.32288953993055558" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d0t-2D-Iec">
+                                <rect key="frame" x="291" y="20" width="68" height="61"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="83" id="PhC-ge-bV2"/>
-                                    <constraint firstAttribute="width" secondItem="OdR-Oe-ceC" secondAttribute="height" multiplier="83:50" id="sbV-QO-dLv"/>
+                                    <constraint firstAttribute="height" constant="61" id="5m7-ND-1Me"/>
+                                    <constraint firstAttribute="width" constant="68" id="IRe-55-Cjo"/>
                                 </constraints>
-                                <state key="normal" title="DONE"/>
+                                <state key="normal" title="Exit">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
-                                    <action selector="drawCard:" destination="SRQ-4e-qsx" eventType="touchUpInside" id="rfE-pZ-T7N"/>
+                                    <action selector="exit:" destination="SRQ-4e-qsx" eventType="touchUpInside" id="dFt-M1-tdi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DAN-wo-5Fz">
+                                <rect key="frame" x="259" y="497" width="100" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="0AG-gX-Rhc"/>
+                                    <constraint firstAttribute="height" constant="150" id="LVb-4F-YcK"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="CardBack">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="drawCard:" destination="SRQ-4e-qsx" eventType="touchUpInside" id="mQp-Hd-VsS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -153,16 +141,14 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Iwd-Ht-yjx" secondAttribute="trailing" id="EhI-b0-T2l"/>
-                            <constraint firstItem="Eiq-RY-8ya" firstAttribute="top" secondItem="OdR-Oe-ceC" secondAttribute="bottom" constant="37" id="IZ5-eN-dm4"/>
-                            <constraint firstItem="DAN-wo-5Fz" firstAttribute="leading" secondItem="van-r5-EEj" secondAttribute="leadingMargin" id="L6x-EM-hcq"/>
                             <constraint firstItem="Iwd-Ht-yjx" firstAttribute="leading" secondItem="van-r5-EEj" secondAttribute="leading" id="LKA-hl-r6h"/>
-                            <constraint firstItem="DAN-wo-5Fz" firstAttribute="top" secondItem="ZrX-Ex-Ima" secondAttribute="bottom" id="Nr2-Eq-CkQ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="OdR-Oe-ceC" secondAttribute="trailing" constant="22" id="PLd-3J-hmZ"/>
                             <constraint firstItem="Iwd-Ht-yjx" firstAttribute="top" secondItem="van-r5-EEj" secondAttribute="top" id="RH6-rh-gdN"/>
+                            <constraint firstItem="1zx-6C-aRf" firstAttribute="top" secondItem="DAN-wo-5Fz" secondAttribute="bottom" constant="20" id="Rbp-7f-PUI"/>
                             <constraint firstItem="Eiq-RY-8ya" firstAttribute="leading" secondItem="van-r5-EEj" secondAttribute="leading" id="dnb-LS-D3m"/>
                             <constraint firstItem="Iwd-Ht-yjx" firstAttribute="height" secondItem="van-r5-EEj" secondAttribute="height" constant="-173" id="eep-kk-qOO"/>
                             <constraint firstAttribute="trailing" secondItem="Eiq-RY-8ya" secondAttribute="trailing" id="jK5-dt-oss"/>
                             <constraint firstItem="1zx-6C-aRf" firstAttribute="top" secondItem="Eiq-RY-8ya" secondAttribute="bottom" id="m7J-nT-Qw0"/>
+                            <constraint firstItem="DAN-wo-5Fz" firstAttribute="trailing" secondItem="van-r5-EEj" secondAttribute="trailingMargin" id="omN-ej-LVp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="d0t-2D-Iec" secondAttribute="trailing" id="uXS-nG-29c"/>
                             <constraint firstItem="Eiq-RY-8ya" firstAttribute="top" secondItem="Iwd-Ht-yjx" secondAttribute="bottom" id="wtt-9b-pbR"/>
                             <constraint firstItem="d0t-2D-Iec" firstAttribute="top" secondItem="ZrX-Ex-Ima" secondAttribute="bottom" id="x0T-J4-Wwz"/>
@@ -181,8 +167,8 @@
     </scenes>
     <resources>
         <image name="BuildingAnnie.png" width="213" height="312"/>
-        <image name="BuildingShelfCorp" width="200" height="300"/>
-        <image name="CardBack" width="213" height="314"/>
+        <image name="BuildingShelfCorp" width="560" height="810"/>
+        <image name="CardBack" width="564" height="824"/>
     </resources>
     <color key="tintColor" red="1" green="0.64396158854166663" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

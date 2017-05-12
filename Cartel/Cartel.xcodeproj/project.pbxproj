@@ -11,12 +11,12 @@
 		57014AEB1DDBA16700BC53C1 /* CardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57014AEA1DDBA16700BC53C1 /* CardTests.swift */; };
 		57014AED1DDBB82A00BC53C1 /* HandCollectionViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57014AEC1DDBB82A00BC53C1 /* HandCollectionViewTests.swift */; };
 		57014AF01DDBB8C800BC53C1 /* HandCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57014AEF1DDBB8C800BC53C1 /* HandCollectionView.swift */; };
-		57014AF21DDBB8E600BC53C1 /* CityCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57014AF11DDBB8E600BC53C1 /* CityCollectionView.swift */; };
+		57014AF21DDBB8E600BC53C1 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57014AF11DDBB8E600BC53C1 /* City.swift */; };
 		57014AF61DDBB93700BC53C1 /* CityCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57014AF51DDBB93700BC53C1 /* CityCollectionView.swift */; };
 		5701C88C1DD70B5F00B484F8 /* DraggableCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5701C88B1DD70B5F00B484F8 /* DraggableCardTests.swift */; };
 		5701C88E1DD7118E00B484F8 /* PlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5701C88D1DD7118E00B484F8 /* PlayerTests.swift */; };
 		5701C8901DD7169200B484F8 /* GameViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5701C88F1DD7169200B484F8 /* GameViewControllerTests.swift */; };
-		5701C8921DD73A5300B484F8 /* GameDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5701C8911DD73A5300B484F8 /* GameDataSource.swift */; };
+		5701C8921DD73A5300B484F8 /* HandDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5701C8911DD73A5300B484F8 /* HandDataSource.swift */; };
 		5701C8941DD73C1600B484F8 /* GameDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5701C8931DD73C1600B484F8 /* GameDataSourceTests.swift */; };
 		570F9A3F19ADDE3900FC9731 /* DraggableCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570F9A3E19ADDE3900FC9731 /* DraggableCard.swift */; };
 		5714DC581994B6A800065908 /* BankrollTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5714DC571994B6A800065908 /* BankrollTests.swift */; };
@@ -31,6 +31,7 @@
 		577385E919925E87006BF33B /* RoadCardStraight.png in Resources */ = {isa = PBXBuildFile; fileRef = 577385E519925E87006BF33B /* RoadCardStraight.png */; };
 		577385EA19925E87006BF33B /* RoadCardTJunction.png in Resources */ = {isa = PBXBuildFile; fileRef = 577385E619925E87006BF33B /* RoadCardTJunction.png */; };
 		577385F2199267AA006BF33B /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577385F1199267AA006BF33B /* CardCell.swift */; };
+		577AE4721EC517300010CD3F /* CityDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577AE4711EC517300010CD3F /* CityDataSource.swift */; };
 		577FC229198A803D00A9AB52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577FC228198A803D00A9AB52 /* AppDelegate.swift */; };
 		577FC231198A803D00A9AB52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 577FC22F198A803D00A9AB52 /* Main.storyboard */; };
 		577FC233198A803D00A9AB52 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 577FC232198A803D00A9AB52 /* Images.xcassets */; };
@@ -68,12 +69,12 @@
 		57014AEA1DDBA16700BC53C1 /* CardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTests.swift; sourceTree = "<group>"; };
 		57014AEC1DDBB82A00BC53C1 /* HandCollectionViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandCollectionViewTests.swift; sourceTree = "<group>"; };
 		57014AEF1DDBB8C800BC53C1 /* HandCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandCollectionView.swift; sourceTree = "<group>"; };
-		57014AF11DDBB8E600BC53C1 /* CityCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityCollectionView.swift; sourceTree = "<group>"; };
+		57014AF11DDBB8E600BC53C1 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		57014AF51DDBB93700BC53C1 /* CityCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityCollectionView.swift; sourceTree = "<group>"; };
 		5701C88B1DD70B5F00B484F8 /* DraggableCardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableCardTests.swift; sourceTree = "<group>"; };
 		5701C88D1DD7118E00B484F8 /* PlayerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTests.swift; sourceTree = "<group>"; };
 		5701C88F1DD7169200B484F8 /* GameViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewControllerTests.swift; sourceTree = "<group>"; };
-		5701C8911DD73A5300B484F8 /* GameDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameDataSource.swift; sourceTree = "<group>"; };
+		5701C8911DD73A5300B484F8 /* HandDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandDataSource.swift; sourceTree = "<group>"; };
 		5701C8931DD73C1600B484F8 /* GameDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameDataSourceTests.swift; sourceTree = "<group>"; };
 		570F9A3E19ADDE3900FC9731 /* DraggableCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableCard.swift; sourceTree = "<group>"; };
 		5714DC571994B6A800065908 /* BankrollTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankrollTests.swift; sourceTree = "<group>"; };
@@ -88,6 +89,7 @@
 		577385E519925E87006BF33B /* RoadCardStraight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RoadCardStraight.png; sourceTree = "<group>"; };
 		577385E619925E87006BF33B /* RoadCardTJunction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RoadCardTJunction.png; sourceTree = "<group>"; };
 		577385F1199267AA006BF33B /* CardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
+		577AE4711EC517300010CD3F /* CityDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityDataSource.swift; sourceTree = "<group>"; };
 		577FC223198A803D00A9AB52 /* Cartel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cartel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		577FC227198A803D00A9AB52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		577FC228198A803D00A9AB52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -122,9 +124,8 @@
 			isa = PBXGroup;
 			children = (
 				577385F1199267AA006BF33B /* CardCell.swift */,
-				57014AEF1DDBB8C800BC53C1 /* HandCollectionView.swift */,
-				57014AF11DDBB8E600BC53C1 /* CityCollectionView.swift */,
-				57357FE31A20D42D0089B018 /* BoardData.swift */,
+				57014AF11DDBB8E600BC53C1 /* City.swift */,
+				577AE4711EC517300010CD3F /* CityDataSource.swift */,
 			);
 			name = Board;
 			sourceTree = "<group>";
@@ -140,11 +141,20 @@
 		577385EF199260FB006BF33B /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				577AE4731EC5957F0010CD3F /* Hand */,
 				57014AEE1DDBB8A000BC53C1 /* Board */,
 				573D187B199382C6007DD674 /* GameViewController.swift */,
-				5701C8911DD73A5300B484F8 /* GameDataSource.swift */,
 			);
 			name = Game;
+			sourceTree = "<group>";
+		};
+		577AE4731EC5957F0010CD3F /* Hand */ = {
+			isa = PBXGroup;
+			children = (
+				57014AEF1DDBB8C800BC53C1 /* HandCollectionView.swift */,
+				5701C8911DD73A5300B484F8 /* HandDataSource.swift */,
+			);
+			name = Hand;
 			sourceTree = "<group>";
 		};
 		577FC21A198A803D00A9AB52 = {
@@ -228,6 +238,7 @@
 		577FC24B198A819600A9AB52 /* Data Objects */ = {
 			isa = PBXGroup;
 			children = (
+				57357FE31A20D42D0089B018 /* BoardData.swift */,
 				577FC24C198A81A900A9AB52 /* Bankroll.swift */,
 				574CAE111990D8DC00C86588 /* Card.swift */,
 				574CAE1E1991049B00C86588 /* Player.swift */,
@@ -376,7 +387,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5701C8921DD73A5300B484F8 /* GameDataSource.swift in Sources */,
+				577AE4721EC517300010CD3F /* CityDataSource.swift in Sources */,
+				5701C8921DD73A5300B484F8 /* HandDataSource.swift in Sources */,
 				57014AF01DDBB8C800BC53C1 /* HandCollectionView.swift in Sources */,
 				570F9A3F19ADDE3900FC9731 /* DraggableCard.swift in Sources */,
 				574CAE121990D8DC00C86588 /* Card.swift in Sources */,
@@ -387,7 +399,7 @@
 				574CAE1F1991049B00C86588 /* Player.swift in Sources */,
 				577385F2199267AA006BF33B /* CardCell.swift in Sources */,
 				577FC24D198A81A900A9AB52 /* Bankroll.swift in Sources */,
-				57014AF21DDBB8E600BC53C1 /* CityCollectionView.swift in Sources */,
+				57014AF21DDBB8E600BC53C1 /* City.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,7 +550,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 56XX9JASG7;
 				INFOPLIST_FILE = Cartel/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-Xfrontend -debug-time-function-bodies";
 				PRODUCT_BUNDLE_IDENTIFIER = com.disklessgames.cartel;
@@ -559,7 +571,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 56XX9JASG7;
 				INFOPLIST_FILE = Cartel/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-Xfrontend -debug-time-function-bodies";
 				PRODUCT_BUNDLE_IDENTIFIER = com.disklessgames.cartel;

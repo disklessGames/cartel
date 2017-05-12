@@ -2,17 +2,17 @@
 import UIKit
 
 class DraggableCard: UIImageView {
-    var dragCenterOffset = CGPoint(x: 0, y: 0)
     var card: Card
-    var shrinkTimer: Timer?
-    var dropCard: ((CGPoint) -> Void)?
+    var dropCard: ((CGPoint) -> Void)!
+    var cancel: (() -> Void)!
+    var hasMoved = false
     
     init(_ card: Card) {
         self.card = card
         super.init(image: card.image)
         
         isUserInteractionEnabled = true
-        enlarge()
+        animatedEnlarge()
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -20,45 +20,40 @@ class DraggableCard: UIImageView {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        enlarge()
+        animatedEnlarge()
         super.touchesBegan(touches, with: event)
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
             let location = touch.location(in: superview?.window)
-            enlarge()
-            startShrinkTimer()
-            UIView.animate(withDuration: 0.4) {
-                            self.center = CGPoint(x: location.x,
-                                                  y: location.y)
+            animatedShrink()
+            hasMoved = true
+            UIView.animate(withDuration: 0.2) {
+                self.center = CGPoint(x: location.x,
+                                      y: location.y)
             }
         }
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        // TODO: implement card drop
-        // check if destination valid
-        //  add to new position
-        // else return to hand
         super.touchesEnded(touches, with: event)
         shrink()
-        let offset = dragCenterOffset
-        
-        let location = touches.first!.location(in: superview)
-        dropCard?(location)
-        center = CGPoint(x: location.x + offset.x,
-                         y: location.y + offset.y)
-    }
-    
-    private func startShrinkTimer() {
-        shrinkTimer?.invalidate()
-        shrinkTimer = nil
-        shrinkTimer = Timer.scheduledTimer(withTimeInterval: 1,
-                                           repeats: false) { [weak self] (timer) in
-                                self?.shrink()
+
+        if hasMoved {
+            let location = touches.first!.location(in: superview)
+            dropCard?(location)
+        } else {
+            cancel()
         }
     }
+    
+    private func animatedShrink() {
+        UIView.animate(withDuration: 0.3) {
+            self.shrink()
+        }
+    }
+    
     private func shrink() {
         let oldCenter = center
         self.frame.size = Card.smallSize
@@ -67,6 +62,12 @@ class DraggableCard: UIImageView {
         layer.shadowOffset = CGSize(width: 0, height: 3)
         layer.shadowOpacity = 0.5
         layer.shadowRadius = 2
+    }
+    
+    private func animatedEnlarge() {
+        UIView.animate(withDuration: 0.1) {
+            self.enlarge()
+        }
     }
     
     private func enlarge() {

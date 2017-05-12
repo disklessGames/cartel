@@ -6,12 +6,6 @@ class CityCollectionView: UICollectionView {
     override var dataSource: UICollectionViewDataSource? {
         didSet {
             delegate = dataSource as? UICollectionViewDelegate
-            if let ds = dataSource {
-                let middle = ds.collectionView(self, numberOfItemsInSection: 0)/2
-                scrollToItem(at: IndexPath(item: middle, section: 0), at: .centeredVertically, animated: false)
-                setZoomScale(0.5, animated: true)
-                print("Datasource set")
-            }
         }
     }
     
@@ -21,6 +15,17 @@ class CityCollectionView: UICollectionView {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        backgroundColor = .lightGray
+    }
+    
+    func resetView() {
+        if let ds = dataSource {
+            let middle = ds.collectionView(self, numberOfItemsInSection: 0)/2
+            
+            scrollToItem(at: IndexPath(item: middle, section: 0), at: .centeredVertically, animated: false)
+            setZoomScale(0.5, animated: true)
+            print("Datasource set")
+        }
     }
     
     func contains(point: CGPoint) -> IndexPath? {

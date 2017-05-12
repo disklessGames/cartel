@@ -23,7 +23,6 @@ class Game {
     }
     
     func prepareGame() {
-        board.prepareForNewGame()
         shuffle()
         deal()
     }

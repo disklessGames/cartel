@@ -6,14 +6,13 @@ class GameViewController: UIViewController, UICollectionViewDelegate {
     @IBOutlet var bankRollButton: UIButton!
     @IBOutlet var handCollectionView: HandCollectionView!
     @IBOutlet weak var cityCollectionView: CityCollectionView!
-    var longPressGesture: UILongPressGestureRecognizer!
     var movingIndexPath: IndexPath?
     
     var game: Game! {
         didSet {
             handData = HandDataSource(player: game.currentPlayer)
             boardData = BoardData()
-
+            
         }
     }
     var handData: HandDataSource? {
@@ -31,18 +30,13 @@ class GameViewController: UIViewController, UICollectionViewDelegate {
         super.init(coder: aDecoder)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongGesture))
-        handCollectionView.addGestureRecognizer(longPressGesture)
-
+    override func viewWillAppear(_ animated: Bool) {
         game = Game()
         game.prepareGame()
-
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
+        cityCollectionView.resetView()
     }
     
     @IBAction func exit(_ sender: AnyObject) {
@@ -52,7 +46,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate {
     
     @IBAction func drawCard(_ sender: AnyObject) {
         if let cardDrawn = game.draw() {
-            self.playerDraw(cardDrawn)
+            self.draw(cardDrawn)
         } else {
             print("No more cards !")
         }
@@ -73,50 +67,22 @@ class GameViewController: UIViewController, UICollectionViewDelegate {
         if let card = handData?.playCard(at: (indexPath as NSIndexPath).row) {
             
             let floater = DraggableCard(card)
-            floater.dropCard = { [unowned self] (point) in
+            floater.cancel = {
+                self.handData?.add(card: card)
+                collectionView.reloadData()
+                floater.removeFromSuperview()
+            }
+            floater.dropCard = { point in
                 self.play(floater, at: point)
             }
             floater.center = handCollectionView.convert(handCollectionView.cellForItem(at: indexPath)!.center, to: view)
             
+            UIView.animate(withDuration: 0.3, animations: {
+                floater.center = self.view.center
+            })
             view.addSubview(floater)
             handCollectionView.reloadData()
         }
-    }
-    
-    
-    func handleLongGesture(gesture: UILongPressGestureRecognizer) {
-        
-        let location = gesture.location(in: handCollectionView)
-        movingIndexPath = handCollectionView.indexPathForItem(at: location)
-        switch(gesture.state) {
-        case .began:
-            guard let indexPath = movingIndexPath else { break }
-            //            setEditing(true, animated: true)
-            let enabled = handCollectionView.beginInteractiveMovementForItem(at: indexPath)
-            print("Start : \(String(describing: movingIndexPath?.description))")
-            if !enabled {
-                print("Whyy ??????")
-            }
-            //            pickedUpCell()?.stopWiggling()
-        //            animatePickingUpCell(pickedUpCell())
-        case .changed:
-            print("Change : \(String(describing: movingIndexPath?.description))")
-            handCollectionView.updateInteractiveMovementTargetPosition(location)
-        case .ended:
-            print("End: \(String(describing: movingIndexPath?.description))")
-            handCollectionView.endInteractiveMovement()
-            //            animatePuttingDownCell(pickedUpCell())
-            movingIndexPath = nil
-        default:
-            handCollectionView.cancelInteractiveMovement()
-            //            animatePuttingDownCell(pickedUpCell())
-            movingIndexPath = nil
-        }
-    }
-    
-    override func setEditing(_ editing: Bool, animated: Bool) {
-        super.setEditing(editing, animated: true)
-        //        startWigglingAllVisibleCells()
     }
 }
 
@@ -136,12 +102,12 @@ extension GameViewController {
         }
     }
     
-    fileprivate func playerDraw(_ cardDrawn: Card) {
+    fileprivate func draw(_ cardDrawn: Card) {
         
         let cardDrawnView = UIImageView(image: cardDrawn.image)
         cardDrawnView.frame.size = Card.bigSize
-        let duration = 1.0
-        let delay = 0.0
+        let duration = 0.5
+        let delay = 1.0
         let options = UIViewAnimationOptions()
         let damping = CGFloat(0.7)
         let velocity = CGFloat(0.7)
@@ -149,11 +115,13 @@ extension GameViewController {
         cardDrawnView.center = bankRollButton.center
         view.addSubview(cardDrawnView)
         
-        UIView.animate(withDuration: duration, delay: delay, usingSpringWithDamping: damping, initialSpringVelocity: 0.7, options: options, animations: {
-            
-            let center = self.view.convert(self.view.center, from: self.view.superview)
-            cardDrawnView.center = center
-            
+        UIView.animate(withDuration: duration,
+                               delay: 0, usingSpringWithDamping: damping, initialSpringVelocity: 0.7, options: options,
+            animations: {
+                
+                let center = self.view.convert(self.view.center, from: self.view.superview)
+                cardDrawnView.center = center
+                
         }, completion: { finished in
             cardDrawnView.image = cardDrawn.image
             UIView.animate(withDuration: duration, delay: delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: options, animations: {
