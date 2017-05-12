@@ -19,6 +19,7 @@
 		5701C8921DD73A5300B484F8 /* HandDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5701C8911DD73A5300B484F8 /* HandDataSource.swift */; };
 		5701C8941DD73C1600B484F8 /* GameDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5701C8931DD73C1600B484F8 /* GameDataSourceTests.swift */; };
 		570F9A3F19ADDE3900FC9731 /* DraggableCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570F9A3E19ADDE3900FC9731 /* DraggableCard.swift */; };
+		5712AF241EC5B12E00C31AAF /* CityLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5712AF231EC5B12E00C31AAF /* CityLayout.swift */; };
 		5714DC581994B6A800065908 /* BankrollTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5714DC571994B6A800065908 /* BankrollTests.swift */; };
 		571ABC731D3F8C780013B5DF /* BoardCollectionViewDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57357FE11A20D3820089B018 /* BoardCollectionViewDataSourceTests.swift */; };
 		57357FE41A20D42D0089B018 /* BoardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57357FE31A20D42D0089B018 /* BoardData.swift */; };
@@ -77,6 +78,7 @@
 		5701C8911DD73A5300B484F8 /* HandDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandDataSource.swift; sourceTree = "<group>"; };
 		5701C8931DD73C1600B484F8 /* GameDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameDataSourceTests.swift; sourceTree = "<group>"; };
 		570F9A3E19ADDE3900FC9731 /* DraggableCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableCard.swift; sourceTree = "<group>"; };
+		5712AF231EC5B12E00C31AAF /* CityLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityLayout.swift; sourceTree = "<group>"; };
 		5714DC571994B6A800065908 /* BankrollTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankrollTests.swift; sourceTree = "<group>"; };
 		57357FE11A20D3820089B018 /* BoardCollectionViewDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardCollectionViewDataSourceTests.swift; sourceTree = "<group>"; };
 		57357FE31A20D42D0089B018 /* BoardData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardData.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				577385F1199267AA006BF33B /* CardCell.swift */,
 				57014AF11DDBB8E600BC53C1 /* City.swift */,
 				577AE4711EC517300010CD3F /* CityDataSource.swift */,
+				5712AF231EC5B12E00C31AAF /* CityLayout.swift */,
 			);
 			name = Board;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				570F9A3F19ADDE3900FC9731 /* DraggableCard.swift in Sources */,
 				574CAE121990D8DC00C86588 /* Card.swift in Sources */,
 				57357FE41A20D42D0089B018 /* BoardData.swift in Sources */,
+				5712AF241EC5B12E00C31AAF /* CityLayout.swift in Sources */,
 				577FC229198A803D00A9AB52 /* AppDelegate.swift in Sources */,
 				577FC24F198AA0D800A9AB52 /* Game.swift in Sources */,
 				573D187C199382C6007DD674 /* GameViewController.swift in Sources */,

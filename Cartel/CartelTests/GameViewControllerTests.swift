@@ -4,40 +4,38 @@ import XCTest
 
 class GameViewControllerTests: XCTestCase {
     
-    var sut = GameViewController(coder: TestableCoder())
-    let hand = TestableHandCollectionView()
+    var sut = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! GameViewController
+    let hand = TestableHandCollectionView(frame: CGRect(x: 0, y: 0, width: 10, height: 10),
+                                          collectionViewLayout: UICollectionViewFlowLayout())
     
     override func setUp() {
         super.setUp()
-        guard let sut = sut else {
-            return
-        }
-        sut.handCollectionView = hand
-        sut.cityCollectionView = CityCollectionView(frame: CGRect.null, collectionViewLayout: UICollectionViewFlowLayout())
+
+        _ = sut.loadViewIfNeeded()
+
         sut.game = Game()
         sut.bankRollButton = UIButton()
+        sut.handCollectionView = hand
         
-        _ = sut.loadViewIfNeeded()
     }
     
     override func tearDown() {
-        sut = nil
         super.tearDown()
     }
     
     
     func testViewDidLoad() {
         
-        sut?.viewDidLoad()
+        sut.viewDidLoad()
         
-        XCTAssertNotNil(sut?.handData)
+        XCTAssertNotNil(sut.handData)
     }
     
     func testDrawCard() {
         
-        sut?.drawCard(sut!.bankRollButton)
+        sut.drawCard(sut.bankRollButton)
         
-        XCTAssertEqual(sut?.cardsLeft(), 72)
+        XCTAssertEqual(sut.cardsLeft(), 72)
     }
     
     func testCleanupDrawAnimation() {
@@ -45,7 +43,7 @@ class GameViewControllerTests: XCTestCase {
         let card = Card(.road)
         let cardView = TestableView()
         
-        sut?.cleanUpDrawAnimation(card, cardView:cardView)
+        sut.cleanUpDrawAnimation(card, cardView:cardView)
         
         XCTAssertTrue(cardView.removeCalled)
         XCTAssertEqual(hand.reloadCalled, 1)
@@ -86,14 +84,6 @@ class GameViewControllerTests: XCTestCase {
 class TestableHandCollectionView: HandCollectionView {
     
     var reloadCalled = 0
-    
-    init() {
-        super.init(frame: CGRect.null, collectionViewLayout: UICollectionViewFlowLayout())
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     override func reloadData() {
         reloadCalled += 1

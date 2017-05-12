@@ -15,7 +15,7 @@ class BoardDataTests: XCTestCase {
     }
     
     func testCreate32X32GridOfNone() {
-        for x in 0..<(32 * 32) {
+        for x in 0..<(10 * 10) {
                 XCTAssertNotNil(sut.cards(at: x))
         }
     }
@@ -29,7 +29,7 @@ class BoardDataTests: XCTestCase {
         
         board.playPocket(Card(.captainJuan))
         
-        XCTAssertEqual(board.collectionView(collectionView, numberOfItemsInSection: 0), 1024)
+        XCTAssertEqual(board.collectionView(collectionView, numberOfItemsInSection: 0), 100)
         XCTAssertEqual(board.collectionView(collectionView, numberOfItemsInSection: 1), 1)
     }
     
@@ -62,8 +62,25 @@ class TestableCollectionView: UICollectionView {
     
     override func dequeueReusableCell(withReuseIdentifier identifier: String, for indexPath: IndexPath) -> UICollectionViewCell {
         dequeueCalled = true
-        let cell = CardCell()
-        cell.imageView = DraggableCard(Card(.road))
-        return cell
+        return TestableCell()
     }
+}
+
+class TestableCell: CardCell {
+    
+    private var image = DraggableCard(Card(.none))
+    
+    override var imageView: DraggableCard! {
+        get {
+            return image
+        }
+        set {
+            image = newValue
+        }
+    }
+    
+    override func configure(_ block: [Card], rotation: CGAffineTransform) {
+        
+    }
+    
 }

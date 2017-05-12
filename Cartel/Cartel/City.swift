@@ -15,7 +15,7 @@ class CityCollectionView: UICollectionView {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        backgroundColor = .lightGray
+        backgroundColor = .black
     }
     
     func resetView() {

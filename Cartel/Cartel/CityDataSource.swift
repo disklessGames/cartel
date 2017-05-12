@@ -15,7 +15,8 @@ extension BoardData: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath) as! CardCell
         let block = city[indexPath.row]!
-        cell.configure(block, rotation: cardRotations[indexPath.row])
+        
+        cell.configure(block, rotation: cardRotations[indexPath.row], isPlayable: playableLocation[indexPath.row])
         return cell
     }
     
@@ -27,8 +28,9 @@ extension BoardData: UICollectionViewDataSource {
 extension BoardData: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let height = CGFloat(150)
-        let width = collectionView.frame.width/10
+        let data = collectionView.dataSource as! BoardData
+        let width = (collectionView.frame.width - CGFloat(data.width*5))/CGFloat(data.width)
+        let height = CGFloat(150 * width/100)
         return CGSize(width: width, height: height)
     }
     

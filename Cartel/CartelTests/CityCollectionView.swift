@@ -10,13 +10,6 @@ class CityCollectionViewTests: XCTestCase {
     }
     
     override func tearDown() {
-    
         super.tearDown()
-    }
-    
-    func testCanCreate() {
-    
-        _ = CityCollectionView(frame: CGRect.null, collectionViewLayout: UICollectionViewFlowLayout())
-        
     }
 }

@@ -5,19 +5,45 @@ class CardCell: UICollectionViewCell {
     
     @IBOutlet var imageView : DraggableCard!
     @IBOutlet weak var countLabel: UILabel!
- 
-    func configure(_ block: [Card], rotation: CGAffineTransform) {
+    
+    override func prepareForReuse() {
+        imageView.subviews.forEach {
+            $0.removeFromSuperview()
+        }
+    }
+    
+    func configure(_ block: [Card], rotation: CGAffineTransform, isPlayable: Bool) {
         if let last = block.last {
-            imageView.image = block.last?.image
             if last.type == .road ||
                 last.type == .none {
+                imageView.image = block.last?.image
                 countLabel.text = ""
             } else {
+                imageView.image = block.first?.image
+                showStackedImages(block)
                 countLabel.text = "\(block.count - 1)"
             }
         }
-        layer.borderWidth = 1
-        layer.borderColor = UIColor.darkGray.cgColor
+        if isPlayable {
+            layer.borderWidth = 1
+            layer.borderColor = UIColor.green.cgColor
+        } else {
+            layer.borderWidth = 0
+        }
+        clipsToBounds = false
         imageView.transform = rotation
+    }
+    
+    func showStackedImages(_ cards: [Card]) {
+        for (index, card) in cards.enumerated() {
+            let newLevel = UIImageView(image: card.image)
+            if index > 0 {
+                newLevel.frame = CGRect(x: CGFloat(-12 * (index - 1)),
+                                        y: CGFloat(-20 * (index - 1)),
+                                        width: frame.width,
+                                        height: frame.height)
+                imageView.addSubview(newLevel)
+            }
+        }
     }
 }

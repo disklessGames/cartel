@@ -12,7 +12,6 @@ class GameViewController: UIViewController, UICollectionViewDelegate {
         didSet {
             handData = HandDataSource(player: game.currentPlayer)
             boardData = BoardData()
-            
         }
     }
     var handData: HandDataSource? {
@@ -74,6 +73,8 @@ class GameViewController: UIViewController, UICollectionViewDelegate {
             }
             floater.dropCard = { point in
                 self.play(floater, at: point)
+                self.boardData.setPlayableLocations(for: Card(.none))
+                self.cityCollectionView.reloadData()
             }
             floater.center = handCollectionView.convert(handCollectionView.cellForItem(at: indexPath)!.center, to: view)
             
@@ -81,6 +82,8 @@ class GameViewController: UIViewController, UICollectionViewDelegate {
                 floater.center = self.view.center
             })
             view.addSubview(floater)
+            boardData.setPlayableLocations(for: card)
+            cityCollectionView.reloadData()
             handCollectionView.reloadData()
         }
     }
@@ -92,9 +95,13 @@ extension GameViewController {
     fileprivate func play(_ movingCard: DraggableCard, at point: CGPoint) {
         
         if let index = self.cityCollectionView.contains(point: point) {
-            self.boardData.play(card: movingCard.card, at: index.row )
-            self.cityCollectionView.reloadData()
-            movingCard.removeFromSuperview()
+            if self.boardData.canPlay(card: movingCard.card, at: index.item) {
+                self.boardData.play(card: movingCard.card, at: index.row )
+                self.cityCollectionView.reloadData()
+                movingCard.removeFromSuperview()
+            } else {
+                movingCard.cancel()
+            }
         } else {
             self.handData?.add(card: movingCard.card)
             self.handCollectionView.reloadData()
@@ -116,12 +123,12 @@ extension GameViewController {
         view.addSubview(cardDrawnView)
         
         UIView.animate(withDuration: duration,
-                               delay: 0, usingSpringWithDamping: damping, initialSpringVelocity: 0.7, options: options,
-            animations: {
-                
-                let center = self.view.convert(self.view.center, from: self.view.superview)
-                cardDrawnView.center = center
-                
+                       delay: 0, usingSpringWithDamping: damping, initialSpringVelocity: 0.7, options: options,
+                       animations: {
+                        
+                        let center = self.view.convert(self.view.center, from: self.view.superview)
+                        cardDrawnView.center = center
+                        
         }, completion: { finished in
             cardDrawnView.image = cardDrawn.image
             UIView.animate(withDuration: duration, delay: delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: options, animations: {

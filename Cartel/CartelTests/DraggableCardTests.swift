@@ -10,11 +10,12 @@ class DraggableCardTests: XCTestCase {
     
     override func setUp() {
         sut = DraggableCard(card)
+        
+        sut.cancel = { }
     }
     
     func testCreate() {
         XCTAssertEqual(sut.card, card)
-        XCTAssertEqual(sut.image, card.image)
     }
     
     func testCreateBig() {
@@ -60,7 +61,6 @@ class DraggableCardTests: XCTestCase {
     func testTouchMovedWithOffset() {
         touch.viewLocation = CGPoint(x: 20, y: 20)
         let touches: Set = [touch]
-        sut.dragCenterOffset = CGPoint(x: 5, y: 5)
         
         sut.touchesMoved(touches, with: nil)
         
@@ -68,15 +68,29 @@ class DraggableCardTests: XCTestCase {
         
     }
     
-    func testTouchesEndedDropsCard() {
-
+    func testTouchesEndedDropsCard_IfMoved() {
+        
         let expect = expectation(description: "drop")
         sut.dropCard = { (point) in
             XCTAssertEqual(point, CGPoint(x: 50, y: 100))
             expect.fulfill()
         }
         touch.viewLocation = CGPoint(x: 50, y: 100)
+        sut.hasMoved = true
+        sut.touchesEnded([touch], with: nil)
         
+        waitForExpectations(timeout: 0.1, handler: nil)
+        
+    }
+    
+    func testTouchesEndedCancels_IfNotMoved() {
+        
+        let expect = expectation(description: "drop")
+        sut.cancel = {
+            expect.fulfill()
+        }
+        touch.viewLocation = CGPoint(x: 50, y: 100)
+        sut.hasMoved = false
         sut.touchesEnded([touch], with: nil)
         
         waitForExpectations(timeout: 0.1, handler: nil)
