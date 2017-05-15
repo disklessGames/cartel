@@ -16,7 +16,7 @@ extension BoardData: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath) as! CardCell
         let block = city[indexPath.row]!
         
-        cell.configure(block, rotation: cardRotations[indexPath.row], isPlayable: playableLocation[indexPath.row])
+        cell.configure(block, agents: agents[indexPath.row], rotation: cardRotations[indexPath.row], isPlayable: playableLocation[indexPath.row])
         return cell
     }
     

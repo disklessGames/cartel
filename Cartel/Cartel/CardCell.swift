@@ -12,7 +12,7 @@ class CardCell: UICollectionViewCell {
         }
     }
     
-    func configure(_ block: [Card], rotation: CGAffineTransform, isPlayable: Bool) {
+    func configure(_ block: [Card], agents: Int?, rotation: CGAffineTransform, isPlayable: Bool) {
         if let last = block.last {
             if last.type == .road ||
                 last.type == .none {
@@ -21,7 +21,7 @@ class CardCell: UICollectionViewCell {
             } else {
                 imageView.image = block.first?.image
                 showStackedImages(block)
-                countLabel.text = "\(block.count - 1)"
+                countLabel.text = "\(agents ?? 0)"
             }
         }
         if isPlayable {

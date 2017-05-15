@@ -39,6 +39,7 @@
 		577FC24A198A80F800A9AB52 /* GameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577FC249198A80F800A9AB52 /* GameTests.swift */; };
 		577FC24D198A81A900A9AB52 /* Bankroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577FC24C198A81A900A9AB52 /* Bankroll.swift */; };
 		577FC24F198AA0D800A9AB52 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577FC24E198AA0D800A9AB52 /* Game.swift */; };
+		57B120271EC9856F00C59748 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B120261EC9856F00C59748 /* InputView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,7 @@
 		577FC249198A80F800A9AB52 /* GameTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTests.swift; sourceTree = "<group>"; };
 		577FC24C198A81A900A9AB52 /* Bankroll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bankroll.swift; sourceTree = "<group>"; };
 		577FC24E198AA0D800A9AB52 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		57B120261EC9856F00C59748 /* InputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 				577AE4731EC5957F0010CD3F /* Hand */,
 				57014AEE1DDBB8A000BC53C1 /* Board */,
 				573D187B199382C6007DD674 /* GameViewController.swift */,
+				57B120261EC9856F00C59748 /* InputView.swift */,
 			);
 			name = Game;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				573D187C199382C6007DD674 /* GameViewController.swift in Sources */,
 				574CAE1F1991049B00C86588 /* Player.swift in Sources */,
 				577385F2199267AA006BF33B /* CardCell.swift in Sources */,
+				57B120271EC9856F00C59748 /* InputView.swift in Sources */,
 				577FC24D198A81A900A9AB52 /* Bankroll.swift in Sources */,
 				57014AF21DDBB8E600BC53C1 /* City.swift in Sources */,
 			);
@@ -562,7 +566,7 @@
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -582,7 +586,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

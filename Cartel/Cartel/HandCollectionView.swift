@@ -8,5 +8,11 @@ class HandCollectionView: UICollectionView, UICollectionViewDelegateFlowLayout  
             data.swop(indexPath.item, newIndexPath.item)
         }
     }
+    
+    func contains(point: CGPoint) -> IndexPath? {
+            let actualPoint = CGPoint(x: point.x + contentOffset.x,
+                                      y: point.y + contentOffset.y)
+            return indexPathForItem(at: actualPoint)
+    }
 }
 

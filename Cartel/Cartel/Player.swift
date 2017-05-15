@@ -1,17 +1,19 @@
 typealias Hand = [Card]
 import Foundation
+import UIKit
 
 class Player {
     var name: String
     var handSize: Int {
         return hand.count
     }
+    var color: UIColor
     
+    var hand = Hand()
     
-    private var hand = Hand()
-    
-    init(name: String){
+    init(name: String, color: UIColor){
         self.name = name
+        self.color = color
     }
     
     func add(card: Card) {

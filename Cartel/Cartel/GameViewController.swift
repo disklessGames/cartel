@@ -3,15 +3,16 @@ import UIKit
 
 class GameViewController: UIViewController, UICollectionViewDelegate {
     
+    @IBOutlet weak var gameInputView: InputView!
+    
     @IBOutlet var bankRollButton: UIButton!
     @IBOutlet var handCollectionView: HandCollectionView!
     @IBOutlet weak var cityCollectionView: CityCollectionView!
-    var movingIndexPath: IndexPath?
     
     var game: Game! {
         didSet {
             handData = HandDataSource(player: game.currentPlayer)
-            boardData = BoardData()
+            boardData = BoardData(players: game.numberOfPlayers)
         }
     }
     var handData: HandDataSource? {
@@ -19,7 +20,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate {
             handCollectionView?.dataSource = handData
         }
     }
-    var boardData = BoardData() {
+    var boardData = BoardData(players: 2) {
         didSet {
             cityCollectionView.dataSource = boardData
         }
@@ -32,6 +33,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         game = Game()
         game.prepareGame()
+        gameInputView.gameViewController = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -60,52 +62,33 @@ class GameViewController: UIViewController, UICollectionViewDelegate {
         handData?.add(card: cardDrawn)
         handCollectionView.reloadData()
     }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        if let card = handData?.playCard(at: (indexPath as NSIndexPath).row) {
-            
-            let floater = DraggableCard(card)
-            floater.cancel = {
-                self.handData?.add(card: card)
-                collectionView.reloadData()
-                floater.removeFromSuperview()
-            }
-            floater.dropCard = { point in
-                self.play(floater, at: point)
-                self.boardData.setPlayableLocations(for: Card(.none))
-                self.cityCollectionView.reloadData()
-            }
-            floater.center = handCollectionView.convert(handCollectionView.cellForItem(at: indexPath)!.center, to: view)
-            
-            UIView.animate(withDuration: 0.3, animations: {
-                floater.center = self.view.center
-            })
-            view.addSubview(floater)
-            boardData.setPlayableLocations(for: card)
-            cityCollectionView.reloadData()
-            handCollectionView.reloadData()
-        }
-    }
+
 }
 
 
 extension GameViewController {
     
-    fileprivate func play(_ movingCard: DraggableCard, at point: CGPoint) {
+    func card(at point: CGPoint) -> Card? {
+        if handCollectionView.frame.contains(point),
+            let index = handCollectionView.contains(point: view.convert(point, to: handCollectionView)) {
+            return handData?.playCard(at: index.item)
+        }
+        if let index = cityCollectionView.contains(point: point) {
+            return boardData.getTopCard(at: index)
+        }
+        return nil
+    }
+    
+    func play(card: Card, at point: CGPoint) {
         
         if let index = self.cityCollectionView.contains(point: point) {
-            if self.boardData.canPlay(card: movingCard.card, at: index.item) {
-                self.boardData.play(card: movingCard.card, at: index.row )
+            if self.boardData.canPlay(card: card, at: index.item) {
+                self.boardData.play(card: card, at: index.row, playerId: game.currentPlayerIndex )
                 self.cityCollectionView.reloadData()
-                movingCard.removeFromSuperview()
-            } else {
-                movingCard.cancel()
             }
         } else {
-            self.handData?.add(card: movingCard.card)
+            self.handData?.add(card: card)
             self.handCollectionView.reloadData()
-            movingCard.removeFromSuperview()
         }
     }
     

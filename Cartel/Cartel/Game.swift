@@ -4,8 +4,11 @@ import Foundation
 class Game {
 
     let bankroll = Bankroll()
-    let board = BoardData()
-    var currentPlayer: Player
+    let board = BoardData(players: 2)
+    var currentPlayerIndex = 0
+    var currentPlayer: Player {
+        return players[currentPlayerIndex]
+    }
     var numberOfPlayers: Int {
         return players.count
     }
@@ -13,13 +16,11 @@ class Game {
     private var players: [Player]
     
     init() {
-        self.currentPlayer = Player(name: "Me")
-        self.players = [currentPlayer]
+        self.players = [Player(name: "Me", color: .green), Player(name: "Nemesis", color: .red)]
     }
     
     init(players: [Player]) {
         self.players = players
-        self.currentPlayer = players.first ?? Player(name: "Me")
     }
     
     func prepareGame() {
@@ -51,7 +52,7 @@ class Game {
     
     func beginTurn(){
         if let card = bankroll.drawCard() {
-            currentPlayer.add(card: card)
+            players[currentPlayerIndex].add(card: card)
         }
     }
     
