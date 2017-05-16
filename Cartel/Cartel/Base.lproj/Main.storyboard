@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -63,7 +64,7 @@
                                 </cells>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Eiq-RY-8ya" customClass="HandCollectionView" customModule="Cartel" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="588" width="870" height="180"/>
+                                <rect key="frame" x="0.0" y="588" width="871" height="180"/>
                                 <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="L1m-FI-ug8"/>
@@ -111,6 +112,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d0t-2D-Iec">
                                 <rect key="frame" x="936" y="20" width="68" height="61"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="61" id="5m7-ND-1Me"/>
                                     <constraint firstAttribute="width" constant="68" id="IRe-55-Cjo"/>
@@ -122,11 +124,10 @@
                                     <action selector="exit:" destination="SRQ-4e-qsx" eventType="touchUpInside" id="dFt-M1-tdi"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DAN-wo-5Fz">
-                                <rect key="frame" x="884" y="568" width="120" height="180"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DAN-wo-5Fz">
+                                <rect key="frame" x="885" y="606" width="119" height="144"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="0AG-gX-Rhc"/>
-                                    <constraint firstAttribute="height" constant="180" id="LVb-4F-YcK"/>
+                                    <constraint firstAttribute="width" secondItem="DAN-wo-5Fz" secondAttribute="height" multiplier="33:40" id="7a0-U0-5Ci"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="CardBack">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -140,19 +141,20 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="sS8-Pp-m5N" firstAttribute="centerY" secondItem="van-r5-EEj" secondAttribute="centerY" id="06A-0m-ZxJ"/>
+                            <constraint firstItem="DAN-wo-5Fz" firstAttribute="height" secondItem="Eiq-RY-8ya" secondAttribute="height" multiplier="0.8" id="3Y9-Pv-XV5"/>
                             <constraint firstAttribute="trailing" secondItem="Iwd-Ht-yjx" secondAttribute="trailing" id="EhI-b0-T2l"/>
                             <constraint firstItem="sS8-Pp-m5N" firstAttribute="centerX" secondItem="van-r5-EEj" secondAttribute="centerX" id="Foi-rA-rY0"/>
                             <constraint firstItem="sS8-Pp-m5N" firstAttribute="width" secondItem="van-r5-EEj" secondAttribute="width" id="Fu1-7e-56H"/>
+                            <constraint firstItem="DAN-wo-5Fz" firstAttribute="centerY" secondItem="Eiq-RY-8ya" secondAttribute="centerY" id="Fv0-mq-UJW"/>
+                            <constraint firstItem="Iwd-Ht-yjx" firstAttribute="top" secondItem="van-r5-EEj" secondAttribute="top" id="HaC-gc-DER"/>
                             <constraint firstItem="Iwd-Ht-yjx" firstAttribute="leading" secondItem="van-r5-EEj" secondAttribute="leading" id="LKA-hl-r6h"/>
-                            <constraint firstItem="Iwd-Ht-yjx" firstAttribute="top" secondItem="van-r5-EEj" secondAttribute="top" id="RH6-rh-gdN"/>
-                            <constraint firstItem="1zx-6C-aRf" firstAttribute="top" secondItem="DAN-wo-5Fz" secondAttribute="bottom" constant="20" id="Rbp-7f-PUI"/>
                             <constraint firstItem="DAN-wo-5Fz" firstAttribute="leading" secondItem="Eiq-RY-8ya" secondAttribute="trailing" constant="14" id="UgR-I1-iOg"/>
                             <constraint firstItem="Eiq-RY-8ya" firstAttribute="leading" secondItem="van-r5-EEj" secondAttribute="leading" id="dnb-LS-D3m"/>
+                            <constraint firstItem="Eiq-RY-8ya" firstAttribute="top" secondItem="Iwd-Ht-yjx" secondAttribute="bottom" id="flz-aW-5df"/>
                             <constraint firstItem="1zx-6C-aRf" firstAttribute="top" secondItem="Eiq-RY-8ya" secondAttribute="bottom" id="m7J-nT-Qw0"/>
                             <constraint firstItem="DAN-wo-5Fz" firstAttribute="trailing" secondItem="van-r5-EEj" secondAttribute="trailingMargin" id="omN-ej-LVp"/>
                             <constraint firstItem="sS8-Pp-m5N" firstAttribute="height" secondItem="van-r5-EEj" secondAttribute="height" id="qOj-UI-2mI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="d0t-2D-Iec" secondAttribute="trailing" id="uXS-nG-29c"/>
-                            <constraint firstItem="Eiq-RY-8ya" firstAttribute="top" secondItem="Iwd-Ht-yjx" secondAttribute="bottom" id="wtt-9b-pbR"/>
                             <constraint firstItem="d0t-2D-Iec" firstAttribute="top" secondItem="ZrX-Ex-Ima" secondAttribute="bottom" id="x0T-J4-Wwz"/>
                         </constraints>
                     </view>
@@ -165,13 +167,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zO2-bN-BhG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1141.5999999999999" y="335.98200899550227"/>
+            <point key="canvasLocation" x="1141.40625" y="335.9375"/>
         </scene>
     </scenes>
     <resources>
         <image name="BuildingAnnie.png" width="213" height="312"/>
         <image name="BuildingShelfCorp" width="560" height="810"/>
-        <image name="CardBack" width="564" height="824"/>
+        <image name="CardBack" width="1078" height="1200"/>
     </resources>
     <color key="tintColor" red="1" green="0.64396158854166663" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>
