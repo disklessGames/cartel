@@ -35,7 +35,9 @@ class Player {
     }
     
     func swop(_ first: Int, _ second: Int) {
-        let temp = hand.remove(at: first)
-        hand.insert(temp, at: second)
+        if hand.count > first {
+            let temp = hand.remove(at: first)
+            hand.insert(temp, at: second)
+        }
     }
 }

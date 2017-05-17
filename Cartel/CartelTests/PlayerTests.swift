@@ -4,7 +4,7 @@ import XCTest
 
 class PlayerTests: XCTestCase {
     
-    let sut = Player(name: "tester")
+    let sut = Player(name: "tester", color: .red)
     let card = Card(.road)
     
     func testCreate() {

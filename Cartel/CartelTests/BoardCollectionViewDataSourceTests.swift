@@ -1,10 +1,9 @@
-
 import XCTest
 @testable import Cartel
 
 class BoardDataTests: XCTestCase {
     
-    let sut = BoardData()
+    let sut = BoardData(players: 2)
     let collectionView = TestableCollectionView(frame: CGRect.null, collectionViewLayout: UICollectionViewFlowLayout())
     
     func testNumberOfSections() {
@@ -16,21 +15,21 @@ class BoardDataTests: XCTestCase {
     
     func testCreate32X32GridOfNone() {
         for x in 0..<(10 * 10) {
-                XCTAssertNotNil(sut.cards(at: x))
+            XCTAssertNotNil(sut.cards(at: x))
         }
     }
     
     func testSimplePlay() {
-        let board = BoardData()
+        let board = BoardData(players: 2)
         
         
-        board.play(card: Card(.tJunction), at: 0)
-        board.play(card: Card(.anniewares), at: 1)
+        board.play(card: Card(.tJunction), at: 0, playerId: 0)
+        board.play(card: Card(.anniewares), at: 1, playerId: 0)
         
-        board.playPocket(Card(.captainJuan))
+        board.play(card: Card(.captainJuan), at: 0, playerId: 0)
         
-        XCTAssertEqual(board.collectionView(collectionView, numberOfItemsInSection: 0), 100)
-        XCTAssertEqual(board.collectionView(collectionView, numberOfItemsInSection: 1), 1)
+        XCTAssertEqual(board.city[0]?.last?.road, RoadCardType.tJunction)
+        XCTAssertEqual(board.pocket[0]?.count, 1)
     }
     
     func testPlayStraightRoad() {
@@ -38,8 +37,8 @@ class BoardDataTests: XCTestCase {
         let road = Card(.straight)
         let building = Card(.anniewares)
         
-        sut.play(card: road, at: 0)
-        sut.play(card: building, at: 1)
+        sut.play(card: road, at: 0, playerId: 0)
+        sut.play(card: building, at: 1, playerId: 0)
         
         XCTAssertEqual(sut.cards(at: 0)?.last, road)
         XCTAssertEqual(sut.cards(at: 1)?.last, building)
@@ -49,7 +48,7 @@ class BoardDataTests: XCTestCase {
         
         let road = Card(.straight)
         
-        sut.play(card: road, at: 0)
+        sut.play(card: road, at: 0, playerId: 0)
         
         XCTAssertNotNil(sut.collectionView(collectionView, cellForItemAt: IndexPath(row: 0, section: 0)))
         XCTAssertTrue(collectionView.dequeueCalled)
@@ -79,8 +78,7 @@ class TestableCell: CardCell {
         }
     }
     
-    override func configure(_ block: [Card], rotation: CGAffineTransform) {
+    override func configure(_ block: [Card], agents: Int?, rotation: CGAffineTransform, isPlayable: Bool) {
         
     }
-    
 }

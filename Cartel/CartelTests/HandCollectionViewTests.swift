@@ -5,7 +5,7 @@ import XCTest
 
 class HandCollectionViewTests: XCTestCase {
     
-    let sut = HandCollectionView()
+    let sut = HandCollectionView(frame: CGRect.null, collectionViewLayout: UICollectionViewFlowLayout())
     let data = TestableHandDataSource()
     
     override func setUp() {
@@ -30,8 +30,13 @@ class HandCollectionViewTests: XCTestCase {
 
 class TestableHandDataSource: HandDataSource {
     
-    init() {
-        super.init(player: Player(name: "test"))
-    }
     var swopCalled = false
+    
+    init() {
+        super.init(player: Player(name: "test", color: .red))
+    }
+    
+    override func swop(_ first: Int, _ second: Int) {
+        swopCalled = true
+    }
 }

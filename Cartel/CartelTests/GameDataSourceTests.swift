@@ -6,7 +6,7 @@ class HandDataSourceTests: XCTestCase {
 
     var sut: HandDataSource!
     let cv = TestableCollectionView(frame: CGRect.null, collectionViewLayout: UICollectionViewFlowLayout())
-    let player = Player(name: "Me")
+    let player = Player(name: "Me", color: .red)
     
     override func setUp() {
         super.setUp()
