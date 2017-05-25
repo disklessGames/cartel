@@ -59,9 +59,7 @@ class Game {
     }
 
     func endTurn() {
-        for _ in 0..<board.cardsToDraw(for: currentPlayer)
-            
- {
+        for _ in 0..<board.cardsToDraw(for: currentPlayer) {
             if let card = draw() {
                 currentPlayer.add(card: card)
             }

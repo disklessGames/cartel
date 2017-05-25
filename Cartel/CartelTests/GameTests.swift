@@ -69,24 +69,24 @@ class GameTests: XCTestCase {
     }
 
     func testEndTurn_drawsCards() {
-        
+
         let player = sut.currentPlayer
-        
+
         sut.endTurn()
 
         XCTAssertEqual(player.handSize, 4)
     }
-    
+
     func testEndTurn_ChangesPlayer() {
-        
+
         let player = sut.currentPlayer
-        
+
         sut.endTurn()
-        
+
         XCTAssertNotEqual(sut.currentPlayer.id, player.id)
-        
+
         sut.endTurn()
-        
+
         XCTAssertEqual(sut.currentPlayer.id, player.id)
     }
 }

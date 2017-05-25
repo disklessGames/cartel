@@ -46,11 +46,11 @@ class GameViewControllerTests: XCTestCase {
         XCTAssertTrue(cardView.removeCalled)
         XCTAssertEqual(hand.reloadCalled, 1)
     }
-    
+
     func testExit_ResetsGame() {
-        
+
         sut.exit(UIButton())
-        
+
         XCTAssertEqual(sut.cardsLeft(), 65)
         XCTAssertEqual(sut.game.currentPlayer.handSize, 4)
     }

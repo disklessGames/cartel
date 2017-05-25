@@ -1,17 +1,17 @@
 import UIKit
 
 class CardCell: UICollectionViewCell {
-    
+
     @IBOutlet var imageView: DraggableCard!
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var player2: UILabel!
-    
+
     override func prepareForReuse() {
         imageView.subviews.forEach {
             $0.removeFromSuperview()
         }
     }
-    
+
     func configure(_ block: [Card], agents: Int, rotation: CGAffineTransform, isPlayable: Bool) {
         if let last = block.last {
             if last.type == .road ||
@@ -23,7 +23,7 @@ class CardCell: UICollectionViewCell {
                 showStackedImages(block)
                 countLabel.text = "\(agents)"
                 player2.text = "\(agents)"
-                
+
             }
         }
         if isPlayable {
@@ -35,7 +35,7 @@ class CardCell: UICollectionViewCell {
         clipsToBounds = false
         imageView.transform = rotation
     }
-    
+
     func showStackedImages(_ cards: [Card]) {
         for (index, card) in cards.enumerated() {
             let newLevel = UIImageView(image: card.image)

@@ -1,9 +1,7 @@
-
 import UIKit
 
-
 class BoardData: NSObject {
-    
+
     let identifier = "CardCell"
     let width = 15
     var city = [Int: [Card]]()
@@ -11,7 +9,7 @@ class BoardData: NSObject {
     var cardRotations = [CGAffineTransform]()
     var pocket = [Int: [Card]]()
     var playableLocation = [Bool]()
-    
+
     init(players: Int) {
         super.init()
         for i in 0..<players {
@@ -26,17 +24,17 @@ class BoardData: NSObject {
         play(card: Card(RoadCardType.straight), at: width*width/2, playerId: nil)
         play(card: Card(RoadCardType.straight), at: width*width/2 + width, playerId: nil)
     }
-    
-    func setPlayableLocations(for card: Card){
+
+    func setPlayableLocations(for card: Card) {
         for y in 0..<width {
             for x in 0..<width {
                 playableLocation[x*width + y] = canPlay(card: card, x: x, y: y)
             }
         }
     }
-    
+
     func play(card: Card, at index: Int, playerId: Int?) {
-        
+
         switch card.type {
         case .road:
             city[index]?.append(card)
@@ -74,12 +72,11 @@ class BoardData: NSObject {
             break
         }
     }
-    
-    
+
     func cards(at index: Int) -> [Card]? {
         return city[index]
     }
-    
+
     func getTopCard(at index: IndexPath) -> Card? {
         if let block = cards(at: index.item),
             let card = block.last,

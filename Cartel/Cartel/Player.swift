@@ -3,7 +3,7 @@ import Foundation
 import UIKit
 
 class Player {
-    
+
     var id: Int
     var name: String
     var handSize: Int {

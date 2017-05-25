@@ -13,8 +13,8 @@ class HandCollectionView: UICollectionView, UICollectionViewDelegateFlowLayout {
                                       y: point.y + contentOffset.y)
             return indexPathForItem(at: actualPoint)
     }
-    
+
     func add() {
-        
+
     }
 }
