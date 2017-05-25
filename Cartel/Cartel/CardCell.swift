@@ -18,6 +18,7 @@ class CardCell: UICollectionViewCell {
                 last.type == .none {
                 imageView.image = block.last?.image
                 countLabel.text = ""
+                player2.text = ""
             } else {
                 imageView.image = block.first?.image
                 showStackedImages(block)
