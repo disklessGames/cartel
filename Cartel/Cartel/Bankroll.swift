@@ -1,12 +1,11 @@
-
 import Foundation
 
 class Bankroll {
     var bankrollCards = [Card]()
     var flipped = false
     var shuffled = false
-    
-    init(){
+
+    init() {
         bankrollCards.append(Card(.snitch))
         for _ in 1...2 {
             bankrollCards.append(Card(.detectiveTracy))
@@ -31,7 +30,7 @@ class Bankroll {
         for _ in 1...3 {
             bankrollCards.append(Card(.rightTurn))
         }
-        
+
         for _ in 1...7 {
             bankrollCards.append(Card(.straight))
             bankrollCards.append(Card(.anniewares))
@@ -40,38 +39,38 @@ class Bankroll {
             bankrollCards.append(Card(.topTech))
         }
     }
-    
-    func pocketCardsCount() -> Int{
+
+    func pocketCardsCount() -> Int {
         var pocketCount = 0
         for card in bankrollCards {
             if card.type == .pocket {
-                pocketCount += 1;
+                pocketCount += 1
             }
         }
         return pocketCount
     }
-    
-    func roadCardsCount()->Int{
+
+    func roadCardsCount() -> Int {
         var CardCount = 0
         for card in bankrollCards {
-            if card.type == .road{
+            if card.type == .road {
                 CardCount += 1
             }
         }
         return CardCount
     }
-    
-    func buildingCardsCount()->Int{
+
+    func buildingCardsCount() -> Int {
         var buildingCardCount = 0
         for card in bankrollCards {
-            if card.type == .building{
+            if card.type == .building {
                 buildingCardCount += 1
             }
         }
         return buildingCardCount
     }
-    
-    func drawCard()->Card?{
+
+    func drawCard() -> Card? {
         if bankrollCards.count > 0 {
             let cardDrawn = bankrollCards[0]
             bankrollCards.remove(at: 0)
@@ -79,24 +78,24 @@ class Bankroll {
         }
         return nil
     }
-    
-    func drawCards(_ numberOfCardsToDraw: Int)->[Card]{
+
+    func drawCards(_ numberOfCardsToDraw: Int) -> [Card] {
         var cardsDrawn = [Card]()
         for _ in  1...numberOfCardsToDraw {
             cardsDrawn.append(drawCard()!)
         }
         return cardsDrawn
     }
-    
-    func cardsLeft()->Int{
-        return bankrollCards.count;
+
+    func cardsLeft() -> Int {
+        return bankrollCards.count
     }
-    
+
     func shuffle() {
         bankrollCards = shuffle(bankrollCards)
         shuffled = true
     }
-    
+
     func shuffle(_ list: [Card]) -> [Card] {
         var list = list
         for old in 0..<list.count {
@@ -105,8 +104,8 @@ class Bankroll {
         }
         return list
     }
-    
-    func flip(){
+
+    func flip() {
         flipped = true
     }
 }

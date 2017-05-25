@@ -90,7 +90,7 @@ class BoardData: NSObject {
             return nil
         }
     }
-    
+
     func canPlay(card: Card, at index: Int) -> Bool {
         switch card.type {
         case .building:
@@ -115,11 +115,11 @@ class BoardData: NSObject {
             return false
         }
     }
-    
+
     func canPlay(card: Card, x: Int, y: Int) -> Bool {
         return canPlay(card: card, at: x*width + y)
     }
-    
+
     private func canPlayBuilding(at index: Int) -> Bool {
         return
             city[index+1]?.last?.type == .road ||
@@ -127,7 +127,7 @@ class BoardData: NSObject {
                 city[index+width]?.last?.type == .road ||
                 city[index-width]?.last?.type == .road
     }
-    
+
     private func doubleDownBonus(index: Int) -> Int {
         if let under = city[index]?.last?.building {
             if case .doubleDown = under {
@@ -151,6 +151,10 @@ class BoardData: NSObject {
             }
         }
         return 0
-        
+
+    }
+
+    func cardsToDraw(for player: Player) -> Int {
+        return 4
     }
 }

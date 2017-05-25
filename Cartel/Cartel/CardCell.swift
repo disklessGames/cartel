@@ -1,10 +1,10 @@
-
 import UIKit
 
 class CardCell: UICollectionViewCell {
     
-    @IBOutlet var imageView : DraggableCard!
+    @IBOutlet var imageView: DraggableCard!
     @IBOutlet weak var countLabel: UILabel!
+    @IBOutlet weak var player2: UILabel!
     
     override func prepareForReuse() {
         imageView.subviews.forEach {
@@ -12,7 +12,7 @@ class CardCell: UICollectionViewCell {
         }
     }
     
-    func configure(_ block: [Card], agents: Int?, rotation: CGAffineTransform, isPlayable: Bool) {
+    func configure(_ block: [Card], agents: Int, rotation: CGAffineTransform, isPlayable: Bool) {
         if let last = block.last {
             if last.type == .road ||
                 last.type == .none {
@@ -21,7 +21,9 @@ class CardCell: UICollectionViewCell {
             } else {
                 imageView.image = block.first?.image
                 showStackedImages(block)
-                countLabel.text = "\(agents ?? 0)"
+                countLabel.text = "\(agents)"
+                player2.text = "\(agents)"
+                
             }
         }
         if isPlayable {

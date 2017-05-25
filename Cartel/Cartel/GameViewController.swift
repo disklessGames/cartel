@@ -1,4 +1,3 @@
-
 import UIKit
 
 class GameViewController: UIViewController, UICollectionViewDelegate {
@@ -46,11 +45,9 @@ class GameViewController: UIViewController, UICollectionViewDelegate {
     }
     
     @IBAction func drawCard(_ sender: AnyObject) {
-        if let cardDrawn = game.draw() {
-            self.draw(cardDrawn)
-        } else {
-            print("No more cards !")
-        }
+        game.endTurn()
+        handCollectionView.dataSource = HandDataSource(player: game.currentPlayer)
+        handCollectionView.reloadData()
     }
     
     func cardsLeft() -> Int {
@@ -117,7 +114,7 @@ extension GameViewController {
             UIView.animate(withDuration: duration, delay: delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: options, animations: {
                 cardDrawnView.center = self.handCollectionView.center
                 
-            }, completion: { finished in
+            }, completion: { _ in
                 self.cleanUpDrawAnimation(cardDrawn, cardView: cardDrawnView)
             })
         })

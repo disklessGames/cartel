@@ -1,4 +1,3 @@
-
 import XCTest
 @testable import Cartel
 
@@ -6,10 +5,10 @@ class BankrollTests: XCTestCase {
 
     let sut = Bankroll()
 
-    func testShuffle(){
+    func testShuffle() {
 
         let preShuffleDeck = sut.bankrollCards
-        
+
         sut.shuffle()
 
         let shuffledDards = sut.bankrollCards
@@ -20,44 +19,44 @@ class BankrollTests: XCTestCase {
                 diff = preShuffleDeck[i].type != shuffledDards[i].type
             }
         }
-        
+
         XCTAssertTrue(diff)
     }
-    
-    func testFlip(){
-        
+
+    func testFlip() {
+
         sut.flip()
-        
+
         XCTAssertTrue(sut.flipped)
     }
-    
-    func testDraw2CardsAtATime(){
-        
+
+    func testDraw2CardsAtATime() {
+
         let cardsDrawn = sut.drawCards(2)
-        
+
         XCTAssertEqual(cardsDrawn.count, 2)
     }
-    
+
     func testNoCardDrawn_bankrollEmpty() {
         sut.bankrollCards = [Card]()
-        
+
         XCTAssertNil(sut.drawCard())
     }
-    
+
     func testBankRollSetupCreates73Cards() {
         XCTAssertEqual(sut.cardsLeft(), 73)
     }
-    
-    func testPocketCardsAre15(){
+
+    func testPocketCardsAre15() {
         XCTAssertEqual(sut.pocketCardsCount(), 15)
     }
-    
-    func testRoadCardsAreThereExceptStartingStraights(){
+
+    func testRoadCardsAreThereExceptStartingStraights() {
         XCTAssertEqual(sut.roadCardsCount(), 14)
     }
-    
-    func testBuildingCardsAre44(){
+
+    func testBuildingCardsAre44() {
         XCTAssertEqual(sut.buildingCardsCount(), 44)
     }
-    
+
 }

@@ -1,4 +1,3 @@
-
 import Foundation
 import UIKit
 
@@ -14,7 +13,7 @@ enum RoadCardType {
     case tJunction
     case leftTurn
     case rightTurn
-    
+
     var image: UIImage {
         get {
             switch self {
@@ -40,7 +39,7 @@ enum PocketCardType {
     case captainJuan
     case wardenSachs
     case congressmanTu
-    
+
     var image: UIImage {
         switch self {
         case .snitch:
@@ -60,7 +59,7 @@ enum PocketCardType {
         case .congressmanTu:
             return UIImage(named: "PocketCongressmanTu.png")!
         }
-        
+
     }
 }
 
@@ -76,7 +75,7 @@ enum BuildingCardType {
     case privateSecurity
     case shelfCorp
     case skyline
-    
+
     var image: UIImage {
         switch self {
         case .anniewares : return UIImage(named: "BuildingAnnie.png")!
@@ -95,7 +94,7 @@ enum BuildingCardType {
 }
 
 class Card: NSObject {
-    
+
     static let smallSize = CGSize(width: 100, height: 150)
     static let bigSize = CGSize(width: 300, height: 450)
 
@@ -117,21 +116,21 @@ class Card: NSObject {
     var building: BuildingCardType?
     var road: RoadCardType?
     var pocket: PocketCardType?
-    
-    init(_ type: CardType){
+
+    init(_ type: CardType) {
         self.type = type
     }
-    
+
     convenience init(_ building: BuildingCardType) {
         self.init(.building)
         self.building = building
     }
-    
+
     convenience init(_ road: RoadCardType) {
         self.init(.road)
         self.road = road
     }
-    
+
     convenience init(_ pocket: PocketCardType) {
         self.init(.pocket)
         self.pocket = pocket
