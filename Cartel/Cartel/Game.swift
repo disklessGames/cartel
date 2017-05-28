@@ -2,8 +2,8 @@ import Foundation
 
 class Game {
 
-    let bankroll = Bankroll()
-    let board: BoardData
+    private let bankroll = Bankroll()
+    private let board: BoardData
     var currentPlayerIndex = 0
     var currentPlayer: Player {
         return players[currentPlayerIndex]
@@ -11,6 +11,7 @@ class Game {
     var numberOfPlayers: Int {
         return players.count
     }
+    var currentPlayerActions = 2
 
     var players: [Player]
 
@@ -68,6 +69,7 @@ class Game {
         if currentPlayerIndex + 1 > players.count {
             currentPlayerIndex = 0
         }
+        currentPlayerActions = 2
     }
 
     func cardsLeft() -> Int {

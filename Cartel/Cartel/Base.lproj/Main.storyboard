@@ -115,10 +115,20 @@
                                     <outlet property="delegate" destination="SRQ-4e-qsx" id="33c-tD-6og"/>
                                 </connections>
                             </collectionView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sS8-Pp-m5N" customClass="InputView" customModule="Cartel" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sS8-Pp-m5N" customClass="InputView" customModule="Cartel" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Actions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJv-Ni-d6f">
+                                        <rect key="frame" x="958" y="528" width="58" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="BJv-Ni-d6f" secondAttribute="trailing" constant="8" id="pfu-Ei-KM1"/>
+                                </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d0t-2D-Iec">
                                 <rect key="frame" x="936" y="20" width="68" height="61"/>
@@ -151,13 +161,18 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="DAN-wo-5Fz" firstAttribute="height" secondItem="Eiq-RY-8ya" secondAttribute="height" multiplier="0.8" id="3Y9-Pv-XV5"/>
+                            <constraint firstItem="sS8-Pp-m5N" firstAttribute="top" secondItem="ZrX-Ex-Ima" secondAttribute="bottom" id="9mR-ut-zR6"/>
                             <constraint firstAttribute="trailing" secondItem="Iwd-Ht-yjx" secondAttribute="trailing" id="EhI-b0-T2l"/>
                             <constraint firstItem="DAN-wo-5Fz" firstAttribute="centerY" secondItem="Eiq-RY-8ya" secondAttribute="centerY" id="Fv0-mq-UJW"/>
                             <constraint firstItem="Iwd-Ht-yjx" firstAttribute="top" secondItem="van-r5-EEj" secondAttribute="top" id="HaC-gc-DER"/>
+                            <constraint firstAttribute="trailing" secondItem="sS8-Pp-m5N" secondAttribute="trailing" id="JHJ-7f-aIR"/>
                             <constraint firstItem="Iwd-Ht-yjx" firstAttribute="leading" secondItem="van-r5-EEj" secondAttribute="leading" id="LKA-hl-r6h"/>
                             <constraint firstItem="DAN-wo-5Fz" firstAttribute="leading" secondItem="Eiq-RY-8ya" secondAttribute="trailing" constant="14" id="UgR-I1-iOg"/>
                             <constraint firstItem="Eiq-RY-8ya" firstAttribute="leading" secondItem="van-r5-EEj" secondAttribute="leading" id="dnb-LS-D3m"/>
                             <constraint firstItem="Eiq-RY-8ya" firstAttribute="top" secondItem="Iwd-Ht-yjx" secondAttribute="bottom" id="flz-aW-5df"/>
+                            <constraint firstItem="sS8-Pp-m5N" firstAttribute="leading" secondItem="van-r5-EEj" secondAttribute="leading" id="jiE-H2-4fA"/>
+                            <constraint firstItem="Eiq-RY-8ya" firstAttribute="top" secondItem="BJv-Ni-d6f" secondAttribute="bottom" constant="19.5" id="kIV-Bn-uvI"/>
+                            <constraint firstItem="1zx-6C-aRf" firstAttribute="top" secondItem="sS8-Pp-m5N" secondAttribute="bottom" id="laG-Vy-oQr"/>
                             <constraint firstItem="1zx-6C-aRf" firstAttribute="top" secondItem="Eiq-RY-8ya" secondAttribute="bottom" id="m7J-nT-Qw0"/>
                             <constraint firstItem="DAN-wo-5Fz" firstAttribute="trailing" secondItem="van-r5-EEj" secondAttribute="trailingMargin" id="omN-ej-LVp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="d0t-2D-Iec" secondAttribute="trailing" id="uXS-nG-29c"/>
@@ -165,6 +180,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="actionsLabel" destination="BJv-Ni-d6f" id="MLD-4F-Jbn"/>
                         <outlet property="bankRollButton" destination="DAN-wo-5Fz" id="2mZ-jV-BVg"/>
                         <outlet property="cityCollectionView" destination="Iwd-Ht-yjx" id="mGi-6U-I6B"/>
                         <outlet property="gameInputView" destination="sS8-Pp-m5N" id="zuh-cj-0zM"/>

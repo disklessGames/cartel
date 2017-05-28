@@ -40,8 +40,12 @@ class BoardData: NSObject {
             city[index]?.append(card)
         case .building:
             switch card.building! {
-            case .anniewares, .topTech:
+            case .anniewares :
                 agents[index]! += 1
+            case.topTech:
+                if city[index]!.count > 1 {
+                    agents[index]! += 1
+                }
             case .groundhogCoffees:
                 if city[index]!.count == 1 {
                     agents[index]! += 1

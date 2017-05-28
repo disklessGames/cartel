@@ -169,6 +169,7 @@
 				577FC225198A803D00A9AB52 /* Cartel */,
 				577FC23B198A803E00A9AB52 /* CartelTests */,
 				577FC224198A803D00A9AB52 /* Products */,
+				57E82D311EDAD1C50027BC5D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -262,6 +263,13 @@
 			name = GameViewTests;
 			sourceTree = "<group>";
 		};
+		57E82D311EDAD1C50027BC5D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		57F14056199F8B7700A0DCE6 /* Engine */ = {
 			isa = PBXGroup;
 			children = (
@@ -335,6 +343,11 @@
 						DevelopmentTeamName = "Johannes Theron (Personal Team)";
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 0;
+							};
+						};
 					};
 					577FC237198A803E00A9AB52 = {
 						CreatedOnToolsVersion = 6.0;
@@ -561,7 +574,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-Xfrontend -debug-time-function-bodies";
-				PRODUCT_BUNDLE_IDENTIFIER = com.disklessgames.cartel;
+				PRODUCT_BUNDLE_IDENTIFIER = za.disklessgames.cartel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -582,7 +595,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-Xfrontend -debug-time-function-bodies";
-				PRODUCT_BUNDLE_IDENTIFIER = com.disklessgames.cartel;
+				PRODUCT_BUNDLE_IDENTIFIER = za.disklessgames.cartel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;

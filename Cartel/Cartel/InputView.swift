@@ -69,7 +69,6 @@ class InputView: UIView {
         drag.dropCard = { point in
             self.gameViewController?.play(card: card, at: point)
             self.gameViewController?.boardData.setPlayableLocations(for: Card(.none))
-            self.gameViewController?.cityCollectionView.reloadData()
             self.draggingCard?.removeFromSuperview()
         }
         drag.center = point
