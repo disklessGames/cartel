@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-extension BoardData: UICollectionViewDataSource {
+extension CityData: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0 {
@@ -24,10 +24,10 @@ extension BoardData: UICollectionViewDataSource {
     }
 }
 
-extension BoardData: UICollectionViewDelegateFlowLayout {
+extension CityData: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let data = collectionView.dataSource as! BoardData
+        let data = collectionView.dataSource as! CityData
         let width = (collectionView.frame.width - CGFloat(data.width*5))/CGFloat(data.width)
         let height = CGFloat(150 * width/100)
         return CGSize(width: width, height: height)

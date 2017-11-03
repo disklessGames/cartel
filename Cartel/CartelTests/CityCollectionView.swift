@@ -11,4 +11,8 @@ class CityCollectionViewTests: XCTestCase {
     override func tearDown() {
         super.tearDown()
     }
+
+    func testInitWithFrame() {
+        _ = CityCollectionView(frame: .null)
+    }
 }

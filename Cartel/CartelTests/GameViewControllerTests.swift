@@ -13,6 +13,7 @@ class GameViewControllerTests: XCTestCase {
         _ = sut.loadViewIfNeeded()
 
         sut.game = Game()
+        sut.game.prepareGame()
         sut.bankRollButton = UIButton()
         sut.handCollectionView = hand
 
@@ -33,7 +34,7 @@ class GameViewControllerTests: XCTestCase {
 
         sut.drawCard(sut.bankRollButton)
 
-        XCTAssertEqual(sut.cardsLeft(), 69)
+        XCTAssertEqual(sut.cardsLeft(), 64)
     }
 
     func testCleanupDrawAnimation() {

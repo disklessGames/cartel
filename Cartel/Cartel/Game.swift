@@ -3,7 +3,7 @@ import Foundation
 class Game {
 
     private let bankroll = Bankroll()
-    private let board: BoardData
+    private let board: CityData
     var currentPlayerIndex = 0
     var currentPlayer: Player {
         return players[currentPlayerIndex]
@@ -18,12 +18,12 @@ class Game {
     init() {
         self.players = [Player(id: 1, name: "Me", color: .green),
                         Player(id: 2, name: "Nemesis", color: .red)]
-        self.board = BoardData(players: 2)
+        self.board = CityData(players: 2)
     }
 
     init(players: [Player]) {
         self.players = players
-        self.board = BoardData(players: players.count)
+        self.board = CityData(players: players.count)
     }
 
     func prepareGame() {
@@ -74,5 +74,13 @@ class Game {
 
     func cardsLeft() -> Int {
         return bankroll.cardsLeft()
+    }
+
+    func cards(at index: Int) -> [Card]? {
+        return board.cards(at:index)
+    }
+
+    func bankRollFlipped() -> Bool {
+        return bankroll.flipped
     }
 }

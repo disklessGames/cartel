@@ -14,7 +14,4 @@ class HandCollectionView: UICollectionView, UICollectionViewDelegateFlowLayout {
             return indexPathForItem(at: actualPoint)
     }
 
-    func add() {
-
-    }
 }

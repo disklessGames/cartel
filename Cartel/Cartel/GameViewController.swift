@@ -12,7 +12,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate {
     var game: Game! {
         didSet {
             handData = HandDataSource(player: game.currentPlayer)
-            boardData = BoardData(players: game.numberOfPlayers)
+            boardData = CityData(players: game.numberOfPlayers)
         }
     }
     var handData: HandDataSource? {
@@ -22,7 +22,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate {
             handCollectionView.reloadData()
         }
     }
-    var boardData = BoardData(players: 2) {
+    var boardData = CityData(players: 2) {
         didSet {
             cityCollectionView.dataSource = boardData
         }

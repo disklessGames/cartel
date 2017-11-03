@@ -20,14 +20,8 @@ class GameTests: XCTestCase {
 
         sut.prepareGame()
 
-        XCTAssertEqual(sut.board.cards(at: 112)?.last?.type, CardType.road)
-        XCTAssertEqual(sut.board.cards(at: 127)?.last?.type, CardType.road)
-    }
-
-    func testStartGame_Shuffles() {
-        sut.prepareGame()
-
-        XCTAssertTrue(sut.bankroll.shuffled)
+        XCTAssertEqual(sut.cards(at: 112)?.last?.type, CardType.road)
+        XCTAssertEqual(sut.cards(at: 127)?.last?.type, CardType.road)
     }
 
     func testStartGame_Deals() {
@@ -47,18 +41,11 @@ class GameTests: XCTestCase {
         XCTAssertEqual(sut.currentPlayer.handSize, 4)
     }
 
-    func testShuffle() {
-
-        sut.shuffle()
-
-        XCTAssertTrue(sut.bankroll.shuffled)
-    }
-
     func testFlip() {
 
         sut.flip()
 
-        XCTAssertTrue(sut.bankroll.flipped)
+        XCTAssertTrue(sut.bankRollFlipped())
     }
 
     func testBeginTurn() {

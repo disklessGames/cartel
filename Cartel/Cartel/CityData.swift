@@ -1,6 +1,6 @@
 import UIKit
 
-class BoardData: NSObject {
+class CityData: NSObject {
 
     let identifier = "CardCell"
     let width = 15
@@ -41,27 +41,27 @@ class BoardData: NSObject {
         case .building:
             switch card.building! {
             case .anniewares :
-                agents[index]! += 1
+                agents[index]? += 1
             case.topTech:
                 if city[index]!.count > 1 {
-                    agents[index]! += 1
+                    agents[index]? += 1
                 }
             case .groundhogCoffees:
                 if city[index]!.count == 1 {
-                    agents[index]! += 1
+                    agents[index]? += 1
                 }
             case .privateSecurity:
                 agents[index] = 0
             case .mannedManagement:
                 if agents[index]! > 0 {
-                    agents[index]! += 1
+                    agents[index]? += 1
                 }
             case .neueNewsNetwork:
                 if pocket[playerId!]!.count > 0 {
-                    agents[index]! += 1
+                    agents[index]? += 1
                 }
             case .doubleDown:
-                agents[index]! += doubleDownBonus(index: index)
+                agents[index]? += doubleDownBonus(index: index)
             case
             .lucyLaundromat,
             .shelfCorp,

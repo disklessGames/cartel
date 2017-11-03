@@ -1,9 +1,9 @@
 import XCTest
 @testable import Cartel
 
-class BoardDataTests: XCTestCase {
+class CityDataTests: XCTestCase {
 
-    let sut = BoardData(players: 2)
+    let sut = CityData(players: 2)
     let collectionView = TestableCollectionView(frame: CGRect.null,
                                                 collectionViewLayout: UICollectionViewFlowLayout())
 
@@ -14,8 +14,22 @@ class BoardDataTests: XCTestCase {
         XCTAssertEqual(sections, 2)
     }
 
+    func testNumberOfItemsOnBoard_IsFilled() {
+
+        let items = sut.collectionView(collectionView, numberOfItemsInSection: 0)
+        
+        XCTAssertEqual(items, 225)
+    }
+
+    func testNumberOfItemsInPocket_StartsEmpty() {
+
+        let items = sut.collectionView(collectionView, numberOfItemsInSection: 1)
+
+        XCTAssertEqual(items, 2)
+    }
+
     func testSimplePlay() {
-        let board = BoardData(players: 2)
+        let board = CityData(players: 2)
 
         board.play(card: Card(.tJunction), at: 0, playerId: 0)
         board.play(card: Card(.anniewares), at: 1, playerId: 0)
@@ -48,6 +62,18 @@ class BoardDataTests: XCTestCase {
         XCTAssertNotNil(sut.collectionView(collectionView,
                                            cellForItemAt: index))
         XCTAssertTrue(collectionView.dequeueCalled)
+    }
+
+    func testCanPlayPocket_AlwaysTrue() {
+
+        let canPlay = sut.canPlay(card: Card(.snitch), at: 0)
+
+        XCTAssertTrue(canPlay)
+    }
+
+    func testCanPlayBuilding_OnBuilding() {
+
+        
     }
 }
 

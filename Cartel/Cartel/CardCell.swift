@@ -3,8 +3,8 @@ import UIKit
 class CardCell: UICollectionViewCell {
 
     @IBOutlet var imageView: DraggableCard!
-    @IBOutlet weak var countLabel: UILabel!
-    @IBOutlet weak var player2: UILabel!
+    @IBOutlet var countLabel: UILabel!
+    @IBOutlet var player2: UILabel!
 
     override func prepareForReuse() {
         imageView.subviews.forEach {
@@ -13,19 +13,19 @@ class CardCell: UICollectionViewCell {
     }
 
     func configure(_ block: [Card], agents: Int, rotation: CGAffineTransform, isPlayable: Bool) {
-        if let last = block.last {
-            if last.type == .road ||
-                last.type == .none {
-                imageView.image = block.last?.image
-                countLabel.text = ""
-                player2.text = ""
-            } else {
-                imageView.image = block.first?.image
-                showStackedImages(block)
-                countLabel.text = "\(agents)"
-                player2.text = "\(agents)"
-
-            }
+        if let last = block.last,
+            last.type == .road || last.type == .none {
+            imageView.image = last.image
+        } else {
+            imageView.image = block.first?.image
+            showStackedImages(block)
+         }
+        if agents > 0 {
+            countLabel.text = "\(agents)"
+            player2.text = "\(agents)"
+        } else {
+            countLabel.text = ""
+            player2.text = ""
         }
         if isPlayable {
             layer.borderWidth = 1

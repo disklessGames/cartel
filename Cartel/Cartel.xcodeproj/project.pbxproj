@@ -22,7 +22,7 @@
 		5712AF241EC5B12E00C31AAF /* CityLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5712AF231EC5B12E00C31AAF /* CityLayout.swift */; };
 		5714DC581994B6A800065908 /* BankrollTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5714DC571994B6A800065908 /* BankrollTests.swift */; };
 		571ABC731D3F8C780013B5DF /* BoardCollectionViewDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57357FE11A20D3820089B018 /* BoardCollectionViewDataSourceTests.swift */; };
-		57357FE41A20D42D0089B018 /* BoardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57357FE31A20D42D0089B018 /* BoardData.swift */; };
+		57357FE41A20D42D0089B018 /* CityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57357FE31A20D42D0089B018 /* CityData.swift */; };
 		573D187C199382C6007DD674 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573D187B199382C6007DD674 /* GameViewController.swift */; };
 		574CAE121990D8DC00C86588 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574CAE111990D8DC00C86588 /* Card.swift */; };
 		574CAE1F1991049B00C86588 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574CAE1E1991049B00C86588 /* Player.swift */; };
@@ -40,6 +40,7 @@
 		577FC24D198A81A900A9AB52 /* Bankroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577FC24C198A81A900A9AB52 /* Bankroll.swift */; };
 		577FC24F198AA0D800A9AB52 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577FC24E198AA0D800A9AB52 /* Game.swift */; };
 		57B120271EC9856F00C59748 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B120261EC9856F00C59748 /* InputView.swift */; };
+		57BF7C0C1FAC55D20062D859 /* CardCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BF7C0B1FAC55D20062D859 /* CardCellTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,7 +83,7 @@
 		5712AF231EC5B12E00C31AAF /* CityLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityLayout.swift; sourceTree = "<group>"; };
 		5714DC571994B6A800065908 /* BankrollTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankrollTests.swift; sourceTree = "<group>"; };
 		57357FE11A20D3820089B018 /* BoardCollectionViewDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardCollectionViewDataSourceTests.swift; sourceTree = "<group>"; };
-		57357FE31A20D42D0089B018 /* BoardData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardData.swift; sourceTree = "<group>"; };
+		57357FE31A20D42D0089B018 /* CityData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityData.swift; sourceTree = "<group>"; };
 		573D187B199382C6007DD674 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		574CAE111990D8DC00C86588 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		574CAE1E1991049B00C86588 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
@@ -104,6 +105,7 @@
 		577FC24C198A81A900A9AB52 /* Bankroll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bankroll.swift; sourceTree = "<group>"; };
 		577FC24E198AA0D800A9AB52 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		57B120261EC9856F00C59748 /* InputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		57BF7C0B1FAC55D20062D859 /* CardCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCellTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +240,7 @@
 				5714DC571994B6A800065908 /* BankrollTests.swift */,
 				5701C88B1DD70B5F00B484F8 /* DraggableCardTests.swift */,
 				57014AEA1DDBA16700BC53C1 /* CardTests.swift */,
+				57BF7C0B1FAC55D20062D859 /* CardCellTests.swift */,
 			);
 			name = CardTests;
 			sourceTree = "<group>";
@@ -245,7 +248,7 @@
 		577FC24B198A819600A9AB52 /* Data Objects */ = {
 			isa = PBXGroup;
 			children = (
-				57357FE31A20D42D0089B018 /* BoardData.swift */,
+				57357FE31A20D42D0089B018 /* CityData.swift */,
 				577FC24C198A81A900A9AB52 /* Bankroll.swift */,
 				574CAE111990D8DC00C86588 /* Card.swift */,
 				574CAE1E1991049B00C86588 /* Player.swift */,
@@ -334,14 +337,14 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = Tuism;
 				TargetAttributes = {
 					577FC222198A803D00A9AB52 = {
 						CreatedOnToolsVersion = 6.0;
 						DevelopmentTeam = 56XX9JASG7;
 						DevelopmentTeamName = "Johannes Theron (Personal Team)";
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.GameCenter = {
@@ -352,7 +355,7 @@
 					577FC237198A803E00A9AB52 = {
 						CreatedOnToolsVersion = 6.0;
 						DevelopmentTeam = CG6B72D3X4;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Manual;
 						TestTargetID = 577FC222198A803D00A9AB52;
 					};
@@ -411,7 +414,7 @@
 				57014AF01DDBB8C800BC53C1 /* HandCollectionView.swift in Sources */,
 				570F9A3F19ADDE3900FC9731 /* DraggableCard.swift in Sources */,
 				574CAE121990D8DC00C86588 /* Card.swift in Sources */,
-				57357FE41A20D42D0089B018 /* BoardData.swift in Sources */,
+				57357FE41A20D42D0089B018 /* CityData.swift in Sources */,
 				5712AF241EC5B12E00C31AAF /* CityLayout.swift in Sources */,
 				577FC229198A803D00A9AB52 /* AppDelegate.swift in Sources */,
 				577FC24F198AA0D800A9AB52 /* Game.swift in Sources */,
@@ -431,6 +434,7 @@
 				577FC24A198A80F800A9AB52 /* GameTests.swift in Sources */,
 				574CAE21199111F000C86588 /* PocketCardTests.swift in Sources */,
 				571ABC731D3F8C780013B5DF /* BoardCollectionViewDataSourceTests.swift in Sources */,
+				57BF7C0C1FAC55D20062D859 /* CardCellTests.swift in Sources */,
 				5714DC581994B6A800065908 /* BankrollTests.swift in Sources */,
 				5701C8941DD73C1600B484F8 /* GameDataSourceTests.swift in Sources */,
 				5701C88E1DD7118E00B484F8 /* PlayerTests.swift in Sources */,
@@ -482,14 +486,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -512,7 +522,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				METAL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "-Xfrontend -debug-time-function-bodies";
@@ -530,14 +540,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -553,7 +569,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				METAL_ENABLE_DEBUG_INFO = NO;
 				OTHER_SWIFT_FLAGS = "-Xfrontend -debug-time-function-bodies";
 				SDKROOT = iphoneos;
@@ -578,8 +594,9 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -598,8 +615,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = za.disklessgames.cartel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
@@ -609,10 +627,7 @@
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Cartel.app/Cartel";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = CG6B72D3X4;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -624,7 +639,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "XC: *";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Debug;
@@ -636,10 +652,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = CG6B72D3X4;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = CartelTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -648,7 +661,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "XC: *";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Release;
