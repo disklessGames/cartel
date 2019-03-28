@@ -110,7 +110,7 @@ extension GameViewController {
         cardDrawnView.frame.size = Card.bigSize
         let duration = 0.5
         let delay = 1.0
-        let options = UIViewAnimationOptions()
+        let options = UIView.AnimationOptions()
         let damping = CGFloat(0.7)
         let velocity = CGFloat(0.7)
         
